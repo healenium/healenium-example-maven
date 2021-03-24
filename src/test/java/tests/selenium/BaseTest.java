@@ -1,4 +1,4 @@
-package selenium;
+package tests.selenium;
 
 
 import com.epam.healenium.SelfHealingDriver;
@@ -19,7 +19,7 @@ public class BaseTest {
     static public void setUp() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.setHeadless(true);
+        options.setHeadless(false);
         //declare delegate
         WebDriver delegate = new ChromeDriver(options);
         driver = SelfHealingDriver.create(delegate);

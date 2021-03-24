@@ -1,8 +1,8 @@
-package selenium;
+package tests.selenium;
 
 import org.junit.jupiter.api.Test;
-import pages.MainPage;
-import pages.MainPageWithFindBy;
+import pages.selenium.MainPage;
+import pages.selenium.MainPageWithFindBy;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
