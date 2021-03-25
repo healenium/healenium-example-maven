@@ -11,17 +11,21 @@ public class SelenideMainPage extends SelenideBasePage{
   private static final By CREATE_MARKUP_BUTTON = By.id("markup-generation-button");
   private static final String URL = "http://sha-test-app.herokuapp.com/";
 
-  public void clickBtn(){
+  public SelenideMainPage clickTestButton(){
     $(TEST_BUTTON).click();
-//    return this;
+    return this;
   }
 
-  public void clickCreateMarkupButton(){
+  public SelenideMainPage clickCreateMarkupButton(){
     $(CREATE_MARKUP_BUTTON).click();
-//    return this;
+    return this;
   }
 
-  public static SelenideMainPage openPage(){
+  public String getTestButtonText(){
+    return $(TEST_BUTTON).getText();
+  }
+
+  public SelenideMainPage openPage(){
     return open(URL, SelenideMainPage.class);
   }
 

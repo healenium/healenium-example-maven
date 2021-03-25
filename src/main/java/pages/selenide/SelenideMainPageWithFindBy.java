@@ -17,12 +17,14 @@ public class SelenideMainPageWithFindBy extends SelenideBasePage{
 
   public void clickBtn(){
     testButton.click();
-//    return this;
   }
 
   public void clickCreateMarkupButton(){
     createMarkupButton.click();
-//    return this;
+  }
+
+  public String getTestButtonText(){
+    return testButton.getText();
   }
 
   public static SelenideMainPageWithFindBy openPage(){

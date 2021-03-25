@@ -7,6 +7,11 @@ public class SelenideBasePage {
     Selenide.switchTo().alert().accept();
   }
 
+  public String getAlertText(){
+    return Selenide.switchTo().alert().getText();
+  }
+
+
   public void refreshPage(){
     Selenide.refresh();
   }

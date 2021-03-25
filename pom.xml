@@ -69,6 +69,11 @@
             <artifactId>selenide</artifactId>
             <version>5.19.0</version>
         </dependency>
+        <dependency>
+            <groupId>ru.yandex.qatools.htmlelements</groupId>
+            <artifactId>htmlelements-java</artifactId>
+            <version>1.20.0</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

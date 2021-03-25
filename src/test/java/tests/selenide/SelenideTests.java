@@ -1,22 +1,27 @@
 package tests.selenide;
 
-import static com.codeborne.selenide.Selenide.open;
-
 import org.junit.jupiter.api.Test;
 import pages.selenide.SelenideMainPage;
 import pages.selenide.SelenideMainPageWithFindBy;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SelenideTests extends SelenideBaseTest{
 
   @Test
-  public void test(){
-    SelenideMainPage mainPage = SelenideMainPage.openPage();
+  public void selenideTest(){
+    SelenideMainPage mainPage = new SelenideMainPage();
 
-    mainPage.clickBtn();
+    mainPage.openPage();
+    mainPage.clickTestButton();
+    assertTrue(mainPage.getAlertText().contains("button found!"), "Alert text is not correct");
+
     mainPage.confirmAlert();
     mainPage.clickCreateMarkupButton();
-    mainPage.clickBtn();
+    assertTrue(("Click me").equals(mainPage.getTestButtonText()), "Button text is not correct");
+
+    mainPage.clickTestButton();
     mainPage.confirmAlert();
+
     mainPage.refreshPage();
   }
 
@@ -24,6 +29,7 @@ public class SelenideTests extends SelenideBaseTest{
   public void testFindBy(){
     SelenideMainPageWithFindBy mainPage = SelenideMainPageWithFindBy.openPage();
 
+    assertTrue(("Click me").equals(mainPage.getTestButtonText()), "Button text is not correct");
     mainPage.clickBtn();
     mainPage.confirmAlert();
     mainPage.clickCreateMarkupButton();

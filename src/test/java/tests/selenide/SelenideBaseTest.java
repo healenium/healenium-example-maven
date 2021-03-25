@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.util.concurrent.TimeUnit;
 
 public class SelenideBaseTest {
-  static protected SelfHealingDriver driver;
+  private static SelfHealingDriver driver;
 
   @BeforeAll
   static public void setUp() {
