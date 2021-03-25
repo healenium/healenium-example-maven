@@ -26,11 +26,14 @@ public class SelenideTests extends SelenideBaseTest{
   }
 
   @Test
-  public void testFindBy(){
+  public void selenideWithFindByTest(){
     SelenideMainPageWithFindBy mainPage = SelenideMainPageWithFindBy.openPage();
 
-    assertTrue(("Click me").equals(mainPage.getTestButtonText()), "Button text is not correct");
+    assertTrue(("Click me").equals(mainPage.getTestButtonText()),
+        "Button text is not correct");
     mainPage.clickBtn();
+    assertTrue(("button found!").equals(mainPage.getAlertText()),
+        "Button text is not correct");
     mainPage.confirmAlert();
     mainPage.clickCreateMarkupButton();
     mainPage.clickBtn();

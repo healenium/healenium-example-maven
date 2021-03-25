@@ -9,7 +9,7 @@ public class HtmlElementTests extends HtmlElementBaseTest {
 
   private HtmlElementMainPage mainPage = new HtmlElementMainPage(driver);
   @Test
-  public void test(){
+  public void htmlElementTest(){
     driver.get("http://sha-test-app.herokuapp.com/");
     assertTrue(mainPage.isTestButtonTextCorrect("Click me"),
         "Button text is not correct");
