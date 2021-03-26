@@ -1,4 +1,4 @@
-package selenium;
+package tests.htmlelement;
 
 
 import com.epam.healenium.SelfHealingDriver;
@@ -12,14 +12,14 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.concurrent.TimeUnit;
 
-public class BaseTest {
+public class HtmlElementBaseTest {
     static protected SelfHealingDriver driver;
 
     @BeforeAll
     static public void setUp() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.setHeadless(true);
+        options.setHeadless(false);
         //declare delegate
         WebDriver delegate = new ChromeDriver(options);
         driver = SelfHealingDriver.create(delegate);
