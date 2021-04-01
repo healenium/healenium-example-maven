@@ -2,6 +2,9 @@
 *.iml
 /out
 /target/
+/healenium-web-selenium/target/
+/healenium-web-selenide/target/
+/healenium-web-htmlelements/target/
 
 # Ignore Gradle GUI config
 gradle-app.setting
