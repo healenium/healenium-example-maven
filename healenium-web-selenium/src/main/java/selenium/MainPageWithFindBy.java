@@ -3,6 +3,7 @@ package selenium;
 
 import com.epam.healenium.SelfHealingDriver;
 import com.epam.healenium.annotation.DisableHealing;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
@@ -31,17 +32,20 @@ public class MainPageWithFindBy extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    public MainPageWithFindBy open() {
+  @Step("Open Main page")
+  public MainPageWithFindBy open() {
         driver.get(mainPageUrl);
         return this;
     }
 
-    public MainPageWithFindBy generateMarkup() {
+  @Step("Generate markup")
+  public MainPageWithFindBy generateMarkup() {
         generateMarkupBtnId.click();
         return this;
     }
 
-    public MainPageWithFindBy clickTestButton() {
+  @Step("Click test button")
+  public MainPageWithFindBy clickTestButton() {
         testButton.click();
         return this;
     }

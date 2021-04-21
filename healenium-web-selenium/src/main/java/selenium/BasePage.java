@@ -2,6 +2,7 @@ package selenium;
 
 
 import com.epam.healenium.SelfHealingDriver;
+import io.qameta.allure.Step;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -38,6 +39,7 @@ public class BasePage {
         return foundAlertText;
     }
 
+    @Step("Confirm allert")
     public void confirmAlert() {
         Alert alert = driver.switchTo().alert();
         alert.accept();

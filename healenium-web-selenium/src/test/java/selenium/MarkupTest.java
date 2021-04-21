@@ -1,5 +1,8 @@
 package selenium;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -8,6 +11,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class MarkupTest extends BaseTest {
 
     @Test
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Button click with FindBy annotation")
     public void testButtonClickWithFindByAnnotationPage() {
         MainPageWithFindBy mainPage = new MainPageWithFindBy(driver);
         //find test button
@@ -23,6 +28,8 @@ public class MarkupTest extends BaseTest {
     }
 
     @Test
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("Button click with findElement annotation")
     public void testButtonClickWithFindElementPage() {
         MainPage mainPage = new MainPage(driver);
         mainPage.open()
@@ -34,9 +41,12 @@ public class MarkupTest extends BaseTest {
                 .clickTestButton();
             mainPage.confirmAlert();
         }
+        assertTrue(("Click me").equals(mainPage.getTestButtonText()));
     }
 
     @Test
+    @Severity(SeverityLevel.MINOR)
+    @Description("Button click with disable healing")
     public void testButtonClickWithDisableHealing() {
         MainPageWithFindBy mainPage = new MainPageWithFindBy(driver);
         mainPage.open()

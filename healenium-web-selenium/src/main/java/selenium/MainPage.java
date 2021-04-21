@@ -2,6 +2,7 @@ package selenium;
 
 
 import com.epam.healenium.SelfHealingDriver;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 public class MainPage extends BasePage {
@@ -12,18 +13,26 @@ public class MainPage extends BasePage {
         super(driver);
     }
 
+    @Step("Open Main page")
     public MainPage open() {
         driver.get(mainPageUrl);
         return this;
     }
 
-    public MainPage generateMarkup() {
+  @Step("Generate Markup")
+  public MainPage generateMarkup() {
         driver.findElement(generateMarkupBtnId).click();
         return this;
     }
 
-    public MainPage clickTestButton() {
+  @Step("Click test button")
+  public MainPage clickTestButton() {
         driver.findElement(testButton).click();
         return this;
+    }
+
+  @Step("Click test button")
+  public String getTestButtonText() {
+        return driver.findElement(testButton).getText();
     }
 }
