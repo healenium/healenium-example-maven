@@ -1,10 +1,6 @@
 .idea
 *.iml
 /out
-/target/
-/healenium-web-selenium/target/
-/healenium-web-selenide/target/
-/healenium-web-htmlelements/target/
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -18,3 +14,9 @@ chromedriver*
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
+/healenium-web-selenium/.allure/
+/healenium-web-selenium/allure-results/
+/healenium-web-htmlelements/target/
+/healenium-web-selenide/target/
+/healenium-web-selenium/target/
+/target/

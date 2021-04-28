@@ -4,6 +4,7 @@ package selenium;
 import com.epam.healenium.SelfHealingDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Attachment;
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.Dimension;
