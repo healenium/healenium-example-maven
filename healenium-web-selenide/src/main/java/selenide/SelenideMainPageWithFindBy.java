@@ -2,7 +2,9 @@ package selenide;
 
 import static com.codeborne.selenide.Selenide.open;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 
 public class SelenideMainPageWithFindBy extends SelenideBasePage{
@@ -15,18 +17,22 @@ public class SelenideMainPageWithFindBy extends SelenideBasePage{
 
   private static final String URL = "http://sha-test-app.herokuapp.com/";
 
-  public void clickBtn(){
-    testButton.click();
+  @Step("Click on Test button")
+  public void clickTestBtn(){
+    testButton.shouldBe(Condition.visible).click();
   }
 
+  @Step("Click on Generate Markup button")
   public void clickCreateMarkupButton(){
-    createMarkupButton.click();
+    createMarkupButton.shouldBe(Condition.visible).click();
   }
 
+  @Step("Get text of Test button")
   public String getTestButtonText(){
-    return testButton.getText();
+    return testButton.shouldBe(Condition.visible).getText();
   }
 
+  @Step("Open Main page")
   public static SelenideMainPageWithFindBy openPage(){
     return open(URL, SelenideMainPageWithFindBy.class);
   }

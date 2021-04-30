@@ -16,10 +16,11 @@ public class SelenideTests extends SelenideBaseTest{
 
     mainPage.confirmAlert();
     mainPage.clickCreateMarkupButton();
-    assertTrue(("Click me").equals(mainPage.getTestButtonText()), "Button text is not correct");
+//    assertTrue(("Click me").equals(mainPage.getTestButtonText()), "Button text is not correct");
 
     mainPage.clickTestButton();
     mainPage.confirmAlert();
+//    assertTrue(("Click me").equals(mainPage.getTestButtonText()), "Button text is not correct");
 
     mainPage.refreshPage();
   }
@@ -28,14 +29,16 @@ public class SelenideTests extends SelenideBaseTest{
   public void selenideWithFindByTest(){
     SelenideMainPageWithFindBy mainPage = SelenideMainPageWithFindBy.openPage();
 
-    assertTrue(("Click me").equals(mainPage.getTestButtonText()),
-        "Button text is not correct");
-    mainPage.clickBtn();
+//    assertTrue(("Click me").equals(mainPage.getTestButtonText()),
+//        "Button text is not correct");
+    mainPage.clickTestBtn();
     assertTrue(("button found!").equals(mainPage.getAlertText()),
         "Button text is not correct");
     mainPage.confirmAlert();
+//    assertTrue(("Click me").equals(mainPage.getTestButtonText()),
+//        "Button text is not correct");
     mainPage.clickCreateMarkupButton();
-    mainPage.clickBtn();
+    mainPage.clickTestBtn();
   }
 
 }

@@ -20,25 +20,6 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
-    <repositories>
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>bintray-epam-healenium</id>
-            <name>bintray</name>
-            <url>https://dl.bintray.com/epam/healenium</url>
-        </repository>
-    </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>bintray-epam-healenium</id>
-            <name>bintray</name>
-            <url>https://dl.bintray.com/epam/healenium</url>
-        </pluginRepository>
-    </pluginRepositories>
-
     <dependencies>
         <dependency>
             <groupId>com.epam.healenium</groupId>
