@@ -10,12 +10,58 @@ Java + Maven + Junit5 project with healenium usage example
 
 Verify that images ```healenium/hlm-backend:latest``` and ```postgres:11-alpine``` are up and running
 
-
-### 2.Run test in terminal with maven
-
+### 2. Project structure
+```
+|__pom.xml
+   |__healenium-web-htmlelements
+	  |__src
+		 |__main
+		    |__java
+			   |__htmlelements.pages	
+		 |__test
+		    |__java
+			   |__htmlelements.tests
+			|__resources
+			   |__healenium.properties			
+   |__healenium-web-selenide
+	  |__src
+         |__main
+		    |__selenide.pages
+         |__test
+			|__java
+			   |selenide.tests	
+			|__resources
+			   |__healenium.properties			
+   |__healenium-web-selenium
+	  |__src
+         |__main
+			|__selenium.pages
+         |__test
+			|__java
+			   |__selenium.tests	
+			|__resources
+			   |__healenium.properties	
+``` 
+			   
+### 3.Run test in terminal with maven
+> If you want to execute all tests, please use the command: 
 ```mvn clean test```
 
-### 3.After test execution you should see generated report link in command line logs
+> If you want to execute tests from healenium-web-htmlelements module, please use the command: 
+```mvn clean test -Dtest=HtmlElementTests -pl healenium-web-htmlelements/```
+
+> If you want to execute tests from healenium-web-selenide module, please use the command: 
+```mvn clean test -Dtest=SelenideTests -pl healenium-web-selenide/```
+>> Also if you want to get an allure report you could use this command:
+```mvn clean test -Dtest=SelenideTests -pl healenium-web-selenide/ allure:report```
+
+> If you want to execute tests from healenium-web-selenium module, please use the command: 
+```mvn clean test -Dtest=MarkupTest -pl healenium-web-selenium/```
+>> Also if you want to get an allure report you could use this command:
+```mvn clean test -Dtest=MarkupTest -pl healenium-web-selenium/ allure:report```
+
+
+### 4.After test execution you should see generated report link in command line logs
 
 ![img.png](img.png)
 
