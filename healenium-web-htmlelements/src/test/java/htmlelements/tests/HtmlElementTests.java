@@ -12,8 +12,6 @@ public class HtmlElementTests extends HtmlElementBaseTest {
   @Test
   public void htmlElementTest(){
     driver.get("http://sha-test-app.herokuapp.com/");
-//    assertTrue(mainPage.isTestButtonTextCorrect("Click me"),
-//        "Button text is not correct");
     mainPage.clickTestButton();
     driver.switchTo().alert().accept();
 

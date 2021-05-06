@@ -45,7 +45,6 @@ public class MarkupTest extends BaseTest {
                 .clickTestButton();
             mainPage.confirmAlert();
         }
-//        assertTrue(("Click me").equals(mainPage.getTestButtonText()));
     }
 
     @Test
