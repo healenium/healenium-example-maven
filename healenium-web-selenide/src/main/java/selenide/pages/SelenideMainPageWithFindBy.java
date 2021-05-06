@@ -1,4 +1,4 @@
-package selenide;
+package selenide.pages;
 
 import static com.codeborne.selenide.Selenide.open;
 

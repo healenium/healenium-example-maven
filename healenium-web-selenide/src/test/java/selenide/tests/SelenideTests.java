@@ -1,6 +1,8 @@
-package selenide;
+package selenide.tests;
 
 import org.junit.jupiter.api.Test;
+import selenide.pages.SelenideMainPage;
+import selenide.pages.SelenideMainPageWithFindBy;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

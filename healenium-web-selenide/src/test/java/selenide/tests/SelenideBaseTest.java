@@ -1,4 +1,4 @@
-package selenide;
+package selenide.tests;
 
 import com.codeborne.selenide.WebDriverRunner;
 import com.epam.healenium.SelfHealingDriver;

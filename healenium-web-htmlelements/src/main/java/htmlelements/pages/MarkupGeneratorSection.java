@@ -1,4 +1,4 @@
-package pages.htmlelements;
+package htmlelements.pages;
 
 import org.openqa.selenium.support.FindBy;
 import ru.yandex.qatools.htmlelements.element.Button;
