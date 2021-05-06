@@ -78,7 +78,7 @@ Also you could take a screenshots for your tests like it implements here: seleni
 If don't want to use Healenium in some methods just use @DisableHealing annotation. 
 > The example of usage you can find here: selenium.pages.MainPageWithFindBy.checkLocatorTestButtonDontHealing 
 
-![img_2.png](img_2.PNG)
+![img_2.png](img_2.png)
 
 ### 7. Plugin Healenium for Intellij IDE
 
@@ -87,9 +87,9 @@ For updating broken locators you could use Plugin "Healenium" for Intellij IDE (
 With this plugin you can update your locators:
 * on class level
 
-![update_on_class_level](img_6.PNG)
+![update_on_class_level](img_6.png)
 * or on variable level
 
-![update_on_class_level](img_5.PNG)
+![update_on_class_level](img_5.png)
 
 ![element_update](img_4.png)
