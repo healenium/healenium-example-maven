@@ -14,33 +14,35 @@ Verify that images ```healenium/hlm-backend:latest``` and ```postgres:11-alpine`
 ```
 |__pom.xml
    |__healenium-web-htmlelements
-	  |__src
-		 |__main
-		    |__java
-			   |__htmlelements.pages	
-		 |__test
-		    |__java
-			   |__htmlelements.tests
-			|__resources
-			   |__healenium.properties			
+        |__src
+            |__main
+                |__java
+                    |__htmlelements.pages	
+            |__test
+                |__java
+                    |__htmlelements.tests
+                |__resources
+                    |__healenium.properties			
    |__healenium-web-selenide
-	  |__src
-         |__main
-		    |__selenide.pages
-         |__test
-			|__java
-			   |selenide.tests	
-			|__resources
-			   |__healenium.properties			
+        |__src
+            |__main
+                |__java
+                    |__selenide.pages
+            |__test
+                |__java
+                    |__selenide.tests	
+                |__resources
+                    |__healenium.properties			
    |__healenium-web-selenium
-	  |__src
-         |__main
-			|__selenium.pages
-         |__test
-			|__java
-			   |__selenium.tests	
-			|__resources
-			   |__healenium.properties	
+        |__src
+            |__main
+                |__java
+                    |__selenium.pages
+            |__test
+                |__java
+                    |__selenium.tests	
+                |__resources
+                    |__healenium.properties	
 ``` 
 			   
 ### 3.Run test in terminal with maven
