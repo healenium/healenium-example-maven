@@ -68,3 +68,19 @@ Verify that images ```healenium/hlm-backend:latest``` and ```postgres:11-alpine`
 Report contains only healed locators with old-new values and a button that tells if healing was successful for further algorithm corrections
 
 ![img_1.png](img_1.png)
+
+### 5. Screenshots 
+
+Also you could take a screenshots for your tests like it implements here: selenium.tests.BaseTest.screenshot
+
+### 6. @DisableHealing annotation
+
+If don't want to use Healenium in some methods just use @DisableHealing annotation. 
+> The example of usage you can find here: selenium.pages.MainPageWithFindBy.checkLocatorTestButtonDontHealing 
+
+![img_2.png](img_2.png)
+
+### 7. Plugin Healenium for Intellij IDE
+
+For updating broken locators you could use Plugin "Healenium" for Intellij IDE
+
