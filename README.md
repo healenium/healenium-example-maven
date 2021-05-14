@@ -62,6 +62,9 @@ Verify that images ```healenium/hlm-backend:latest``` and ```postgres:11-alpine`
 >> Also if you want to get an allure report you could use this command:
 ```mvn clean test -Dtest=MarkupTest -pl healenium-web-selenium/ allure:report```
 
+>  If you want to get a Report Portal report you could use this command:
+```mvn clean test -Dtest=MarkupTest -pl healenium-web-selenium-rp/```
+>>Do not forget to specify your rp.uuid and rp.project values in reportportal.properties file under test/resources
 
 ### 4.After test execution you should see generated report link in command line logs
 
