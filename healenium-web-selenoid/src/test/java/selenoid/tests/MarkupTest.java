@@ -1,28 +1,21 @@
-package selenium.tests;
+package selenoid.tests;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import com.epam.reportportal.annotations.attribute.Attribute;
-import com.epam.reportportal.annotations.attribute.Attributes;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import selenium.pages.MainPage;
-import selenium.pages.MainPageWithFindBy;
+import selenoid.pages.MainPage;
+import selenoid.pages.MainPageWithFindBy;
 
 
 public class MarkupTest extends BaseTest {
 
     @Test
-    @Attributes(attributes = { @Attribute(key = "healing", value = "true") })
-    @DisplayName("Button click with FindBy annotation")
     public void testButtonClickWithFindByAnnotationPage() {
         MainPageWithFindBy mainPage = new MainPageWithFindBy(driver);
         //find test button
         mainPage.open().clickTestButton();
         //confirm Alert
         mainPage.confirmAlert();
-        //take a screenshot
-        screenshot();
 
         for (int i = 0; i <= 2; i++) {
             mainPage
@@ -33,8 +26,6 @@ public class MarkupTest extends BaseTest {
     }
 
     @Test
-    @Attributes(attributes = { @Attribute(key = "healing", value = "true") })
-    @DisplayName("Button click with findElement annotation")
     public void testButtonClickWithFindElementPage() {
         MainPage mainPage = new MainPage(driver);
         mainPage.open()
@@ -49,8 +40,6 @@ public class MarkupTest extends BaseTest {
     }
 
     @Test
-    @Attributes(attributes = { @Attribute(key = "healing", value = "false") })
-    @DisplayName("Button click with disable healing")
     public void testButtonClickWithDisableHealing() {
         MainPageWithFindBy mainPage = new MainPageWithFindBy(driver);
         mainPage.open()
