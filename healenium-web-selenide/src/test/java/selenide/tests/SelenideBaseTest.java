@@ -2,13 +2,13 @@ package selenide.tests;
 
 import com.codeborne.selenide.WebDriverRunner;
 import com.epam.healenium.SelfHealingDriver;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URI;
 import java.util.concurrent.TimeUnit;
 
 public class SelenideBaseTest {
@@ -16,11 +16,21 @@ public class SelenideBaseTest {
 
   @BeforeAll
   static public void setUp() {
-    WebDriverManager.chromedriver().setup();
-    ChromeOptions options = new ChromeOptions();
-    options.setHeadless(false);
+    DesiredCapabilities capabilities = new DesiredCapabilities();
+    capabilities.setCapability("browserName", "chrome");
+    capabilities.setCapability("browserVersion", "90.0");
+    capabilities.setCapability("enableVNC", true);
 
-    WebDriver delegate = new ChromeDriver(options);
+    RemoteWebDriver delegate = null;
+    try {
+      delegate = new RemoteWebDriver(
+          URI.create("http://10.6.223.91:4444/wd/hub").toURL(),
+          capabilities
+      );
+    } catch (MalformedURLException e) {
+      e.getMessage();
+    }
+
     driver = SelfHealingDriver.create(delegate);
     driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
     driver.manage().window().maximize();

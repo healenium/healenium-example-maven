@@ -20,3 +20,5 @@ chromedriver*
 /healenium-web-selenide/target/
 /healenium-web-selenium/target/
 /target/
+/healenium-web-selenide/.allure/
+/healenium-web-selenide/build/
