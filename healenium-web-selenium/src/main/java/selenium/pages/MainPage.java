@@ -31,7 +31,7 @@ public class MainPage extends BasePage {
         return this;
     }
 
-  @Step("Click test button")
+  @Step("Get test button text")
   public String getTestButtonText() {
         return driver.findElement(testButton).getText();
     }

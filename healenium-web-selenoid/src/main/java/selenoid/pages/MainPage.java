@@ -2,29 +2,33 @@ package selenoid.pages;
 
 
 import com.epam.healenium.SelfHealingDriver;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 public class MainPage extends BasePage {
-    By generateMarkupBtnId = By.id("markup-generation-button");
-    By testButton = By.xpath("//button[contains(@class,'default-btn')]");
+  By generateMarkupBtnId = By.id("markup-generation-button");
+  By testButton = By.xpath("//button[contains(@class,'default-btn')]");
 
-    public MainPage(SelfHealingDriver driver) {
+  public MainPage(SelfHealingDriver driver) {
         super(driver);
     }
 
-    public MainPage open() {
-        driver.get(mainPageUrl);
-        return this;
-    }
+  @Step("Open Main page")
+  public MainPage open() {
+    driver.get(mainPageUrl);
+    return this;
+  }
 
+  @Step("Generate Markup")
   public MainPage generateMarkup() {
-        driver.findElement(generateMarkupBtnId).click();
-        return this;
-    }
+    driver.findElement(generateMarkupBtnId).click();
+    return this;
+  }
 
+  @Step("Click test button")
   public MainPage clickTestButton() {
-        driver.findElement(testButton).click();
-        return this;
-    }
+    driver.findElement(testButton).click();
+    return this;
+  }
 
 }
