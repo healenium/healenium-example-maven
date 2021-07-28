@@ -20,11 +20,11 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <junit.version>5.6.3</junit.version>
+        <junit.version>5.7.0</junit.version>
         <log4j.version>2.13.0</log4j.version>
         <hamcrest.version>2.2</hamcrest.version>
         <webdrivermanager.version>4.2.0</webdrivermanager.version>
-        <healenium.version>3.1.1</healenium.version>
+        <healenium.version>3.1</healenium.version>
     </properties>
 
     <dependencies>
