@@ -39,17 +39,4 @@ public class MainPage extends BasePage {
         return driver.findElement(testButton).getText();
     }
 
-    @Step("Click test button casted with JS Executor")
-    public MainPage clickJsTestButton() {
-        WebElement el=this.getTestButton();
-        System.out.println(el.getText());
-        el.click();
-        return this;
-    }
-    private WebElement getTestButton(){
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        return ((WebElement) js.executeScript("return document.getElementsByClassName('default-btn')[0]"));
-        return (WebElement) js.executeScript("return arguments[0].shadowRoot", driver.findElement(testButton));
-    }
-
 }

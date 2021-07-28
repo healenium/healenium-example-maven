@@ -28,7 +28,7 @@
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
       <version>${junit.api.version}</version>
-      <scope>test</scope>
+      <scope>compile</scope>
     </dependency>
     <!-- Parameterized Tests -->
     <dependency>
