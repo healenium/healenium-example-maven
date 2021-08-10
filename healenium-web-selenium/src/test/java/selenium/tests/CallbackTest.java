@@ -24,28 +24,4 @@ public class CallbackTest extends BaseTest {
                     .verifyShadowElement();
         }
     }
-
-
-//    @Test
-//    @Severity(SeverityLevel.NORMAL)
-//    @Description("Button click using different types of locators")
-//    public void testButtonClickWithDiffLocators(){
-//        CallbackTestPage callbackTestPage = new CallbackTestPage(driver);
-//        callbackTestPage
-//                .open()
-//                .clickAddSquareButtonClassName()
-//                .clickRemoveSquareButton();
-//        callbackTestPage
-//                .clickAddSquareButtonCss()
-//                .clickRemoveSquareButton();
-////            .put("By.className", By::className)
-////            .put("By.cssSelector", By::cssSelector)
-////            .put("By.xpath", By::xpath)
-////            .put("By.tagName", By::tagName)
-////            .put("By.name", By::name)
-////            .put("By.partialLinkText", By::partialLinkText)
-////            .put("By.linkText", By::linkText)
-////            .put("By.id", By::id)
-//    }
-
 }
