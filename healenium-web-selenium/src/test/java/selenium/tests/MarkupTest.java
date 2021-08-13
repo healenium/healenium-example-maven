@@ -44,7 +44,7 @@ public class MarkupTest extends BaseTest {
         for (int i = 0; i <= 2; i++) {
             mainPage
                     .generateMarkup()
-                    .clickTestButton();
+                    .clickTestButton(); //should be healed
             mainPage.confirmAlert();
         }
     }
@@ -60,7 +60,7 @@ public class MarkupTest extends BaseTest {
         boolean result = mainPage
                 .generateMarkup() //regenerate Markup
                 .checkLocatorTestButtonDontHealing(); //find test button again
-        assertTrue(result, "The locator was heal");
+        assertTrue(result, "The locator was not healed");
     }
 
     @Test
@@ -76,7 +76,8 @@ public class MarkupTest extends BaseTest {
                 for (int i = 0; i <= 5; i++) {
                     mainPage.selectFirstCheckbox();
                 }
-                mainPage.verifyFirstCheckbox();
+                boolean result = mainPage.verifyFirstCheckbox();  //should be healed
+                assertTrue(result, "Locator for checkbox with findElements has been healed");
             }
         }
     }
@@ -92,7 +93,7 @@ public class MarkupTest extends BaseTest {
         for (int i = 0; i <= 2; i++) {
             mainPage
                     .generateMarkup()
-                    .clickTestGeneratedButton();
+                    .clickTestGeneratedButton();  //should be healed
         }
     }
 }

@@ -4,7 +4,6 @@ package selenium.pages;
 import com.epam.healenium.SelfHealingDriver;
 import com.epam.healenium.annotation.DisableHealing;
 import io.qameta.allure.Step;
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 
@@ -40,9 +39,8 @@ public class MainPage extends BasePage {
     }
 
     @Step("Click test button after generating markup")
-    public MainPage clickTestGeneratedButton() {
+    public void clickTestGeneratedButton() {
         driver.findElement(testGeneratedButton).click();
-        return this;
     }
 
     @DisableHealing
@@ -62,7 +60,7 @@ public class MainPage extends BasePage {
     }
 
     @Step("Verify first account checkbox selected")
-    public void verifyFirstCheckbox() {
-        Assertions.assertTrue(driver.findElements(checkboxAccount).get(0).isEnabled());
+    public boolean verifyFirstCheckbox() {
+        return driver.findElements(checkboxAccount).get(0).isEnabled();
     }
 }

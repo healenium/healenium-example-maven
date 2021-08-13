@@ -3,7 +3,6 @@ package selenium.pages;
 
 import com.epam.healenium.SelfHealingDriver;
 import io.qameta.allure.Step;
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -28,15 +27,13 @@ public class CallbackTestPage extends BasePage {
     }
 
     @Step("Verify test button with elements in shadowRoot enabled")
-    public void verifyShadowElement() {
-        Assertions.assertTrue(getTestButton().isEnabled(),
-                "Element in shadowRoot enabled");
+    public boolean verifyShadowElement() {
+        return getTestButton().isEnabled();
     }
 
     @Step("Verify test square with css enabled")
-    public void verifySquareElement() {
-        Assertions.assertTrue(driver.findElement(testButtonCss).isEnabled(),
-                "Element with css enabled");
+    public boolean verifySquareElement() {
+        return driver.findElement(testButtonCss).isEnabled();
     }
 
     @Step("Click Add custom-square to DOM button")

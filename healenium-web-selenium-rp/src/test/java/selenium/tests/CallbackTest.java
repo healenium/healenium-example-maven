@@ -1,8 +1,8 @@
 package selenium.tests;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
+import com.epam.reportportal.annotations.attribute.Attribute;
+import com.epam.reportportal.annotations.attribute.Attributes;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import selenium.pages.CallbackTestPage;
 
@@ -11,8 +11,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class CallbackTest extends BaseTest {
 
     @Test
-    @Severity(SeverityLevel.MINOR)
-    @Description("Update locator for element from shadow root")
+    @Attributes(attributes = {@Attribute(key = "healing", value = "true")})
+    @DisplayName("Update locator for element from shadow root")
     public void testElementFromShadowRoot() {
         CallbackTestPage callbackTestPage = new CallbackTestPage(driver);
         boolean result = callbackTestPage
@@ -30,8 +30,8 @@ public class CallbackTest extends BaseTest {
     }
 
     @Test
-    @Severity(SeverityLevel.NORMAL)
-    @Description("Update locator for element with css selector")
+    @Attributes(attributes = {@Attribute(key = "healing", value = "true")})
+    @DisplayName("Update locator for element with css selector")
     public void testCssLocators() {
         CallbackTestPage callbackTestPage = new CallbackTestPage(driver);
         boolean result = callbackTestPage

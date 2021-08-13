@@ -3,7 +3,6 @@ package selenium.pages;
 
 import com.epam.healenium.SelfHealingDriver;
 import com.epam.reportportal.annotations.Step;
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -12,7 +11,10 @@ public class CallbackTestPage extends BasePage {
 
     By addSquareButton = By.xpath("//button[contains(@class, 'add')]");
     By updateSquareButton = By.xpath("//button[contains(@class, 'update')]");
+    By removeSquareButton = By.xpath("//button[contains(@class, 'remove')]");
+
     By testButton = By.xpath("//custom-square[contains(@c, 'red')]");
+    By testButtonCss = By.cssSelector("[c='red']");
 
     public CallbackTestPage(SelfHealingDriver driver) {
         super(driver);
@@ -25,9 +27,13 @@ public class CallbackTestPage extends BasePage {
     }
 
     @Step("Verify test button with elements in shadowRoot enabled")
-    public void verifyShadowElement() {
-        Assertions.assertTrue(getTestButton().isEnabled(),
-                "Element in shadowRoot enabled");
+    public boolean verifyShadowElement() {
+        return getTestButton().isEnabled();
+    }
+
+    @Step("Verify test square with css enabled")
+    public boolean verifySquareElement() {
+        return driver.findElement(testButtonCss).isEnabled();
     }
 
     @Step("Click Add custom-square to DOM button")
@@ -39,6 +45,12 @@ public class CallbackTestPage extends BasePage {
     @Step("Click Update attributes button")
     public CallbackTestPage clickUpdateSquareButton() {
         driver.findElement(updateSquareButton).click();
+        return this;
+    }
+
+    @Step("Click Remove attributes button")
+    public CallbackTestPage clickRemoveSquareButton() {
+        driver.findElement(removeSquareButton).click();
         return this;
     }
 
