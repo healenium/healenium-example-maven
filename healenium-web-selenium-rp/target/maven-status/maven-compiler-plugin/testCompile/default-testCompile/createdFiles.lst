@@ -1,0 +1,3 @@
+selenium\tests\BaseTest.class
+selenium\tests\CallbackTest.class
+selenium\tests\MarkupTest.class
