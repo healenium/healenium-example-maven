@@ -1,13 +1,13 @@
 package selenium.tests;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.Test;
 import selenium.pages.MainPage;
 import selenium.pages.MainPageWithFindBy;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class MarkupTest extends BaseTest {
@@ -61,5 +61,38 @@ public class MarkupTest extends BaseTest {
                 .generateMarkup() //regenerate Markup
                 .checkLocatorTestButtonDontHealing(); //find test button again
         assertTrue(result, "The locator was heal");
+    }
+
+    @Test
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Select checkboxes with findElements annotation")
+    public void testSelectCheckboxes() {
+        MainPage mainPage = new MainPage(driver);
+        mainPage.open();
+
+        for (int j = 0; j <= 2; j++) {
+            mainPage.generateMarkup();
+            if (mainPage.displayedText()) {
+                for (int i = 0; i <= 5; i++) {
+                    mainPage.selectFirstCheckbox();
+                }
+                mainPage.verifyFirstCheckbox();
+            }
+        }
+    }
+
+    @Test
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Button click with find element by id")
+    public void testButtonClickWithId() {
+        MainPage mainPage = new MainPage(driver);
+        mainPage.open()
+                .clickTestButton();
+        mainPage.confirmAlert();
+        for (int i = 0; i <= 2; i++) {
+            mainPage
+                    .generateMarkup()
+                    .clickTestGeneratedButton();
+        }
     }
 }

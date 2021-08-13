@@ -24,4 +24,21 @@ public class CallbackTest extends BaseTest {
                     .verifyShadowElement();
         }
     }
+
+    @Test
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Update locator for element with css selector")
+    public void testCssLocators(){
+        CallbackTestPage callbackTestPage = new CallbackTestPage(driver);
+        callbackTestPage
+                .open()
+                .clickAddSquareButton()
+                .verifySquareElement();
+
+        for (int i = 0; i <= 2; i++) {
+            callbackTestPage
+                    .clickUpdateSquareButton()
+                    .verifySquareElement();
+        }
+    }
 }
