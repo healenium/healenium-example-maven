@@ -1,10 +1,10 @@
-package selenium.tests;
+package seleniumrp.tests;
 
 import com.epam.reportportal.annotations.attribute.Attribute;
 import com.epam.reportportal.annotations.attribute.Attributes;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import selenium.pages.CallbackTestPage;
+import seleniumrp.pages.CallbackTestPage;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

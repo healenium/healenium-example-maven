@@ -1,56 +1,57 @@
-package selenium.tests;
+package selenium;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import com.epam.reportportal.annotations.attribute.Attribute;
-import com.epam.reportportal.annotations.attribute.Attributes;
-import org.junit.jupiter.api.DisplayName;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.Test;
 import selenium.pages.MainPage;
 import selenium.pages.MainPageWithFindBy;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class MarkupTest extends BaseTest {
 
     @Test
-    @Attributes(attributes = { @Attribute(key = "healing", value = "true") })
-    @DisplayName("Button click with FindBy annotation")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Button click with FindBy annotation")
     public void testButtonClickWithFindByAnnotationPage() {
         MainPageWithFindBy mainPage = new MainPageWithFindBy(driver);
+
+        mainPage.open().clickButtonForInvisible().checkThatButtonInvisible();
         //find test button
         mainPage.open().clickTestButton();
         //confirm Alert
         mainPage.confirmAlert();
-        //take a screenshot
         screenshot();
 
         for (int i = 0; i <= 2; i++) {
             mainPage
-                .generateMarkup() //regenerate Markup
-                .clickTestButton(); //find test button again
+                    .generateMarkup() //regenerate Markup
+                    .clickTestButton(); //find test button again
             mainPage.confirmAlert();  //confirm Alert again
         }
     }
 
     @Test
-    @Attributes(attributes = { @Attribute(key = "healing", value = "true") })
-    @DisplayName("Button click with findElement annotation")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("Button click with findElement annotation")
     public void testButtonClickWithFindElementPage() {
         MainPage mainPage = new MainPage(driver);
         mainPage.open()
-            .clickTestButton();
+                .clickTestButton();
         mainPage.confirmAlert();
         for (int i = 0; i <= 2; i++) {
             mainPage
-                .generateMarkup()
-                .clickTestButton();
+                    .generateMarkup()
+                    .clickTestButton(); //should be healed
             mainPage.confirmAlert();
         }
     }
 
     @Test
-    @Attributes(attributes = { @Attribute(key = "healing", value = "false") })
-    @DisplayName("Button click with disable healing")
+    @Severity(SeverityLevel.MINOR)
+    @Description("Button click with disable healing")
     public void testButtonClickWithDisableHealing() {
         MainPageWithFindBy mainPage = new MainPageWithFindBy(driver);
         mainPage.open()
@@ -63,8 +64,8 @@ public class MarkupTest extends BaseTest {
     }
 
     @Test
-    @Attributes(attributes = { @Attribute(key = "healing", value = "true") })
-    @DisplayName("Select checkboxes with findElements annotation")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Select checkboxes with findElements annotation")
     public void testSelectCheckboxes() {
         MainPage mainPage = new MainPage(driver);
         mainPage.open();
@@ -82,8 +83,8 @@ public class MarkupTest extends BaseTest {
     }
 
     @Test
-    @Attributes(attributes = { @Attribute(key = "healing", value = "true") })
-    @DisplayName("Button click with find element by id")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Button click with find element by id")
     public void testButtonClickWithId() {
         MainPage mainPage = new MainPage(driver);
         mainPage.open()

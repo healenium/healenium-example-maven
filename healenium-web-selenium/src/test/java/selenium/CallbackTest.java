@@ -1,4 +1,4 @@
-package selenium.tests;
+package selenium;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;

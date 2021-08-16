@@ -1,4 +1,4 @@
-package selenium.tests;
+package seleniumrp.tests;
 
 
 import com.epam.healenium.SelfHealingDriver;

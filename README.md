@@ -81,7 +81,7 @@ Report contains only healed locators with old-new values and a button that tells
 
 ### 5. Screenshots 
 
-Also you could take a screenshots for your tests like it implements here: selenium.tests.BaseTest.screenshot
+Also you could take a screenshots for your tests like it implements here: BaseTest.screenshot
 ```
   public byte[] screenshot() {
       return ((TakesScreenshot) driver.getDelegate()).getScreenshotAs(OutputType.BYTES);
@@ -90,7 +90,7 @@ Also you could take a screenshots for your tests like it implements here: seleni
 ### 6. @DisableHealing annotation
 
 If don't want to use Healenium in some methods just use @DisableHealing annotation. 
-> The example of usage you can find here: selenium.pages.MainPageWithFindBy.checkLocatorTestButtonDontHealing 
+> The example of usage you can find here: MainPageWithFindBy.checkLocatorTestButtonDontHealing 
 
 ![img_2.png](img_2.png)
 
