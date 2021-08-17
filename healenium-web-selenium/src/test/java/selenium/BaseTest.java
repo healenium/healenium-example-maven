@@ -28,7 +28,7 @@ public class BaseTest {
       RemoteWebDriver delegate = null;
       try {
         delegate = new RemoteWebDriver(
-            URI.create("http://10.6.223.91:4444/wd/hub").toURL(),
+            URI.create("http://100.64.54.64:4444/wd/hub").toURL(),
             capabilities
         );
       } catch (MalformedURLException e) {
