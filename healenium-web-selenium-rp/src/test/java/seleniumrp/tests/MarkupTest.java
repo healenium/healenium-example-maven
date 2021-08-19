@@ -58,32 +58,6 @@ public class MarkupTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Button click with disable healing")
-    public void testButtonClickWithDisableHealing1() {
-        MainPageWithFindBy mainPage = new MainPageWithFindBy(driver);
-        mainPage.open()
-                .clickTestButton()
-                .confirmAlert();
-        boolean result = mainPage
-                .generateMarkup() //regenerate Markup
-                .checkLocatorTestButtonDontHealing(); //find test button again
-        assertTrue(result, "The locator was not healed");
-    }
-
-    @Test
-    @DisplayName("Button click with disable healing")
-    public void testButtonClickWithDisableHealing2() {
-        MainPageWithFindBy mainPage = new MainPageWithFindBy(driver);
-        mainPage.open()
-                .clickTestButton()
-                .confirmAlert();
-        boolean result = mainPage
-                .generateMarkup() //regenerate Markup
-                .checkLocatorTestButtonDontHealing(); //find test button again
-        assertTrue(result, "The locator was not healed");
-    }
-
-    @Test
     @DisplayName("Select checkboxes with findElements annotation")
     public void testSelectCheckboxes() {
         MainPage mainPage = new MainPage(driver);
