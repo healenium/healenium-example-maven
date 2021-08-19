@@ -8,7 +8,7 @@ Java + Maven + Junit5 project with healenium usage example
 
 ```docker-compose up -d```
 
-Verify that images ```healenium/hlm-backend:latest``` and ```postgres:11-alpine``` are up and running
+Verify that images ```healenium/hlm-backend:latest``` and ```postgres:11-alpine``` and ```healenium/hlm-selector-imitator:1``` are up and running
 
 ### 2. Project structure
 ```
@@ -81,7 +81,7 @@ Report contains only healed locators with old-new values and a button that tells
 
 ### 5. Screenshots 
 
-Also you could take a screenshots for your tests like it implements here: selenium.tests.BaseTest.screenshot
+Also you could take a screenshots for your tests like it implements here: BaseTest.screenshot
 ```
   public byte[] screenshot() {
       return ((TakesScreenshot) driver.getDelegate()).getScreenshotAs(OutputType.BYTES);

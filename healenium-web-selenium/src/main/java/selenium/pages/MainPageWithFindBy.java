@@ -32,20 +32,20 @@ public class MainPageWithFindBy extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-  @Step("Open Main page")
-  public MainPageWithFindBy open() {
+    @Step("Open Main page")
+    public MainPageWithFindBy open() {
         driver.get(mainPageUrl);
         return this;
     }
 
-  @Step("Generate markup")
-  public MainPageWithFindBy generateMarkup() {
+    @Step("Generate markup")
+    public MainPageWithFindBy generateMarkup() {
         generateMarkupBtnId.click();
         return this;
     }
 
-  @Step("Click test button")
-  public MainPageWithFindBy clickTestButton() {
+    @Step("Click test button")
+    public MainPageWithFindBy clickTestButton() {
         testButton.click();
         return this;
     }

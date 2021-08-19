@@ -7,6 +7,7 @@ import org.openqa.selenium.Alert;
 public class BasePage {
     protected String mainPageUrl = "https://sha-test-app.herokuapp.com/";
     protected String ajaxLoadPageUrl = "https://stephanwagner.me/loading-spinner-with-animation";
+    protected String callbackTestPageUrl = "https://mdn.github.io/web-components-examples/life-cycle-callbacks/";
     protected String yandexPageUrl = "https://yandex.ru/";
     protected SelfHealingDriver driver;
 

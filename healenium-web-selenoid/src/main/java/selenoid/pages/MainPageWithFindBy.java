@@ -3,6 +3,7 @@ package selenoid.pages;
 
 import com.epam.healenium.SelfHealingDriver;
 import com.epam.healenium.annotation.DisableHealing;
+import io.qameta.allure.Step;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,40 +17,37 @@ public class MainPageWithFindBy extends BasePage {
     @FindBy(xpath = "//button[contains(@class,'default-btn')]")
     WebElement testButton;
 
-    @FindBy(id = "for-invisible-test")
-    WebElement buttonForInvisible;
-
-    @FindBy(id = "field-parent")
-    WebElement fieldParent;
-
     public MainPageWithFindBy(SelfHealingDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
 
-  public MainPageWithFindBy open() {
+    @Step("Open Main page")
+    public MainPageWithFindBy open() {
         driver.get(mainPageUrl);
         return this;
     }
 
-  public MainPageWithFindBy generateMarkup() {
+    @Step("Generate Markup")
+    public MainPageWithFindBy generateMarkup() {
         generateMarkupBtnId.click();
         return this;
     }
 
-  public MainPageWithFindBy clickTestButton() {
+    @Step("Click test button")
+    public MainPageWithFindBy clickTestButton() {
         testButton.click();
         return this;
     }
 
-  @DisableHealing
-  public boolean checkLocatorTestButtonDontHealing() {
-    try {
-      testButton.click();
-      return false;
-    } catch (NoSuchElementException e) {
-      return true;
-     }
-  }
+    @DisableHealing
+    public boolean checkLocatorTestButtonDontHealing() {
+        try {
+            testButton.click();
+            return false;
+        } catch (NoSuchElementException e) {
+            return true;
+        }
+    }
 
 }
