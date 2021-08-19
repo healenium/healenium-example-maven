@@ -1,19 +1,16 @@
 package seleniumrp.tests;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import com.epam.reportportal.annotations.attribute.Attribute;
-import com.epam.reportportal.annotations.attribute.Attributes;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import seleniumrp.pages.MainPage;
 import seleniumrp.pages.MainPageWithFindBy;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 public class MarkupTest extends BaseTest {
 
     @Test
-    @Attributes(attributes = { @Attribute(key = "healing", value = "true") })
     @DisplayName("Button click with FindBy annotation")
     public void testButtonClickWithFindByAnnotationPage() {
         MainPageWithFindBy mainPage = new MainPageWithFindBy(driver);
@@ -33,7 +30,6 @@ public class MarkupTest extends BaseTest {
     }
 
     @Test
-    @Attributes(attributes = { @Attribute(key = "healing", value = "true") })
     @DisplayName("Button click with findElement annotation")
     public void testButtonClickWithFindElementPage() {
         MainPage mainPage = new MainPage(driver);
@@ -49,7 +45,6 @@ public class MarkupTest extends BaseTest {
     }
 
     @Test
-    @Attributes(attributes = { @Attribute(key = "healing", value = "false") })
     @DisplayName("Button click with disable healing")
     public void testButtonClickWithDisableHealing() {
         MainPageWithFindBy mainPage = new MainPageWithFindBy(driver);
@@ -63,7 +58,32 @@ public class MarkupTest extends BaseTest {
     }
 
     @Test
-    @Attributes(attributes = { @Attribute(key = "healing", value = "true") })
+    @DisplayName("Button click with disable healing")
+    public void testButtonClickWithDisableHealing1() {
+        MainPageWithFindBy mainPage = new MainPageWithFindBy(driver);
+        mainPage.open()
+                .clickTestButton()
+                .confirmAlert();
+        boolean result = mainPage
+                .generateMarkup() //regenerate Markup
+                .checkLocatorTestButtonDontHealing(); //find test button again
+        assertTrue(result, "The locator was not healed");
+    }
+
+    @Test
+    @DisplayName("Button click with disable healing")
+    public void testButtonClickWithDisableHealing2() {
+        MainPageWithFindBy mainPage = new MainPageWithFindBy(driver);
+        mainPage.open()
+                .clickTestButton()
+                .confirmAlert();
+        boolean result = mainPage
+                .generateMarkup() //regenerate Markup
+                .checkLocatorTestButtonDontHealing(); //find test button again
+        assertTrue(result, "The locator was not healed");
+    }
+
+    @Test
     @DisplayName("Select checkboxes with findElements annotation")
     public void testSelectCheckboxes() {
         MainPage mainPage = new MainPage(driver);
@@ -82,7 +102,6 @@ public class MarkupTest extends BaseTest {
     }
 
     @Test
-    @Attributes(attributes = { @Attribute(key = "healing", value = "true") })
     @DisplayName("Button click with find element by id")
     public void testButtonClickWithId() {
         MainPage mainPage = new MainPage(driver);
