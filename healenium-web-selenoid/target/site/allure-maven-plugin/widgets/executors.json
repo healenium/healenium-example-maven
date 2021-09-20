@@ -1,5 +1,0 @@
-[ {
-  "name" : "Maven",
-  "type" : "maven",
-  "buildName" : "healenium-web-selenoid"
-} ]
