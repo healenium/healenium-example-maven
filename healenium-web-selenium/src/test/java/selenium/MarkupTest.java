@@ -25,12 +25,11 @@ public class MarkupTest extends BaseTest {
         mainPage.confirmAlert();
         screenshot();
 
-        for (int i = 0; i <= 2; i++) {
-            mainPage
-                    .generateMarkup() //regenerate Markup
-                    .clickTestButton(); //find test button again
-            mainPage.confirmAlert();  //confirm Alert again
-        }
+        mainPage
+                .generateMarkup() //regenerate Markup
+                .clickTestButton(); //find test button again
+        mainPage.confirmAlert();  //confirm Alert again
+
     }
 
     @Test
@@ -41,12 +40,12 @@ public class MarkupTest extends BaseTest {
         mainPage.open()
                 .clickTestButton();
         mainPage.confirmAlert();
-        for (int i = 0; i <= 2; i++) {
-            mainPage
-                    .generateMarkup()
-                    .clickTestButton(); //should be healed
-            mainPage.confirmAlert();
-        }
+
+        mainPage
+                .generateMarkup()
+                .clickTestButton(); //should be healed
+        mainPage.confirmAlert();
+
     }
 
     @Test
@@ -70,16 +69,13 @@ public class MarkupTest extends BaseTest {
         MainPage mainPage = new MainPage(driver);
         mainPage.open();
 
-        for (int j = 0; j <= 2; j++) {
+        while (!mainPage.displayedText())
             mainPage.generateMarkup();
-            if (mainPage.displayedText()) {
-                for (int i = 0; i <= 5; i++) {
-                    mainPage.selectFirstCheckbox();
-                }
-                boolean result = mainPage.verifyFirstCheckbox();  //should be healed
-                assertTrue(result, "Locator for checkbox with findElements has been healed");
-            }
-        }
+
+        mainPage.selectAllCheckboxes(); //find via findElements
+
+        boolean result = mainPage.verifyFirstCheckbox();  //should be healed
+        assertTrue(result, "Locator for checkbox with findElements has been healed");
     }
 
     @Test
@@ -90,10 +86,29 @@ public class MarkupTest extends BaseTest {
         mainPage.open()
                 .clickTestButton();
         mainPage.confirmAlert();
-        for (int i = 0; i <= 2; i++) {
-            mainPage
-                    .generateMarkup()
-                    .clickTestGeneratedButton();  //should be healed
-        }
+
+        mainPage
+                .generateMarkup()
+                .clickTestGeneratedButton();  //should be healed
+    }
+
+    @Test
+    @Severity(SeverityLevel.MINOR)
+    @Description("Select first checkbox and verify using parent:: function in Xpath")
+    public void testCheckboxesParentXpath(){
+        MainPage mainPage = new MainPage(driver);
+        mainPage.open()
+                .generateMarkup();
+
+        while (!mainPage.displayedText())
+            mainPage.generateMarkup();
+
+        mainPage.selectFirstCheckbox();
+        boolean result = mainPage.verifyFirstAccountCheckbox();
+        assertTrue(result, "Verify first account checkbox checked");
+
+        mainPage.selectFirstAccountCheckbox();
+        result = mainPage.verifyFirstAccountCheckbox(); //should be healed
+        assertTrue(result, "Verify first account checkbox unchecked");
     }
 }
