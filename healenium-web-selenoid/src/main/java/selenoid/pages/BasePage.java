@@ -12,12 +12,6 @@ public class BasePage {
     protected String yandexPageUrl = "https://yandex.ru/";
     protected SelfHealingDriver driver;
 
-  protected String mainPageUrl = "https://sha-test-app.herokuapp.com/";
-  protected String ajaxLoadPageUrl = "https://stephanwagner.me/loading-spinner-with-animation";
-  protected String yandexPageUrl = "https://yandex.ru/";
-  protected String callbackTestPageUrl = "https://mdn.github.io/web-components-examples/life-cycle-callbacks/";
-  protected SelfHealingDriver driver;
-
   public BasePage(SelfHealingDriver driver) {
     this.driver = driver;
   }

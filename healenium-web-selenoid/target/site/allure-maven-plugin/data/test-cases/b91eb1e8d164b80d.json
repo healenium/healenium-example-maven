@@ -1,0 +1,162 @@
+{
+  "uid" : "b91eb1e8d164b80d",
+  "name" : "testSelectCheckboxes()",
+  "fullName" : "selenoid.tests.MarkupTest.testSelectCheckboxes",
+  "historyId" : "7e65c60e09fb0488c52ae4da4ac95777",
+  "time" : {
+    "start" : 1632161444920,
+    "stop" : 1632161471462,
+    "duration" : 26542
+  },
+  "description" : "Select checkboxes with findElements annotation",
+  "descriptionHtml" : "<p>Select checkboxes with findElements annotation</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "Select checkboxes with findElements annotation",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Open Main page",
+      "time" : {
+        "start" : 1632161444936,
+        "stop" : 1632161447591,
+        "duration" : 2655
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Check that checkboxes available",
+      "time" : {
+        "start" : 1632161447598,
+        "stop" : 1632161451814,
+        "duration" : 4216
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Generate Markup",
+      "time" : {
+        "start" : 1632161451814,
+        "stop" : 1632161452948,
+        "duration" : 1134
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Check that checkboxes available",
+      "time" : {
+        "start" : 1632161452948,
+        "stop" : 1632161453283,
+        "duration" : 335
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Select all available accounts from checkboxes",
+      "time" : {
+        "start" : 1632161453284,
+        "stop" : 1632161470407,
+        "duration" : 17123
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Verify first account checkbox selected",
+      "time" : {
+        "start" : 1632161470408,
+        "stop" : 1632161471462,
+        "duration" : 1054
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "hasContent" : true,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "EPRUMOSL8055"
+  }, {
+    "name" : "thread",
+    "value" : "528@EPRUMOSL8055.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "selenoid.tests.MarkupTest"
+  }, {
+    "name" : "testClass",
+    "value" : "selenoid.tests.MarkupTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "testSelectCheckboxes"
+  }, {
+    "name" : "suite",
+    "value" : "selenoid.tests.MarkupTest"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "b91eb1e8d164b80d.json",
+  "parameterValues" : [ ]
+}
