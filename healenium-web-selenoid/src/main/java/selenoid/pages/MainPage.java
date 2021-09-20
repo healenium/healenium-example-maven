@@ -6,6 +6,9 @@ import com.epam.healenium.annotation.DisableHealing;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class MainPage extends BasePage {
     By generateMarkupBtnId = By.id("markup-generation-button");
@@ -14,7 +17,8 @@ public class MainPage extends BasePage {
 
     By checkboxAccount = By.xpath("//*[@class='checkbox checkbox_size_m checkbox_theme_alfa-on-white']");
     By textFirstSelect = By.xpath("(//*[text()='Select Account'])[1]");
-    By textSecondSelect = By.xpath("(//*[text()='Select Account'])[2]");
+
+    By firstCheckboxChecked = By.xpath("//*[text()='Current account']//parent::label[contains(@class,'checked')]");
 
     public MainPage(SelfHealingDriver driver) {
         super(driver);
@@ -47,8 +51,7 @@ public class MainPage extends BasePage {
     @Step("Check that checkboxes available")
     public boolean displayedText() {
         try {
-            return driver.findElement(textFirstSelect).isEnabled()
-                    && !driver.findElement(textSecondSelect).isEnabled();
+            return driver.findElement(textFirstSelect).isEnabled();
         } catch (NoSuchElementException e1) {
             return false;
         }
@@ -64,4 +67,19 @@ public class MainPage extends BasePage {
         return driver.findElements(checkboxAccount).get(0).isEnabled();
     }
 
+    @Step("Select all available accounts from checkboxes")
+    public void selectAllCheckboxes() {
+        List<WebElement> checkboxes = driver.findElements(checkboxAccount);
+        checkboxes.forEach(c -> c.click());
+    }
+
+    @Step("Verify first account checkbox checked")
+    public boolean verifyFirstAccountCheckbox() {
+        return driver.findElement(firstCheckboxChecked).isEnabled();
+    }
+
+    @Step("Click first account checkbox")
+    public void selectFirstAccountCheckbox() {
+        driver.findElement(firstCheckboxChecked).click();
+    }
 }

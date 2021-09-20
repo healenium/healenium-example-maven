@@ -17,10 +17,6 @@ public class MarkupGeneratorSection extends HtmlElement {
     testButton.click();
   }
 
-  public String getTestButtonText(){
-    return testButton.getText();
-  }
-
   public void clickMarkupBtn(){
     markupButton.click();
   }

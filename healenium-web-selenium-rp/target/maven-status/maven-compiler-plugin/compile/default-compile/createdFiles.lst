@@ -1,0 +1,6 @@
+seleniumrp\pages\CallbackTestPage.class
+util\LoggingUtils.class
+seleniumrp\pages\MainPage.class
+seleniumrp\pages\MainPageWithFindBy.class
+seleniumrp\pages\BasePage.class
+seleniumrp\pages\AjaxLoadPage.class
