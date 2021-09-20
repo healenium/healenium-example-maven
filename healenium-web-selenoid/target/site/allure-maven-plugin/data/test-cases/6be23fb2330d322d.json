@@ -1,0 +1,207 @@
+{
+  "uid" : "6be23fb2330d322d",
+  "name" : "testElementFromShadowRoot()",
+  "fullName" : "selenoid.tests.CallbackTest.testElementFromShadowRoot",
+  "historyId" : "2a67ee6192acafc70f1052238b5abb3",
+  "time" : {
+    "start" : 1632161384844,
+    "stop" : 1632161411094,
+    "duration" : 26250
+  },
+  "description" : "Update locator for element from shadow root",
+  "descriptionHtml" : "<p>Update locator for element from shadow root</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "Update locator for element from shadow root",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Open Life cycle callbacks test page",
+      "time" : {
+        "start" : 1632161385091,
+        "stop" : 1632161385814,
+        "duration" : 723
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Click Add custom-square to DOM button",
+      "time" : {
+        "start" : 1632161385816,
+        "stop" : 1632161386965,
+        "duration" : 1149
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Verify test button with elements in shadowRoot enabled",
+      "time" : {
+        "start" : 1632161386966,
+        "stop" : 1632161387677,
+        "duration" : 711
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Click Update attributes button",
+      "time" : {
+        "start" : 1632161387693,
+        "stop" : 1632161388379,
+        "duration" : 686
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Verify test button with elements in shadowRoot enabled",
+      "time" : {
+        "start" : 1632161388379,
+        "stop" : 1632161395988,
+        "duration" : 7609
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Click Update attributes button",
+      "time" : {
+        "start" : 1632161395988,
+        "stop" : 1632161396624,
+        "duration" : 636
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Verify test button with elements in shadowRoot enabled",
+      "time" : {
+        "start" : 1632161396624,
+        "stop" : 1632161403459,
+        "duration" : 6835
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Click Update attributes button",
+      "time" : {
+        "start" : 1632161403459,
+        "stop" : 1632161404082,
+        "duration" : 623
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Verify test button with elements in shadowRoot enabled",
+      "time" : {
+        "start" : 1632161404082,
+        "stop" : 1632161411078,
+        "duration" : 6996
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 9,
+    "hasContent" : true,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "EPRUMOSL8055"
+  }, {
+    "name" : "thread",
+    "value" : "528@EPRUMOSL8055.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "selenoid.tests.CallbackTest"
+  }, {
+    "name" : "testClass",
+    "value" : "selenoid.tests.CallbackTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "testElementFromShadowRoot"
+  }, {
+    "name" : "suite",
+    "value" : "selenoid.tests.CallbackTest"
+  }, {
+    "name" : "severity",
+    "value" : "minor"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "minor",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "6be23fb2330d322d.json",
+  "parameterValues" : [ ]
+}

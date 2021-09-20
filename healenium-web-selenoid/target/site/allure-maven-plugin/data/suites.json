@@ -1,0 +1,117 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "selenoid.tests.CallbackTest",
+    "children" : [ {
+      "name" : "testElementFromShadowRoot()",
+      "uid" : "6be23fb2330d322d",
+      "parentUid" : "9d10b22b922244d91b6349e73ee53ecb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1632161384844,
+        "stop" : 1632161411094,
+        "duration" : 26250
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "testCssLocators()",
+      "uid" : "23d9a61c9c3c4fd7",
+      "parentUid" : "9d10b22b922244d91b6349e73ee53ecb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1632161411136,
+        "stop" : 1632161435937,
+        "duration" : 24801
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "9d10b22b922244d91b6349e73ee53ecb"
+  }, {
+    "name" : "selenoid.tests.MarkupTest",
+    "children" : [ {
+      "name" : "testSelectCheckboxes()",
+      "uid" : "b91eb1e8d164b80d",
+      "parentUid" : "944c94c6b1e50e005f649dfa04fa8b90",
+      "status" : "passed",
+      "time" : {
+        "start" : 1632161444920,
+        "stop" : 1632161471462,
+        "duration" : 26542
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "testButtonClickWithFindElementPage()",
+      "uid" : "f091197f072545a9",
+      "parentUid" : "944c94c6b1e50e005f649dfa04fa8b90",
+      "status" : "passed",
+      "time" : {
+        "start" : 1632161471469,
+        "stop" : 1632161483672,
+        "duration" : 12203
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "testButtonClickWithFindByAnnotationPage()",
+      "uid" : "67ad8343dce08a1f",
+      "parentUid" : "944c94c6b1e50e005f649dfa04fa8b90",
+      "status" : "passed",
+      "time" : {
+        "start" : 1632161483676,
+        "stop" : 1632161496089,
+        "duration" : 12413
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "testButtonClickWithId()",
+      "uid" : "c02ff5df8ed08bd0",
+      "parentUid" : "944c94c6b1e50e005f649dfa04fa8b90",
+      "status" : "passed",
+      "time" : {
+        "start" : 1632161496106,
+        "stop" : 1632161501267,
+        "duration" : 5161
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "testCheckboxesParentXpath()",
+      "uid" : "9df0df622f453505",
+      "parentUid" : "944c94c6b1e50e005f649dfa04fa8b90",
+      "status" : "passed",
+      "time" : {
+        "start" : 1632161501273,
+        "stop" : 1632161539726,
+        "duration" : 38453
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "testButtonClickWithDisableHealing()",
+      "uid" : "fcfc930f012aa829",
+      "parentUid" : "944c94c6b1e50e005f649dfa04fa8b90",
+      "status" : "passed",
+      "time" : {
+        "start" : 1632161539733,
+        "stop" : 1632161587021,
+        "duration" : 47288
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "944c94c6b1e50e005f649dfa04fa8b90"
+  } ]
+}

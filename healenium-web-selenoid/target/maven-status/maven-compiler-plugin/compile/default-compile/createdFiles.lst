@@ -1,0 +1,4 @@
+selenoid\pages\MainPageWithFindBy.class
+selenoid\pages\MainPage.class
+selenoid\pages\BasePage.class
+selenoid\pages\CallbackTestPage.class
