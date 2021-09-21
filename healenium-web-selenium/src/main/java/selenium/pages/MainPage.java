@@ -82,4 +82,17 @@ public class MainPage extends BasePage {
     public void selectFirstAccountCheckbox() {
         driver.findElement(firstCheckboxChecked).click();
     }
+
+    @Step("Check that test button with id locator is enabled")
+    public boolean testButtonEnable()
+    {
+        try
+        {
+            return driver.findElement(testGeneratedButton).isEnabled();
+        }
+        catch (NullPointerException e)
+        {
+            return false;
+        }
+    }
 }

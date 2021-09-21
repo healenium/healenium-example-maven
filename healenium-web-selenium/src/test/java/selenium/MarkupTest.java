@@ -85,9 +85,14 @@ public class MarkupTest extends BaseTest {
                 .clickTestButton();
         mainPage.confirmAlert();
 
-        mainPage
-                .generateMarkup()
-                .clickTestGeneratedButton();  //should be healed
+        while (!mainPage.testButtonEnable())
+            mainPage.generateMarkup();
+
+        for (int i = 0; i < 3; i++)
+        {
+            mainPage.clickTestGeneratedButton();//should be healed
+            mainPage.generateMarkup();
+        }
     }
 
     @Test
