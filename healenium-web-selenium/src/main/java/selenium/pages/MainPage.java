@@ -153,17 +153,4 @@ public class MainPage extends BasePage {
             throw new NoSuchElementException("No inputs found");
         child.forEach(c -> c.isEnabled());
     }
-
-    @Step("Check that test button with id locator is enabled")
-    public boolean testButtonEnable()
-    {
-        try
-        {
-            return driver.findElement(testGeneratedButton).isEnabled();
-        }
-        catch (NullPointerException e)
-        {
-            return false;
-        }
-    }
 }
