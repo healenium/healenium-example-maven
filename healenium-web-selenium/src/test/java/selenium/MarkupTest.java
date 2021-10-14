@@ -138,4 +138,22 @@ public class MarkupTest extends BaseTest {
         mainPage.fillInputsGroup();
         mainPage.verifyInputText(); //should be healed
     }
+
+    @Test
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("Healing locators in condition waits logic")
+    public void testConditionWait(){
+        MainPage mainPage = new MainPage(driver);
+        mainPage.open()
+                .clickTestButton()
+                .confirmAlert();
+
+        mainPage.generateMarkup()
+                .clickTestButton() //should be healed
+                .confirmAlert();
+
+        mainPage.generateMarkup()
+                .clickTestButtonWaitor() //should be healed
+                .confirmAlert();
+    }
 }

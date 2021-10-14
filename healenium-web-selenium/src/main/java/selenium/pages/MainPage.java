@@ -7,6 +7,8 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -152,5 +154,14 @@ public class MainPage extends BasePage {
         if (child.size() == 0)
             throw new NoSuchElementException("No inputs found");
         child.forEach(c -> c.isEnabled());
+    }
+
+    @Step("Click test button with conditional waits")
+    public MainPage clickTestButtonWaitor() {
+
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.elementToBeClickable(testButton)).click();
+
+        return this;
     }
 }
