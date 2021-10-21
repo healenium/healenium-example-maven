@@ -2,6 +2,7 @@ package selenoid.pages;
 
 
 import com.epam.healenium.SelfHealingDriver;
+import io.qameta.allure.Step;
 import org.openqa.selenium.Alert;
 
 public class BasePage {
@@ -11,20 +12,21 @@ public class BasePage {
     protected String yandexPageUrl = "https://yandex.ru/";
     protected SelfHealingDriver driver;
 
-    public BasePage(SelfHealingDriver driver) {
-        this.driver = driver;
-    }
+  public BasePage(SelfHealingDriver driver) {
+    this.driver = driver;
+  }
 
-    public static void sleepForSecondsToSeeTheAlertWhileTestIsRunning(int seconds) {
-        try {
-            Thread.sleep(seconds * 1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+  public static void sleepForSecondsToSeeTheAlertWhileTestIsRunning(int seconds) {
+    try {
+      Thread.sleep(seconds * 1000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
     }
+  }
 
-    public void confirmAlert() {
-        Alert alert = driver.switchTo().alert();
-        alert.accept();
-    }
+  @Step("Confirm alert")
+  public void confirmAlert() {
+    Alert alert = driver.switchTo().alert();
+    alert.accept();
+  }
 }

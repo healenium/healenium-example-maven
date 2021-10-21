@@ -17,6 +17,12 @@ public class MainPageWithFindBy extends BasePage {
     @FindBy(xpath = "//button[contains(@class,'default-btn')]")
     WebElement testButton;
 
+    @FindBy(id = "for-invisible-test")
+    WebElement buttonForInvisible;
+
+    @FindBy(id = "field-parent")
+    WebElement fieldParent;
+
     public MainPageWithFindBy(SelfHealingDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);

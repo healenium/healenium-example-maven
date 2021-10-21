@@ -8,7 +8,7 @@ import selenoid.pages.CallbackTestPage;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class CallbackTest extends BaseTest{
+public class CallbackTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.MINOR)

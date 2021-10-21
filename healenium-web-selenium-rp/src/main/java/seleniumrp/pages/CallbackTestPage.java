@@ -1,4 +1,4 @@
-package selenium.pages;
+package seleniumrp.pages;
 
 import com.epam.healenium.SelfHealingDriver;
 import com.epam.reportportal.annotations.Step;

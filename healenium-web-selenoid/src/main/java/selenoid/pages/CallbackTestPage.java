@@ -1,12 +1,13 @@
 package selenoid.pages;
 
+
 import com.epam.healenium.SelfHealingDriver;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
-public class CallbackTestPage extends BasePage{
+public class CallbackTestPage extends BasePage {
 
     By addSquareButton = By.xpath("//button[contains(@class, 'add')]");
     By updateSquareButton = By.xpath("//button[contains(@class, 'update')]");
@@ -58,4 +59,5 @@ public class CallbackTestPage extends BasePage{
         WebElement shadowRoot = driver.findElement(testButton);
         return (WebElement) js.executeScript("return arguments[0].shadowRoot", shadowRoot);
     }
+
 }

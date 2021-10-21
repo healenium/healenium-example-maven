@@ -1,13 +1,10 @@
-package selenoid.pages;
+package seleniumrp.pages;
 
 
 import com.epam.healenium.SelfHealingDriver;
 import com.epam.healenium.annotation.DisableHealing;
-import io.qameta.allure.Step;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
+import com.epam.reportportal.annotations.Step;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -165,7 +162,7 @@ public class MainPage extends BasePage {
         return this;
     }
 
-    @Step("Click on test button via js script")
+    @Step("Click on test buton via js script")
     public MainPage clickJsButton() {
         String query = "return document.getElementsByClassName('default-btn')[0]";
         ((WebElement)((JavascriptExecutor) driver).executeScript(query)).click();

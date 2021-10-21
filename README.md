@@ -8,7 +8,7 @@ Java + Maven + Junit5 project with healenium usage example
 
 ```docker-compose up -d```
 
-Verify that images ```healenium/hlm-backend:latest``` and ```postgres:11-alpine``` and ```healenium/hlm-selector-imitator:1``` are up and running
+Verify that images ```healenium/hlm-backend:latest``` and ```postgres:11-alpine```  and ```healenium/hlm-selector-imitator:1``` are up and running
 
 ### 2. Project structure
 ```
@@ -90,7 +90,7 @@ Also you could take a screenshots for your tests like it implements here: BaseTe
 ### 6. @DisableHealing annotation
 
 If don't want to use Healenium in some methods just use @DisableHealing annotation. 
-> The example of usage you can find here: selenium.pages.MainPageWithFindBy.checkLocatorTestButtonDontHealing 
+> The example of usage you can find here: MainPageWithFindBy.checkLocatorTestButtonDontHealing 
 
 ![img_2.png](img_2.png)
 

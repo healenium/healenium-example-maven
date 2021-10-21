@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
+    protected String tildaUrl="https://healenium.io/sha";
     protected String mainPageUrl = "https://sha-test-app.herokuapp.com/";
     protected String ajaxLoadPageUrl = "https://stephanwagner.me/loading-spinner-with-animation";
     protected String yandexPageUrl = "https://yandex.ru/";

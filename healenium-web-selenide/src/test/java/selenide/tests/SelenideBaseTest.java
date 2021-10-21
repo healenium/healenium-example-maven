@@ -19,8 +19,8 @@ public class SelenideBaseTest {
     WebDriverManager.chromedriver().setup();
     ChromeOptions options = new ChromeOptions();
     options.setHeadless(false);
-
     WebDriver delegate = new ChromeDriver(options);
+
     driver = SelfHealingDriver.create(delegate);
     driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
     driver.manage().window().maximize();

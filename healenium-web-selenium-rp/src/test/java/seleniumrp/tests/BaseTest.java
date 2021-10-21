@@ -26,6 +26,7 @@ public class BaseTest {
         options.setHeadless(false);
         //declare delegate
         WebDriver delegate = new ChromeDriver(options);
+
         driver = SelfHealingDriver.create(delegate);
         driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
         driver.manage().window().setSize(new Dimension(1200, 800));
