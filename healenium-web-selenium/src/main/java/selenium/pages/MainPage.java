@@ -5,6 +5,7 @@ import com.epam.healenium.SelfHealingDriver;
 import com.epam.healenium.annotation.DisableHealing;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -27,8 +28,7 @@ public class MainPage extends BasePage {
     By checkboxUnchecked = By.xpath("//label[not(contains(@class,'checkbox_checked'))]");
 
     By parentInput = By.xpath("//*[contains(@class,'input-group') and @role='group']//span[@class='input__box']");
-    By childInput = By.xpath(".//[@value='']");
-
+    By childInput = By.xpath(".//*[@value='']");
 
     public MainPage(SelfHealingDriver driver) {
         super(driver);
@@ -162,6 +162,13 @@ public class MainPage extends BasePage {
         WebDriverWait wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.elementToBeClickable(testButton)).click();
 
+        return this;
+    }
+
+    @Step("Click on test button via js script")
+    public MainPage clickJsButton() {
+        String query = "return document.getElementsByClassName('default-btn')[0]";
+        ((WebElement)((JavascriptExecutor) driver).executeScript(query)).click();
         return this;
     }
 }

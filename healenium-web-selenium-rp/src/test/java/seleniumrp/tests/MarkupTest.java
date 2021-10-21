@@ -1,5 +1,6 @@
 package seleniumrp.tests;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import seleniumrp.pages.MainPage;
@@ -64,10 +65,16 @@ public class MarkupTest extends BaseTest {
         while (!mainPage.displayedText())
             mainPage.generateMarkup();
 
-        mainPage.selectAllCheckboxes(); //find via findElements
+        int selectCount = mainPage.selectAllCheckboxes(); //find via findElements
 
-        boolean result = mainPage.verifyFirstCheckbox();  //should be healed
-        assertTrue(result, "Locator for checkbox with findElements has been healed");
+        int verifiedCount = mainPage.verifyAllCheckboxesChecked();
+        Assertions.assertEquals(selectCount, verifiedCount,
+                "All checkboxes were checked");
+
+        selectCount = mainPage.selectAllCheckboxes(); // should be healed and unchecked
+        verifiedCount = mainPage.verifyAllCheckboxesUnchecked();
+        Assertions.assertEquals(selectCount, verifiedCount,
+                "The same number of locator for checkbox with findElements has been healed");
     }
 
     @Test
@@ -105,5 +112,51 @@ public class MarkupTest extends BaseTest {
         mainPage.selectFirstAccountCheckbox();
         result = mainPage.verifyFirstAccountCheckbox(); //should be healed
         assertTrue(result, "Verify first account checkbox unchecked");
+    }
+
+    @Test
+    @DisplayName("Select and verify several inputs via parent.findElement")
+    public void testSelectElementsUnderParent() {
+        MainPage mainPage = new MainPage(driver);
+        mainPage.open()
+                .generateMarkup();
+
+        while (!mainPage.groupInputEnabled())
+            mainPage.generateMarkup();
+
+        // find all locator and fill them. verify their values
+        mainPage.verifyInputText(); //no healing
+        mainPage.fillInputsGroup();
+        mainPage.verifyInputText(); //should be healed
+    }
+
+    @Test
+    @DisplayName("Healing locators in condition waits logic")
+    public void testConditionWait(){
+        MainPage mainPage = new MainPage(driver);
+        mainPage.open()
+                .clickTestButton()
+                .confirmAlert();
+
+        mainPage.generateMarkup()
+                .clickTestButton() //should be healed
+                .confirmAlert();
+
+        mainPage.generateMarkup()
+                .clickTestButtonWaitor() //should be healed
+                .confirmAlert();
+    }
+
+    @Test
+    @DisplayName("Healing locators called via js script")
+    public void testJsExecutor(){
+        MainPage mainPage = new MainPage(driver);
+        mainPage.open()
+                .clickJsButton()
+                .confirmAlert();
+
+        mainPage.generateMarkup()
+                .clickJsButton() //should be healed
+                .confirmAlert();
     }
 }

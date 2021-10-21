@@ -140,7 +140,7 @@ public class MarkupTest extends BaseTest {
     }
 
     @Test
-    @Severity(SeverityLevel.BLOCKER)
+    @Severity(SeverityLevel.CRITICAL)
     @Description("Healing locators in condition waits logic")
     public void testConditionWait(){
         MainPage mainPage = new MainPage(driver);
@@ -154,6 +154,20 @@ public class MarkupTest extends BaseTest {
 
         mainPage.generateMarkup()
                 .clickTestButtonWaitor() //should be healed
+                .confirmAlert();
+    }
+
+    @Test
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Healing locators called via js script")
+    public void testJsExecutor(){
+        MainPage mainPage = new MainPage(driver);
+        mainPage.open()
+                .clickJsButton()
+                .confirmAlert();
+
+        mainPage.generateMarkup()
+                .clickJsButton() //should be healed
                 .confirmAlert();
     }
 }
