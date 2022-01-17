@@ -8,7 +8,7 @@ Java + Maven + Junit5 project with healenium usage example
 
 ```docker-compose up -d```
 
-Verify that images ```healenium/hlm-backend:latest``` and ```postgres:11-alpine```  and ```healenium/hlm-selector-imitator:1``` are up and running
+Verify that images ```healenium/hlm-backend:3.2.0-rc-1``` and ```postgres:11-alpine```  and ```healenium/hlm-selector-imitator:1``` are up and running
 
 ### 2. Project structure
 ```
