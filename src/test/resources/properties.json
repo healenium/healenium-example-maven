@@ -1,11 +1,17 @@
 {
+  "frameworks": [
+    {
+      "framework": "selenium"
+    }
+  ],
   "capabilities": [
     {
       "browserName": "chrome",
       "version": "96",
       "goog:chromeOptions": {
         "args": [
-          "--no-sandbox","--disable-dev-shm-usage"
+          "--no-sandbox",
+          "--disable-dev-shm-usage"
         ]
       }
     },
@@ -14,7 +20,8 @@
       "version": "95",
       "goog:chromeOptions": {
         "args": [
-          "--no-sandbox","--disable-dev-shm-usage"
+          "--no-sandbox",
+          "--disable-dev-shm-usage"
         ]
       }
     },
@@ -27,7 +34,8 @@
       "platform": "LINUX",
       "edgeOptions": {
         "args": [
-          "--no-sandbox","--disable-dev-shm-usage"
+          "--no-sandbox",
+          "--disable-dev-shm-usage"
         ]
       }
     }
