@@ -1,4 +1,4 @@
-package com.epam.healenium.cucumber.step_definitions;
+package cucumber.step_definitions;
 
 import com.epam.healenium.SelfHealingDriver;
 import com.epam.healenium.selenium.pageobject.callback.CallbackPage;

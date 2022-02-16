@@ -1,4 +1,4 @@
-package com.epam.healenium.cucumber.step_definitions;
+package cucumber.step_definitions;
 
 public class MarkupPageBinding {
 
