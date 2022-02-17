@@ -1,6 +1,8 @@
 # healenium-example-maven
 Java + Maven + Junit5 project with healenium usage example 
 
+### To setup Healenium see the tutorial: https://www.youtube.com/watch?v=Ed5HyfwZhq4
+
 ## How to start
 ### 1.Start Healenium backend from infra folder
 
@@ -8,67 +10,59 @@ Java + Maven + Junit5 project with healenium usage example
 
 ```docker-compose up -d```
 
+To download this file into your project use this command:
+
+```$ curl https://raw.githubusercontent.com/healenium/healenium-example-maven/master/infra/docker-compose.yaml -o docker-compose.yml```
+
+Create /db/sql folder on the same level in your project. Add init.sql file into ./db/sql/init.sql folder in your project via command:
+
+```$ curl https://raw.githubusercontent.com/healenium/healenium-client/master/example/init.sql -o init.sql```
+
 Verify that images ```healenium/hlm-backend:3.2.0``` and ```postgres:11-alpine```  and ```healenium/hlm-selector-imitator:1``` are up and running
 
 ### 2. Project structure
 ```
 |__pom.xml
-   |__healenium-web-htmlelements
-        |__src
-            |__main
-                |__java
-                    |__htmlelements.pages	
-            |__test
-                |__java
-                    |__htmlelements.tests
-                |__resources
-                    |__healenium.properties			
-   |__healenium-web-selenide
-        |__src
-            |__main
-                |__java
-                    |__selenide.pages
-            |__test
-                |__java
-                    |__selenide.tests	
-                |__resources
-                    |__healenium.properties			
-   |__healenium-web-selenium
-        |__src
-            |__main
-                |__java
-                    |__selenium.pages
-            |__test
-                |__java
-                    |__selenium.tests	
-                |__resources
-                    |__healenium.properties	
+|__infra
+    |__db/sql
+        |__init.sql
+    |__docker-compose.yml
+|__src/main/java/com/epam/healenium
+    |__constants
+    |__selenide
+        |__pageobject
+            |__callback
+            |__markup
+            |__testenv
+            BasePage
+    |__selenium
+        |__pageobject
+            |__callback
+            |__markup
+            |__testenv
+            BasePage
+    |__settings
+        |__framework
+            |__JdiContext
+            |__SelenideContext
+            |__SeleniumContext
+        |__FrameworkContext
+|__src/test/java/com/epam/healenium/tests
+    |__CssTest
+    |__GeneralTest
+    |__ParentChildTest
+    |__SemanticTest
+    |__WaitTest
+    |__XpathTest
 ``` 
 			   
 ### 3.Run test in terminal with maven
-> If you want to execute all tests, please use the command: 
-```mvn clean test```
 
-> If you want to execute tests from healenium-web-htmlelements module, please use the command: 
-```mvn clean test -Dtest=HtmlElementTests -pl healenium-web-htmlelements/```
+In ```BaseTest.java``` class select necessary framework: **SELENIUM** or **SELENIDE**.
 
-> If you want to execute tests from healenium-web-selenide module, please use the command: 
-```mvn clean test -Dtest=SelenideTests -pl healenium-web-selenide/```
->> Also if you want to get an allure report you could use this command:
-```mvn clean test -Dtest=SelenideTests -pl healenium-web-selenide/ allure:report```
+```pages = new FrameworkContext(FrameworkType.SELENIDE, driver).setFramework();```
 
-> If you want to execute tests from healenium-web-selenium module, please use the command: 
-```mvn clean test -Dtest=MarkupTest -pl healenium-web-selenium/```
->> Also if you want to get an allure report you could use this command:
-```mvn clean test -Dtest=MarkupTest -pl healenium-web-selenium/ allure:report```
-
->  If you want to get a Report Portal report you could use this command:
-```mvn clean test -Dtest=MarkupTest -pl healenium-web-selenium-rp/```
->>Do not forget to specify your rp.uuid and rp.project values in reportportal.properties file under test/resources
-
->  If you want to run test on Selenoid you could use this command:
-```mvn clean test -Dtest=MarkupTest -pl healenium-web-selenoid/```
->>Do not forget to change Selenoid URl in BaseTest: URI.create("your-selenoid-url:4444/wd/hub").toURL()
+If you want to execute all tests, please use the command: ```mvn clean test```
  
 
 ### 4.After test execution you should see generated report link in command line logs
@@ -81,7 +75,7 @@ Report contains only healed locators with old-new values and a button that tells
 
 ### 5. Screenshots 
 
-Also you could take a screenshots for your tests like it implements here: BaseTest.screenshot
+Also you could take a screenshots for your com.epam.healenium.tests like it implements here: BaseTest.screenshot
 ```
   public byte[] screenshot() {
       return ((TakesScreenshot) driver.getDelegate()).getScreenshotAs(OutputType.BYTES);

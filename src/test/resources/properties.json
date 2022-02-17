@@ -1,0 +1,43 @@
+{
+  "frameworks": [
+    {
+      "framework": "selenium"
+    }
+  ],
+  "capabilities": [
+    {
+      "browserName": "chrome",
+      "version": "96",
+      "goog:chromeOptions": {
+        "args": [
+          "--no-sandbox",
+          "--disable-dev-shm-usage"
+        ]
+      }
+    },
+    {
+      "browser": "chrome",
+      "version": "95",
+      "goog:chromeOptions": {
+        "args": [
+          "--no-sandbox",
+          "--disable-dev-shm-usage"
+        ]
+      }
+    },
+    {
+      "browser": "firefox",
+      "version": "89"
+    },
+    {
+      "browser": "MicrosoftEdge",
+      "platform": "LINUX",
+      "edgeOptions": {
+        "args": [
+          "--no-sandbox",
+          "--disable-dev-shm-usage"
+        ]
+      }
+    }
+  ]
+}
