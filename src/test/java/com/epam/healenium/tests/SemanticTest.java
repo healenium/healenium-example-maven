@@ -14,20 +14,12 @@ public class SemanticTest extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     @Description("Button click with find element by id")
     public void testButtonClickWithId() {
-        FrameworkPage mainPage = pages.get(String.valueOf(PagesType.MARKUP));
+        FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
-        mainPage.openPage()
-                .clickTestButton();
-        mainPage.confirmAlert();
-
-        while (!mainPage.testButtonEnable())
-            mainPage.generateMarkup();
-
-        for (int i = 0; i < 3; i++)
-        {
-            mainPage.clickTestGeneratedButton();//should be healed
-            mainPage.generateMarkup();
-        }
+        page.openPage()
+                .findTestElement(LocatorType.ID, "change_id")
+                .clickSubmitButton()
+                .findTestElement(LocatorType.ID, "change_id");
     }
 
     @Test
@@ -91,8 +83,8 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
         page.openPage()
-                .findTestElement(LocatorType.TAG_NAME, "#test_tag")
+                .findTestElement(LocatorType.TAG_NAME, "test_tag")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.TAG_NAME, "#test_tag");
+                .findTestElement(LocatorType.TAG_NAME, "test_tag");
     }
 }

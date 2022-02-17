@@ -32,7 +32,8 @@ public abstract class FrameworkPage {
         return null;
     }
 
-    public void confirmAlert() {
+    public FrameworkPage confirmAlert() {
+        return null;
     }
 
     public FrameworkPage generateMarkup() {

@@ -36,8 +36,9 @@ public class SeleniumBasePage extends FrameworkPage {
         return foundAlertText;
     }
 
-    public void confirmAlert() {
+    public SeleniumBasePage confirmAlert() {
         Alert alert = driver.switchTo().alert();
         alert.accept();
+        return this;
     }
 }

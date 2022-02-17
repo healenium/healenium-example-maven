@@ -1,6 +1,8 @@
 # healenium-example-maven
 Java + Maven + Junit5 project with healenium usage example 
 
+### To setup Healenium see the tutorial: https://www.youtube.com/watch?v=Ed5HyfwZhq4
+
 ## How to start
 ### 1.Start Healenium backend from infra folder
 
@@ -8,15 +10,59 @@ Java + Maven + Junit5 project with healenium usage example
 
 ```docker-compose up -d```
 
+To download this file into your project use this command:
+
+```$ curl https://raw.githubusercontent.com/healenium/healenium-example-maven/master/infra/docker-compose.yaml -o docker-compose.yml```
+
+Create /db/sql folder on the same level in your project. Add init.sql file into ./db/sql/init.sql folder in your project via command:
+
+```$ curl https://raw.githubusercontent.com/healenium/healenium-client/master/example/init.sql -o init.sql```
+
 Verify that images ```healenium/hlm-backend:3.2.0``` and ```postgres:11-alpine```  and ```healenium/hlm-selector-imitator:1``` are up and running
 
 ### 2. Project structure
 ```
-|__pom.xml	
+|__pom.xml
+|__infra
+    |__db/sql
+        |__init.sql
+    |__docker-compose.yml
+|__src/main/java/com/epam/healenium
+    |__constants
+    |__selenide
+        |__pageobject
+            |__callback
+            |__markup
+            |__testenv
+            BasePage
+    |__selenium
+        |__pageobject
+            |__callback
+            |__markup
+            |__testenv
+            BasePage
+    |__settings
+        |__framework
+            |__JdiContext
+            |__SelenideContext
+            |__SeleniumContext
+        |__FrameworkContext
+|__src/test/java/com/epam/healenium/tests
+    |__CssTest
+    |__GeneralTest
+    |__ParentChildTest
+    |__SemanticTest
+    |__WaitTest
+    |__XpathTest
 ``` 
 			   
 ### 3.Run test in terminal with maven
 
+In ```BaseTest.java``` class select necessary framework: **SELENIUM** or **SELENIDE**.
+
+```pages = new FrameworkContext(FrameworkType.SELENIDE, driver).setFramework();```
+
+If you want to execute all tests, please use the command: ```mvn clean test```
  
 
 ### 4.After test execution you should see generated report link in command line logs

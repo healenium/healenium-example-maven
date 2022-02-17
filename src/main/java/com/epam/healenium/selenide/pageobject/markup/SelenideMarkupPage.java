@@ -1,6 +1,8 @@
 package com.epam.healenium.selenide.pageobject.markup;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.ex.ElementNotFound;
 import com.epam.healenium.annotation.DisableHealing;
 import com.epam.healenium.constants.PageUrl;
 import com.epam.healenium.selenide.pageobject.SelenideBasePage;
@@ -33,36 +35,36 @@ public class SelenideMarkupPage extends SelenideBasePage {
 
     public SelenideMarkupPage openPage() {
         open(PageUrl.MARKUP_URL.toString());
-        return this;
+        return page(SelenideMarkupPage.class);
     }
 
     public SelenideMarkupPage generateMarkup() {
         $(generateMarkupBtnId).click();
-        return this;
+        return page(SelenideMarkupPage.class);
     }
 
     public SelenideMarkupPage clickTestButton() {
         $(testButton).click();
-        return this;
+        return page(SelenideMarkupPage.class);
     }
 
     public SelenideMarkupPage clickTestGeneratedButton() {
         $(testGeneratedButton).click();
-        return this;
+        return page(SelenideMarkupPage.class);
     }
 
     @DisableHealing
     public boolean displayedText() {
         try {
-            return $(textFirstSelect).isEnabled();
-        } catch (NoSuchElementException e1) {
+            return $(textFirstSelect).shouldBe(Condition.visible).isEnabled();
+        } catch (ElementNotFound e1) {
             return false;
         }
     }
 
     public SelenideMarkupPage selectFirstCheckbox() {
         $$(checkboxAccount).get(0).click();
-        return this;
+        return page(SelenideMarkupPage.class);
     }
 
     public boolean verifyFirstCheckbox() {
@@ -72,14 +74,14 @@ public class SelenideMarkupPage extends SelenideBasePage {
     @DisableHealing
     public int verifyAllCheckboxesChecked() {
         List<SelenideElement> checkboxes = $$(checkboxChecked);
-        checkboxes.forEach(c -> assertTrue(c.isEnabled()));
+        checkboxes.forEach(c -> assertTrue(c.shouldBe(visible).isEnabled()));
         return checkboxes.size();
     }
 
     @DisableHealing
     public int verifyAllCheckboxesUnchecked() {
         List<SelenideElement> checkboxes = $$(checkboxUnchecked);
-        checkboxes.forEach(c -> assertTrue(c.isEnabled()));
+        checkboxes.forEach(c -> assertTrue(c.shouldBe(visible).isEnabled()));
         return checkboxes.size();
     }
 
@@ -97,14 +99,14 @@ public class SelenideMarkupPage extends SelenideBasePage {
 
     public SelenideMarkupPage selectFirstAccountCheckbox() {
         $(firstCheckboxChecked).click();
-        return this;
+        return page(SelenideMarkupPage.class);
     }
 
     @DisableHealing
     public boolean testButtonEnable() {
         try {
             return $(testGeneratedButton).isEnabled();
-        } catch (NoSuchElementException e) {
+        } catch (ElementNotFound e) {
             return false;
         }
     }
@@ -115,7 +117,7 @@ public class SelenideMarkupPage extends SelenideBasePage {
             return $(parentInput).isEnabled()
                     && $(By.xpath("//*[@placeholder='Just some text']"))
                     .isEnabled();
-        } catch (NoSuchElementException e1) {
+        } catch (ElementNotFound e1) {
             return false;
         }
     }
@@ -137,6 +139,6 @@ public class SelenideMarkupPage extends SelenideBasePage {
 
     public SelenideMarkupPage clickTestButtonWaitor(int seconds) {
         $(testButton).shouldBe(visible, Duration.ofSeconds(seconds)).click();
-        return this;
+        return page(SelenideMarkupPage.class);
     }
 }

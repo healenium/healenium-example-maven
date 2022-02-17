@@ -18,12 +18,8 @@ public class GeneralTest extends BaseTest {
     public void testButtonClickWithFindByAnnotationPage() {
         FrameworkPage mainPage = pages.get(String.valueOf(PagesType.MARKUP_FIND_BY));
 
-        //find test button
-        mainPage.openPage().clickTestButton();
-        //confirm Alert
-        mainPage.confirmAlert();
-
-        mainPage
+        mainPage.openPage().clickTestButton()
+                .confirmAlert()
                 .generateMarkup() //regenerate Markup
                 .clickTestButton(); //find test button again
         mainPage.confirmAlert();  //confirm Alert again
@@ -59,10 +55,9 @@ public class GeneralTest extends BaseTest {
     public void testButtonClickWithDisableHealing() {
         FrameworkPage mainPage = pages.get(String.valueOf(PagesType.MARKUP_FIND_BY));
 
-        mainPage.openPage()
+        boolean result = mainPage.openPage()
                 .clickTestButton()
-                .confirmAlert();
-        boolean result = mainPage
+                .confirmAlert()
                 .generateMarkup() //regenerate Markup
                 .checkLocatorTestButtonDontHealing(); //find test button again
         assertTrue(result, "The locator was not healed");
