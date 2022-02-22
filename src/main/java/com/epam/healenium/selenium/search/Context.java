@@ -1,13 +1,13 @@
 package com.epam.healenium.selenium.search;
 
-import com.epam.healenium.SelfHealingDriver;
 import com.epam.healenium.constants.LocatorType;
 import com.epam.healenium.selenium.search.locators.*;
+import org.openqa.selenium.WebDriver;
 
 public class Context {
     private Strategy strategy;
 
-    public Context(SelfHealingDriver driver, LocatorType type) {
+    public Context(WebDriver driver, LocatorType type) {
         switch (type) {
             case XPATH:
                 this.strategy = new XPathStrategy(driver);

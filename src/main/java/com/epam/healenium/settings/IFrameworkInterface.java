@@ -1,10 +1,9 @@
 package com.epam.healenium.settings;
 
 import com.epam.healenium.FrameworkPage;
-import com.epam.healenium.SelfHealingDriver;
 
 import java.util.HashMap;
 
-public interface FrameworkStrategy {
+public interface IFrameworkInterface {
     HashMap<String, FrameworkPage> useSettings();
 }

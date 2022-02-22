@@ -1,11 +1,11 @@
 package com.epam.healenium.selenium.pageobject.markup;
 
-import com.epam.healenium.SelfHealingDriver;
 import com.epam.healenium.annotation.DisableHealing;
 import com.epam.healenium.selenium.pageobject.SeleniumBasePage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -27,7 +27,7 @@ public class MainPageWithFindBy extends SeleniumBasePage {
     @FindBy(id = "field-parent")
     WebElement fieldParent;
 
-    public MainPageWithFindBy(SelfHealingDriver driver) {
+    public MainPageWithFindBy(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }

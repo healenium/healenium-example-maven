@@ -1,9 +1,9 @@
 package com.epam.healenium.selenium.pageobject.callback;
 
-import com.epam.healenium.SelfHealingDriver;
 import com.epam.healenium.constants.PageUrl;
 import com.epam.healenium.selenium.pageobject.SeleniumBasePage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 public class CallbackPage extends SeleniumBasePage {
 
@@ -13,7 +13,7 @@ public class CallbackPage extends SeleniumBasePage {
 
     private By testButtonCss = By.cssSelector("[c='red']");
 
-    public CallbackPage(SelfHealingDriver driver) {
+    public CallbackPage(WebDriver driver) {
         super(driver);
     }
 
