@@ -58,6 +58,17 @@ Verify that images ```healenium/hlm-backend:3.2.0``` and ```postgres:11-alpine``
 			   
 ### 3.Run test in terminal with maven
 
+In ```BaseTest.java``` class select necessary driver: **LOCAL**, **PROXY** or **REMOTE** and browser to run: chrome, firefox or edge.
+
+```driver = new DriverContext(DriverType.LOCAL).getDriver(BrowserType.CHROME);```
+
+**LOCAL** - used for local run. It's been set by default in BaseTest.java class. For this driver should be used docker-compose file from test example.
+
+**PROXY** - used if you're running tests using healenium-proxy. For this driver you need to set docker-compose containers as in example by link:
+https://github.com/healenium/healenium-example-dotnet/blob/master/infra/docker-compose.yml
+
+**REMOTE** - used if you-re running test on remote machine. Do not forget to provide necessary host. In this test example it's been used remote machine with Selenoid.
+
 In ```BaseTest.java``` class select necessary framework: **SELENIUM** or **SELENIDE**.
 
 ```pages = new FrameworkContext(FrameworkType.SELENIDE, driver).setFramework();```

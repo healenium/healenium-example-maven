@@ -1,15 +1,15 @@
 package com.epam.healenium.settings.framework;
 
 import com.epam.healenium.FrameworkPage;
-import com.epam.healenium.SelfHealingDriver;
-import com.epam.healenium.settings.FrameworkStrategy;
+import com.epam.healenium.settings.IFrameworkInterface;
+import org.openqa.selenium.WebDriver;
 
 import java.util.HashMap;
 
-public class JdiContext implements FrameworkStrategy {
-    private SelfHealingDriver driver;
+public class JdiContext implements IFrameworkInterface {
+    private WebDriver driver;
 
-    public JdiContext(SelfHealingDriver driver) {
+    public JdiContext(WebDriver driver) {
         this.driver = driver;
     }
 

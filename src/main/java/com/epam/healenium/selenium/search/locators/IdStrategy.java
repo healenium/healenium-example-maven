@@ -1,13 +1,13 @@
 package com.epam.healenium.selenium.search.locators;
 
-import com.epam.healenium.SelfHealingDriver;
 import com.epam.healenium.selenium.search.Strategy;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 public class IdStrategy implements Strategy {
-    private SelfHealingDriver driver;
+    private WebDriver driver;
 
-    public IdStrategy(SelfHealingDriver driver) {
+    public IdStrategy(WebDriver driver) {
         this.driver = driver;
     }
 

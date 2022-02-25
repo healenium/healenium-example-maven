@@ -2,19 +2,19 @@ package com.epam.healenium.settings.framework;
 
 import com.codeborne.selenide.WebDriverRunner;
 import com.epam.healenium.FrameworkPage;
-import com.epam.healenium.SelfHealingDriver;
 import com.epam.healenium.constants.PagesType;
 import com.epam.healenium.selenide.pageobject.markup.SelenideMainPageWithFindBy;
 import com.epam.healenium.selenide.pageobject.markup.SelenideMarkupPage;
 import com.epam.healenium.selenide.pageobject.callback.SelenideCallbackPage;
 import com.epam.healenium.selenide.pageobject.testenv.SelenideTestEnvPage;
-import com.epam.healenium.settings.FrameworkStrategy;
+import com.epam.healenium.settings.IFrameworkInterface;
+import org.openqa.selenium.WebDriver;
 
 import java.util.HashMap;
 
-public class SelenideContext implements FrameworkStrategy {
+public class SelenideContext implements IFrameworkInterface {
 
-    public SelenideContext(SelfHealingDriver driver) {
+    public SelenideContext(WebDriver driver) {
         WebDriverRunner.setWebDriver(driver);
     }
 

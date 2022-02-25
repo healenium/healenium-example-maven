@@ -1,10 +1,10 @@
 package com.epam.healenium.selenium.pageobject.markup;
 
-import com.epam.healenium.SelfHealingDriver;
 import com.epam.healenium.annotation.DisableHealing;
 import com.epam.healenium.selenium.pageobject.SeleniumBasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -29,7 +29,7 @@ public class MarkupPage extends SeleniumBasePage {
     private By parentInput = By.xpath("//*[contains(@class,'input-group') and @role='group']");//span[@class='input__box']");
     private By childInput = By.xpath(".//*[@value='']");
 
-    public MarkupPage(SelfHealingDriver driver) {
+    public MarkupPage(WebDriver driver) {
         super(driver);
     }
 
