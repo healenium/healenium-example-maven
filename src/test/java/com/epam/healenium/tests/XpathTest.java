@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Test;
 
 public class XpathTest extends BaseTest {
 
-    @DisableHealing
     @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("XPath with special characters")
