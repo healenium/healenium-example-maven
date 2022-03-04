@@ -11,6 +11,7 @@ import org.openqa.selenium.NoSuchElementException;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
@@ -74,23 +75,27 @@ public class SelenideMarkupPage extends SelenideBasePage {
     @DisableHealing
     public int verifyAllCheckboxesChecked() {
         List<SelenideElement> checkboxes = $$(checkboxChecked);
-        checkboxes.forEach(c -> assertTrue(c.shouldBe(visible).isEnabled()));
+        checkboxes.forEach(c -> assertTrue(c.isEnabled()));
         return checkboxes.size();
     }
 
     @DisableHealing
     public int verifyAllCheckboxesUnchecked() {
         List<SelenideElement> checkboxes = $$(checkboxUnchecked);
-        checkboxes.forEach(c -> assertTrue(c.shouldBe(visible).isEnabled()));
+        checkboxes.forEach(c -> assertTrue(c.isEnabled()));
         return checkboxes.size();
     }
 
     public int selectAllCheckboxes() {
+        AtomicInteger count= new AtomicInteger();
         List<SelenideElement> checkboxes = $$(checkboxAccount);
         if (checkboxes.size() == 0)
             throw new NoSuchElementException("No checkboxes found");
-        checkboxes.forEach(c -> c.click());
-        return checkboxes.size();
+        checkboxes.forEach(c -> {
+            c.click();
+            count.addAndGet(1);
+        });
+        return count.get();
     }
 
     public boolean verifyFirstAccountCheckbox() {

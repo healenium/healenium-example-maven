@@ -93,4 +93,12 @@ public abstract class FrameworkPage {
     public FrameworkPage clickTestButtonWaitor(int i) {
         return null;
     }
+
+    public FrameworkPage findElementsUnderParent(String parentXpath, String childXpath) {
+        return null;
+    }
+
+    public FrameworkPage clickFormButton() {
+        return null;
+    }
 }
