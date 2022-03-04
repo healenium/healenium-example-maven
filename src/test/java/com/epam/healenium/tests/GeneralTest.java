@@ -2,6 +2,8 @@ package com.epam.healenium.tests;
 
 import com.epam.healenium.FrameworkPage;
 import com.epam.healenium.constants.PagesType;
+import com.epam.healenium.selenide.pageobject.SelenideBasePage;
+import com.epam.healenium.selenide.pageobject.markup.SelenideMarkupPage;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -39,13 +41,8 @@ public class GeneralTest extends BaseTest {
 
         int selectCount = mainPage.selectAllCheckboxes(); //find via findElements
 
-        int verifiedCount = mainPage.verifyAllCheckboxesChecked();
-        Assertions.assertEquals(selectCount, verifiedCount,
-                "All checkboxes were checked");
-
-        selectCount = mainPage.selectAllCheckboxes(); // should be healed and unchecked
-        verifiedCount = mainPage.verifyAllCheckboxesUnchecked();
-        Assertions.assertEquals(selectCount, verifiedCount,
+        int selectCountHealed = mainPage.selectAllCheckboxes(); // should be healed and unchecked
+        Assertions.assertEquals(selectCount, selectCountHealed,
                 "The same number of locator for checkbox with findElements has been healed");
     }
 
