@@ -1,6 +1,7 @@
 package com.epam.healenium.selenium.pageobject.markup;
 
 import com.epam.healenium.annotation.DisableHealing;
+import com.epam.healenium.constants.PageUrl;
 import com.epam.healenium.selenium.pageobject.SeleniumBasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -34,7 +35,7 @@ public class MarkupPage extends SeleniumBasePage {
     }
 
     public MarkupPage openPage() {
-        driver.get(mainPageUrl);
+        driver.get(String.valueOf(PageUrl.MARKUP_URL));
         return this;
     }
 

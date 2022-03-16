@@ -1,5 +1,6 @@
 package com.epam.healenium.selenide.pageobject.testenv;
 
+import com.codeborne.selenide.SelenideElement;
 import com.epam.healenium.constants.LocatorType;
 import com.epam.healenium.constants.PageUrl;
 import com.epam.healenium.selenide.pageobject.SelenideBasePage;
@@ -9,8 +10,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SelenideTestEnvPage extends SelenideBasePage {
@@ -42,6 +42,12 @@ public class SelenideTestEnvPage extends SelenideBasePage {
 
     public SelenideTestEnvPage clickFormButton(){
         $(formButton).click();
+        return this;
+    }
+
+    public SelenideTestEnvPage findTestElements(String locators){
+        List<SelenideElement> formElements = $$(By.xpath(locators));
+        formElements.forEach(f -> f.click());
         return this;
     }
 }

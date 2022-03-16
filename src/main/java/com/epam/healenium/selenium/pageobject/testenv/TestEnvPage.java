@@ -47,4 +47,10 @@ public class TestEnvPage extends SeleniumBasePage {
         driver.findElement(formButton).click();
         return this;
     }
+
+    public TestEnvPage findTestElements(String locators){
+        List<WebElement> formElements = driver.findElements(By.xpath(locators));
+        formElements.forEach(f -> f.click());
+        return this;
+    }
 }

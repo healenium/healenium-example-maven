@@ -1,7 +1,6 @@
 package com.epam.healenium.tests;
 
 import com.epam.healenium.FrameworkPage;
-import com.epam.healenium.annotation.DisableHealing;
 import com.epam.healenium.constants.LocatorType;
 import com.epam.healenium.constants.PagesType;
 import io.qameta.allure.Description;

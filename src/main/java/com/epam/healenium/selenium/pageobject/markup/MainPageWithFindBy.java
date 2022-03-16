@@ -1,6 +1,7 @@
 package com.epam.healenium.selenium.pageobject.markup;
 
 import com.epam.healenium.annotation.DisableHealing;
+import com.epam.healenium.constants.PageUrl;
 import com.epam.healenium.selenium.pageobject.SeleniumBasePage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -34,7 +35,7 @@ public class MainPageWithFindBy extends SeleniumBasePage {
 
     @Step("Open Main page")
     public MainPageWithFindBy openPage() {
-        driver.get(mainPageUrl);
+        driver.get(String.valueOf(PageUrl.MARKUP_URL));
         return this;
     }
 

@@ -101,4 +101,8 @@ public abstract class FrameworkPage {
     public FrameworkPage clickFormButton() {
         return null;
     }
+
+    public FrameworkPage findTestElements(String s) {
+        return null;
+    }
 }

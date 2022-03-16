@@ -1,6 +1,7 @@
 package com.epam.healenium.tests;
 
 import com.epam.healenium.FrameworkPage;
+import com.epam.healenium.constants.LocatorType;
 import com.epam.healenium.constants.PagesType;
 import com.epam.healenium.selenide.pageobject.SelenideBasePage;
 import com.epam.healenium.selenide.pageobject.markup.SelenideMarkupPage;
@@ -32,18 +33,12 @@ public class GeneralTest extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     @Description("Select checkboxes with findElements annotation")
     public void testSelectCheckboxes() {
-        FrameworkPage mainPage = pages.get(String.valueOf(PagesType.MARKUP));
+        FrameworkPage mainPage = pages.get(String.valueOf(PagesType.TEST_ENV));
 
-        mainPage.openPage();
-
-        while (!mainPage.displayedText())
-            mainPage.generateMarkup();
-
-        int selectCount = mainPage.selectAllCheckboxes(); //find via findElements
-
-        int selectCountHealed = mainPage.selectAllCheckboxes(); // should be healed and unchecked
-        Assertions.assertEquals(selectCount, selectCountHealed,
-                "The same number of locator for checkbox with findElements has been healed");
+        mainPage.openPage()
+                .findTestElements("//*[contains(@class,'test-form')]//*[@class='input1']")
+                .clickFormButton()
+                .findTestElements("//*[contains(@class,'test-form')]//*[@class='input1']");
     }
 
     @Test

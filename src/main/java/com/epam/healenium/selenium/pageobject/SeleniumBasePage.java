@@ -8,7 +8,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SeleniumBasePage extends FrameworkPage {
-    protected String mainPageUrl = "https://sha-test-app.herokuapp.com/";
     protected WebDriver driver;
 
     public SeleniumBasePage(WebDriver driver) {
