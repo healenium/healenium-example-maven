@@ -3,9 +3,9 @@ package com.epam.healenium.tests;
 import com.epam.healenium.FrameworkPage;
 import com.epam.healenium.constants.LocatorType;
 import com.epam.healenium.constants.PagesType;
-import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -14,7 +14,7 @@ public class ParentChildTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.MINOR)
-    @Description("Select first checkbox and verify using parent:: function in Xpath")
+    @DisplayName("Select first checkbox and verify using parent:: function in Xpath")
     public void testParentXpath(){
         FrameworkPage mainPage = pages.get(String.valueOf(PagesType.MARKUP));
 
@@ -35,7 +35,7 @@ public class ParentChildTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.MINOR)
-    @Description("Select and verify several inputs via parent.findElement")
+    @DisplayName("Select and verify several inputs via parent.findElement")
     public void testUnderParentFindElements() {
         FrameworkPage mainPage = pages.get(String.valueOf(PagesType.MARKUP));
 
@@ -53,7 +53,7 @@ public class ParentChildTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("Select and verify several inputs CSS FirstChild")
+    @DisplayName("Select and verify several inputs CSS FirstChild")
     public void testCSSFirstChild(){
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -65,7 +65,7 @@ public class ParentChildTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("Select and verify several inputs CSS LastChild")
+    @DisplayName("Select and verify several inputs CSS LastChild")
     public void testCSSLastChild(){
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -77,7 +77,7 @@ public class ParentChildTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("Select first checkbox and verify using parent.findElements in Xpath. " +
+    @DisplayName("Select first checkbox and verify using parent.findElements in Xpath. " +
             "The difference between first - not use @DisabledHealing")
     public void testXPathUnderParentFindElements() {
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));

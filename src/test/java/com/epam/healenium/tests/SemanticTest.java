@@ -3,16 +3,16 @@ package com.epam.healenium.tests;
 import com.epam.healenium.FrameworkPage;
 import com.epam.healenium.constants.LocatorType;
 import com.epam.healenium.constants.PagesType;
-import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class SemanticTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("Button click with find element by id")
+    @DisplayName("Button click with find element by id")
     public void testButtonClickWithId() {
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -24,7 +24,7 @@ public class SemanticTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("Find element by classname")
+    @DisplayName("Find element by classname")
     public void testFindElementByClassName() {
         FrameworkPage mainPage = pages.get(String.valueOf(PagesType.MARKUP));
 
@@ -42,7 +42,7 @@ public class SemanticTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.MINOR)
-    @Description("Find element by linktext")
+    @DisplayName("Find element by linktext")
     public void testFindElementByLinkText() {
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -54,7 +54,7 @@ public class SemanticTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("Find element by name")
+    @DisplayName("Find element by name")
     public void testFindElementByName() {
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -66,7 +66,7 @@ public class SemanticTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.MINOR)
-    @Description("Find element by partialLinkText")
+    @DisplayName("Find element by partialLinkText")
     public void testFindElementByPartialLinkText() {
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -78,7 +78,7 @@ public class SemanticTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.MINOR)
-    @Description("Find element by tagName")
+    @DisplayName("Find element by tagName")
     public void testFindElementByTagName() {
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 

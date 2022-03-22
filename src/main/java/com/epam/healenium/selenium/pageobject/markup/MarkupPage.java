@@ -3,6 +3,7 @@ package com.epam.healenium.selenium.pageobject.markup;
 import com.epam.healenium.annotation.DisableHealing;
 import com.epam.healenium.constants.PageUrl;
 import com.epam.healenium.selenium.pageobject.SeleniumBasePage;
+import com.epam.reportportal.annotations.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -34,16 +35,19 @@ public class MarkupPage extends SeleniumBasePage {
         super(driver);
     }
 
+    @Step("Open markup page")
     public MarkupPage openPage() {
         driver.get(String.valueOf(PageUrl.MARKUP_URL));
         return this;
     }
 
+    @Step("Generate markup")
     public MarkupPage generateMarkup() {
         driver.findElement(generateMarkupBtnId).click();
         return this;
     }
 
+    @Step("Click test button")
     public MarkupPage clickTestButton() {
         driver.findElement(testButton).click();
         return this;
@@ -63,6 +67,7 @@ public class MarkupPage extends SeleniumBasePage {
         }
     }
 
+    @Step("Select first checkbox from list")
     public MarkupPage selectFirstCheckbox() {
         driver.findElements(checkboxAccount).get(0).click();
         return this;
@@ -94,10 +99,12 @@ public class MarkupPage extends SeleniumBasePage {
         return checkboxes.size();
     }
 
+    @Step("Verify first checkbox")
     public boolean verifyFirstAccountCheckbox() {
         return driver.findElement(firstCheckboxChecked).isEnabled();
     }
 
+    @Step("Select first account checkbox")
     public MarkupPage selectFirstAccountCheckbox() {
         driver.findElement(firstCheckboxChecked).click();
         return this;
@@ -123,6 +130,7 @@ public class MarkupPage extends SeleniumBasePage {
         }
     }
 
+    @Step("Fill elements under parent form")
     @DisableHealing
     public void fillInputsGroup() {
         WebElement parent = driver.findElement(parentInput);
@@ -130,6 +138,7 @@ public class MarkupPage extends SeleniumBasePage {
         child.forEach(c -> c.sendKeys("Value"));
     }
 
+    @Step("Verify elements under parent form with value")
     public void verifyInputText() {
         WebElement parent = driver.findElement(parentInput);
         List<WebElement> child = parent.findElements(childInput);
@@ -138,8 +147,8 @@ public class MarkupPage extends SeleniumBasePage {
         child.forEach(c -> assertTrue(c.isEnabled()));
     }
 
+    @Step("Click test button using conditional wait")
     public MarkupPage clickTestButtonWaitor(int seconds) {
-
         WebDriverWait wait = new WebDriverWait(driver, seconds);
         wait.until(ExpectedConditions.elementToBeClickable(testButton)).click();
 

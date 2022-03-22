@@ -3,7 +3,7 @@ package com.epam.healenium.selenium.pageobject.markup;
 import com.epam.healenium.annotation.DisableHealing;
 import com.epam.healenium.constants.PageUrl;
 import com.epam.healenium.selenium.pageobject.SeleniumBasePage;
-import io.qameta.allure.Step;
+import com.epam.reportportal.annotations.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -33,7 +33,7 @@ public class MainPageWithFindBy extends SeleniumBasePage {
         PageFactory.initElements(driver, this);
     }
 
-    @Step("Open Main page")
+    @Step("Open page")
     public MainPageWithFindBy openPage() {
         driver.get(String.valueOf(PageUrl.MARKUP_URL));
         return this;
@@ -83,6 +83,7 @@ public class MainPageWithFindBy extends SeleniumBasePage {
     }
 
     @DisableHealing
+    @Step("Check locator with disabled healing annotation")
     public boolean checkLocatorTestButtonDontHealing() {
         try {
             testButton.click();

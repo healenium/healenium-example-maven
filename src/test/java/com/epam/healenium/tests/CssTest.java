@@ -1,11 +1,11 @@
 package com.epam.healenium.tests;
 
 import com.epam.healenium.FrameworkPage;
-import com.epam.healenium.constants.PagesType;
 import com.epam.healenium.constants.LocatorType;
-import io.qameta.allure.Description;
+import com.epam.healenium.constants.PagesType;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -14,7 +14,7 @@ public class CssTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("Update locator for element with css attribute")
+    @DisplayName("Update locator for element with css attribute")
     public void testCssAttribute() {
         FrameworkPage callbackTestPage = pages.get(String.valueOf(PagesType.CALLBACK));
 
@@ -34,7 +34,7 @@ public class CssTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("Update locator for element with css id")
+    @DisplayName("Update locator for element with css id")
     public void testCssId() {
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -46,7 +46,7 @@ public class CssTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("Update locator for element with css id with special character")
+    @DisplayName("Update locator for element with css id with special character")
     public void testCssIdSpecialCharacter() {
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -58,7 +58,7 @@ public class CssTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("Update locator for element with css Element")
+    @DisplayName("Update locator for element with css Element")
     public void testCssElement() {
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -70,7 +70,7 @@ public class CssTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("Update locator for element with css Disabled")
+    @DisplayName("Update locator for element with css Disabled")
     public void testCssDisabled() {
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -82,7 +82,7 @@ public class CssTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("Update locator for element with css Enabled")
+    @DisplayName("Update locator for element with css Enabled")
     public void testCssEnabled() {
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -94,7 +94,7 @@ public class CssTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("Update locator for element with css Checked")
+    @DisplayName("Update locator for element with css Checked")
     public void testCssChecked() {
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -106,14 +106,14 @@ public class CssTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("Update locator for element with css Hover")
+    @DisplayName("Update locator for element with css Hover")
     public void testCssHover() {
 
     }
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("Update locator for element with css ClassName")
+    @DisplayName("Update locator for element with css ClassName")
     public void testCssClassName() {
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 

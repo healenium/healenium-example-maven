@@ -3,16 +3,16 @@ package com.epam.healenium.tests;
 import com.epam.healenium.FrameworkPage;
 import com.epam.healenium.constants.LocatorType;
 import com.epam.healenium.constants.PagesType;
-import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class XpathTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("XPath with special characters")
+    @DisplayName("XPath with special characters")
     public void testXpathSpecialCharacter(){
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -24,7 +24,7 @@ public class XpathTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.MINOR)
-    @Description("XPath Following")
+    @DisplayName("XPath Following")
     public void testXpathFollowing(){
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -36,7 +36,7 @@ public class XpathTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("XPath Contains")
+    @DisplayName("XPath Contains")
     public void testXpathContains(){
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -48,7 +48,7 @@ public class XpathTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("XPath Not Contains")
+    @DisplayName("XPath Not Contains")
     public void testXpathNotContains(){
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -60,7 +60,7 @@ public class XpathTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.MINOR)
-    @Description("XPath Following-Sibling")
+    @DisplayName("XPath Following-Sibling")
     public void testXpathFollowingSibling(){
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -72,7 +72,7 @@ public class XpathTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.MINOR)
-    @Description("XPath Ancestor::")
+    @DisplayName("XPath Ancestor::")
     public void testXPathAncestor(){
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -84,7 +84,7 @@ public class XpathTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.MINOR)
-    @Description("XPath OR")
+    @DisplayName("XPath OR")
     public void testXpathOR(){
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -96,7 +96,7 @@ public class XpathTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.MINOR)
-    @Description("XPath And")
+    @DisplayName("XPath And")
     public void testXpathAnd(){
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -108,7 +108,7 @@ public class XpathTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("XPath Starts-with")
+    @DisplayName("XPath Starts-with")
     public void testXpathStartsWith(){
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -120,7 +120,7 @@ public class XpathTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.MINOR)
-    @Description("XPath Precending::")
+    @DisplayName("XPath Precending::")
     public void testXpathPrecending(){
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -132,7 +132,7 @@ public class XpathTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.MINOR)
-    @Description("XPath Descendant::")
+    @DisplayName("XPath Descendant::")
     public void testXpathDescendant(){
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -144,7 +144,7 @@ public class XpathTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.MINOR)
-    @Description("XPath Hover")
+    @DisplayName("XPath Hover")
     public void testXpathHover(){
 
     }

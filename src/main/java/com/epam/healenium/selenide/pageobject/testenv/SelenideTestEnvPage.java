@@ -5,6 +5,7 @@ import com.epam.healenium.constants.LocatorType;
 import com.epam.healenium.constants.PageUrl;
 import com.epam.healenium.selenide.pageobject.SelenideBasePage;
 import com.epam.healenium.selenide.search.Context;
+import com.epam.reportportal.annotations.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -18,33 +19,39 @@ public class SelenideTestEnvPage extends SelenideBasePage {
     private By submitButton = By.id("Submit");
     private By formButton = By.id("Submit_checkbox");
 
+    @Step("Open test page")
     public SelenideTestEnvPage openPage() {
         open(PageUrl.TEST_ENV_URL.toString());
         return this;
     }
 
+    @Step("Find test element")
     public SelenideTestEnvPage findTestElement(LocatorType type, String selector) {
         boolean result = new Context(type).executeStrategy(selector);
         assertTrue(result);
         return this;
     }
 
+    @Step("Click submit button")
     public SelenideTestEnvPage clickSubmitButton() {
         $(submitButton).click();
         return this;
     }
 
+    @Step("Find elements under parent on form")
     public SelenideTestEnvPage findElementsUnderParent(String parentXpath, String childXpath) {
         List<WebElement> formElements = $(By.xpath(parentXpath)).findElements(By.xpath("." + childXpath));
         formElements.forEach(f -> f.click());
         return this;
     }
 
+    @Step("Click submit button for checkboxes form")
     public SelenideTestEnvPage clickFormButton(){
         $(formButton).click();
         return this;
     }
 
+    @Step("Find several elements via findElements")
     public SelenideTestEnvPage findTestElements(String locators){
         List<SelenideElement> formElements = $$(By.xpath(locators));
         formElements.forEach(f -> f.click());

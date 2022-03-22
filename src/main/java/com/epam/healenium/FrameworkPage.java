@@ -2,107 +2,47 @@ package com.epam.healenium;
 
 import com.epam.healenium.constants.LocatorType;
 
-public abstract class FrameworkPage {
+public interface FrameworkPage {
 
-    public FrameworkPage openPage() {
-        return null;
-    }
+    FrameworkPage openPage();
 
-    public FrameworkPage findTestElement(LocatorType css, String s) {
-        return null;
-    }
+    FrameworkPage findTestElement(LocatorType css, String s);
 
-    public FrameworkPage clickSubmitButton() {
-        return null;
-    }
+    FrameworkPage clickSubmitButton();
 
-    public FrameworkPage clickAddSquareButton() {
-        return null;
-    }
+    FrameworkPage clickAddSquareButton();
 
-    public FrameworkPage clickUpdateSquareButton() {
-        return null;
-    }
+    FrameworkPage clickUpdateSquareButton();
 
-    public boolean verifySquareElement() {
-        return false;
-    }
+    boolean verifySquareElement();
 
-    public FrameworkPage clickTestButton() {
-        return null;
-    }
+    FrameworkPage clickTestButton();
 
-    public FrameworkPage confirmAlert() {
-        return null;
-    }
+    FrameworkPage confirmAlert();
 
-    public FrameworkPage generateMarkup() {
-        return null;
-    }
+    FrameworkPage generateMarkup();
 
-    public boolean displayedText() {
-        return false;
-    }
+    boolean displayedText();
 
-    public int selectAllCheckboxes() {
-        return 0;
-    }
+    boolean checkLocatorTestButtonDontHealing();
 
-    public int verifyAllCheckboxesChecked() {
-        return 0;
-    }
+    FrameworkPage selectFirstCheckbox();
 
-    public int verifyAllCheckboxesUnchecked() {
-        return 0;
-    }
+    boolean verifyFirstAccountCheckbox();
 
-    public boolean checkLocatorTestButtonDontHealing() {
-        return false;
-    }
+    FrameworkPage selectFirstAccountCheckbox();
 
-    public FrameworkPage selectFirstCheckbox() {
-        return null;
-    }
+    boolean groupInputEnabled();
 
-    public boolean verifyFirstAccountCheckbox() {
-        return false;
-    }
+    void verifyInputText();
 
-    public FrameworkPage selectFirstAccountCheckbox() {
-        return null;
-    }
+    void fillInputsGroup();
 
-    public boolean groupInputEnabled() {
-        return false;
-    }
+    FrameworkPage clickTestButtonWaitor(int i);
 
-    public void verifyInputText() {
-    }
+    FrameworkPage findElementsUnderParent(String parentXpath, String childXpath);
 
-    public void fillInputsGroup() {
-    }
+    FrameworkPage clickFormButton();
 
-    public boolean testButtonEnable() {
-        return false;
-    }
-
-    public FrameworkPage clickTestGeneratedButton() {
-        return null;
-    }
-
-    public FrameworkPage clickTestButtonWaitor(int i) {
-        return null;
-    }
-
-    public FrameworkPage findElementsUnderParent(String parentXpath, String childXpath) {
-        return null;
-    }
-
-    public FrameworkPage clickFormButton() {
-        return null;
-    }
-
-    public FrameworkPage findTestElements(String s) {
-        return null;
-    }
+    FrameworkPage findTestElements(String s);
 }

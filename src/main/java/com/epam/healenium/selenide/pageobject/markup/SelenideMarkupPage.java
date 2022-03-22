@@ -6,6 +6,7 @@ import com.codeborne.selenide.ex.ElementNotFound;
 import com.epam.healenium.annotation.DisableHealing;
 import com.epam.healenium.constants.PageUrl;
 import com.epam.healenium.selenide.pageobject.SelenideBasePage;
+import com.epam.reportportal.annotations.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 
@@ -33,17 +34,19 @@ public class SelenideMarkupPage extends SelenideBasePage {
     private By parentInput = By.xpath("//*[contains(@class,'input-group') and @role='group']");//span[@class='input__box']");
     private By childInput = By.xpath(".//*[@value='']");
 
-
+    @Step("Open markup page")
     public SelenideMarkupPage openPage() {
         open(PageUrl.MARKUP_URL.toString());
         return page(SelenideMarkupPage.class);
     }
 
+    @Step("Generate markup")
     public SelenideMarkupPage generateMarkup() {
         $(generateMarkupBtnId).click();
         return page(SelenideMarkupPage.class);
     }
 
+    @Step("Click test button")
     public SelenideMarkupPage clickTestButton() {
         $(testButton).click();
         return page(SelenideMarkupPage.class);
@@ -63,6 +66,7 @@ public class SelenideMarkupPage extends SelenideBasePage {
         }
     }
 
+    @Step("Select first checkbox from list")
     public SelenideMarkupPage selectFirstCheckbox() {
         $$(checkboxAccount).get(0).click();
         return page(SelenideMarkupPage.class);
@@ -98,10 +102,12 @@ public class SelenideMarkupPage extends SelenideBasePage {
         return count.get();
     }
 
+    @Step("Verify first checkbox")
     public boolean verifyFirstAccountCheckbox() {
         return $(firstCheckboxChecked).isEnabled();
     }
 
+    @Step("Select first account checkbox")
     public SelenideMarkupPage selectFirstAccountCheckbox() {
         $(firstCheckboxChecked).click();
         return page(SelenideMarkupPage.class);
@@ -128,12 +134,14 @@ public class SelenideMarkupPage extends SelenideBasePage {
     }
 
     @DisableHealing
+    @Step("Fill elements under parent form")
     public void fillInputsGroup() {
         SelenideElement parent = $(parentInput);
         List<SelenideElement> child = parent.$$(childInput);
         child.forEach(c -> c.sendKeys("Value"));
     }
 
+    @Step("Verify elements under parent form with value")
     public void verifyInputText() {
         SelenideElement parent = $(parentInput);
         List<SelenideElement> child = parent.$$(childInput);
@@ -142,6 +150,7 @@ public class SelenideMarkupPage extends SelenideBasePage {
         child.forEach(c -> assertTrue(c.isEnabled()));
     }
 
+    @Step("Click test button using conditional wait")
     public SelenideMarkupPage clickTestButtonWaitor(int seconds) {
         $(testButton).shouldBe(visible, Duration.ofSeconds(seconds)).click();
         return page(SelenideMarkupPage.class);

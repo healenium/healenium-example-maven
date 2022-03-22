@@ -7,6 +7,7 @@ import com.codeborne.selenide.ex.ElementNotFound;
 import com.epam.healenium.annotation.DisableHealing;
 import com.epam.healenium.constants.PageUrl;
 import com.epam.healenium.selenide.pageobject.SelenideBasePage;
+import com.epam.reportportal.annotations.Step;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
@@ -20,22 +21,26 @@ public class SelenideMainPageWithFindBy extends SelenideBasePage {
     @FindBy(how = How.ID, using = "markup-generation-button")
     public SelenideElement generateMarkupBtnId;
 
+    @Step("Open page")
     public SelenideMainPageWithFindBy openPage(){
         open(PageUrl.MARKUP_URL.toString());
         return page(SelenideMainPageWithFindBy.class);
     }
 
+    @Step("Generate markup")
     public SelenideMainPageWithFindBy generateMarkup() {
         generateMarkupBtnId.shouldBe(Condition.visible).click();
         return page(SelenideMainPageWithFindBy.class);
     }
 
+    @Step("Click test button")
     public SelenideMainPageWithFindBy clickTestButton() {
         testButton.shouldBe(Condition.visible).click();
         return page(SelenideMainPageWithFindBy.class);
     }
 
     @DisableHealing
+    @Step("Check locator with disabled healing annotation")
     public boolean checkLocatorTestButtonDontHealing() {
         try {
             testButton.shouldBe(Condition.visible).click();
@@ -45,6 +50,7 @@ public class SelenideMainPageWithFindBy extends SelenideBasePage {
         }
     }
 
+    @Step("Confirm alert")
     public SelenideMainPageWithFindBy confirmAlert(){
         Selenide.switchTo().alert().accept();
         return page(SelenideMainPageWithFindBy.class);

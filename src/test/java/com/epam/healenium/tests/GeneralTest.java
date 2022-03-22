@@ -1,14 +1,10 @@
 package com.epam.healenium.tests;
 
 import com.epam.healenium.FrameworkPage;
-import com.epam.healenium.constants.LocatorType;
 import com.epam.healenium.constants.PagesType;
-import com.epam.healenium.selenide.pageobject.SelenideBasePage;
-import com.epam.healenium.selenide.pageobject.markup.SelenideMarkupPage;
-import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -17,7 +13,7 @@ public class GeneralTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.TRIVIAL)
-    @Description("Button click with FindBy annotation")
+    @DisplayName("Button click with FindBy annotation")
     public void testButtonClickWithFindByAnnotationPage() {
         FrameworkPage mainPage = pages.get(String.valueOf(PagesType.MARKUP_FIND_BY));
 
@@ -31,7 +27,7 @@ public class GeneralTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("Select checkboxes with findElements annotation")
+    @DisplayName("Select checkboxes with findElements annotation")
     public void testSelectCheckboxes() {
         FrameworkPage mainPage = pages.get(String.valueOf(PagesType.TEST_ENV));
 
@@ -43,7 +39,7 @@ public class GeneralTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.MINOR)
-    @Description("Button click with disable healing")
+    @DisplayName("Button click with disable healing")
     public void testButtonClickWithDisableHealing() {
         FrameworkPage mainPage = pages.get(String.valueOf(PagesType.MARKUP_FIND_BY));
 
