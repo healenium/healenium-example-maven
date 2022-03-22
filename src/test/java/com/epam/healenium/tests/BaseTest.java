@@ -35,9 +35,4 @@ public class BaseTest {
             driver.quit();
         }
     }
-
-//    @Attachment(value = "Screenshot", type = "image/png")
-//    public byte[] screenshot() {
-//        return ((TakesScreenshot) driver.getDelegate()).getScreenshotAs(OutputType.BYTES);
-//    }
 }

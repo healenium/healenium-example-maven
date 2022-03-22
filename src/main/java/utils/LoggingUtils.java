@@ -30,4 +30,8 @@ public class LoggingUtils {
     public static void logBase64(String base64, String message) {
         LOGGER.info("RP_MESSAGE#BASE64#{}#{}", base64, message);
     }
+
+    public static void info(String message){
+        LOGGER.info("RP_MESSAGE#BASE64#{}#{}", message);
+    }
 }

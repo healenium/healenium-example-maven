@@ -23,6 +23,16 @@ public class SeleniumBasePage implements FrameworkPage {
         }
     }
 
+//    @Attachment(value = "Screenshot", type = "image/png")
+//    protected void screenshot() {
+////        if (driver instanceof TakesScreenshot) {
+//            SelfHealingDriver healingDriver=SelfHealingDriver.create(driver);
+//            WebDriver dr=healingDriver.getDelegate();
+//            byte[] screenshot = ((TakesScreenshot) dr).getScreenshotAs(OutputType.BYTES);
+//            LoggingUtils.log(screenshot, "Test elements");
+////        }
+//    }
+
     public String getAlertText() {
         sleepForSecondsToSeeTheAlertWhileTestIsRunning(1);
         String foundAlertText = "";
