@@ -20,9 +20,9 @@
 
         <selenium.version>4.1.2</selenium.version>
         <selenide.version>6.3.4</selenide.version>
-        <jdi.version>1.3.22</jdi.version>
+        <jdi.version>1.3.24</jdi.version>
 
-        <healenium.version>3.2.3</healenium.version>
+        <healenium.version>3.2.4</healenium.version>
     </properties>
 
     <dependencies>
@@ -43,6 +43,20 @@
             <artifactId>selenium-api</artifactId>
             <version>${selenium.version}</version>
         </dependency>
+
+<!--        For selenium 3.141.59 only-->
+        <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
+<!--        <dependency>-->
+<!--            <groupId>com.squareup.okhttp3</groupId>-->
+<!--            <artifactId>okhttp</artifactId>-->
+<!--            <version>3.11.0</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.squareup.okhttp3</groupId>-->
+<!--            <artifactId>logging-interceptor</artifactId>-->
+<!--            <version>3.11.0</version>-->
+<!--        </dependency>-->
+
 
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
         <dependency>

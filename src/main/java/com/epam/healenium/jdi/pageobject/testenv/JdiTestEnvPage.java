@@ -4,13 +4,11 @@ import com.epam.healenium.constants.LocatorType;
 import com.epam.healenium.constants.PageUrl;
 import com.epam.healenium.jdi.pageobject.JdiBasePage;
 import com.epam.healenium.jdi.search.Context;
-import com.epam.jdi.light.elements.composite.WebPage;
 import com.epam.jdi.light.elements.pageobjects.annotations.locators.UI;
 import com.epam.jdi.light.ui.html.elements.common.Button;
-import com.epam.jdi.light.ui.html.elements.common.Checkbox;
+import org.openqa.selenium.WebDriver;
 
-import java.util.List;
-
+import static com.epam.jdi.light.elements.composite.WebPage.openUrl;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
@@ -21,8 +19,12 @@ public class JdiTestEnvPage extends JdiBasePage {
     @UI("Submit_checkbox")
     private Button formButton;
 
+    public JdiTestEnvPage(WebDriver driver) {
+        super(driver);
+    }
+
     public JdiTestEnvPage openPage(){
-        WebPage.openUrl(String.valueOf(PageUrl.TEST_ENV_URL));
+        openUrl(String.valueOf(PageUrl.TEST_ENV_URL));
         return this;
     }
 

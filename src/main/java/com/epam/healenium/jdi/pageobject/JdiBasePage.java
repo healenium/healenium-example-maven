@@ -2,8 +2,15 @@ package com.epam.healenium.jdi.pageobject;
 
 import com.epam.healenium.FrameworkPage;
 import com.epam.healenium.constants.LocatorType;
+import org.openqa.selenium.WebDriver;
 
 public class JdiBasePage implements FrameworkPage {
+
+    protected WebDriver driver;
+
+    public JdiBasePage(WebDriver driver) {
+        this.driver = driver;
+    }
 
     @Override
     public FrameworkPage openPage() {

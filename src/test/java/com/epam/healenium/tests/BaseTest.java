@@ -15,6 +15,7 @@ import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
+
 public class BaseTest {
     static protected WebDriver driver;
     static protected HashMap<String, FrameworkPage> pages;
