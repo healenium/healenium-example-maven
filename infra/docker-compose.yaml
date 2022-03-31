@@ -17,7 +17,7 @@ services:
       - healenium
 
   healenium:
-    image: healenium/hlm-backend:3.2.0
+    image: healenium/hlm-backend:3.2.1
     ports:
       - "7878:7878"
     links:
@@ -33,7 +33,7 @@ services:
       - healenium
 
   selector-imitator:
-    image: healenium/hlm-selector-imitator:1
+    image: healenium/hlm-selector-imitator:1.1
     restart: on-failure
     ports:
       - "8000:8000"
