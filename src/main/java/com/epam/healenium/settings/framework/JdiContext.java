@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.HashMap;
 
+import static com.epam.jdi.light.elements.init.PageFactory.initElements;
+
 public class JdiContext implements IFrameworkInterface {
     private WebDriver driver;
 
@@ -18,7 +20,8 @@ public class JdiContext implements IFrameworkInterface {
     @Override
     public HashMap<String, FrameworkPage> useSettings() {
         HashMap<String, FrameworkPage> jdiContext = new HashMap<>();
-        jdiContext.put(String.valueOf(PagesType.TEST_ENV), new JdiTestEnvPage(this.driver));
+        jdiContext.put(String.valueOf(PagesType.TEST_ENV), new JdiTestEnvPage());
+
         return jdiContext;
     }
 }

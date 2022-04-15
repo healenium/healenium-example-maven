@@ -6,12 +6,6 @@ import org.openqa.selenium.WebDriver;
 
 public class JdiBasePage implements FrameworkPage {
 
-    protected WebDriver driver;
-
-    public JdiBasePage(WebDriver driver) {
-        this.driver = driver;
-    }
-
     @Override
     public FrameworkPage openPage() {
         return null;
