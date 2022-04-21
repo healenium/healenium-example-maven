@@ -39,5 +39,37 @@ services:
     networks:
       - healenium
 
+  hlm-proxy:
+    image: healenium/hlm-proxy:0.2.5
+    container_name: hlm-proxy
+    volumes:
+      - docker-log-volume:/var/log/dockerlogs
+    ports:
+      - "8085:8085"
+    environment:
+      - "recovery-tries=1"
+      - "score-cap=.6"
+      - "heal-enabled=true"
+    #      - SELENIUM_HOST=hlm-selenium-webview
+    #      - HEALENIUM_HOST=healenium
+    #      - IMITATE_HOST=selector-imitator
+    networks:
+      - healenium
+
+  hlm-selenium-webview:
+    image: healenium/hlm-selenium-4-standalone-tigervnc:firefox98.0.1_chrome99.0.4844.82_edge99.0.1150.46
+    restart: on-failure
+    container_name: hlm-selenium-webview
+    ports:
+      - "8086:6080"
+      - "4444:4444"
+    volumes:
+      - docker-log-volume:/var/log/dockerlogs
+    networks:
+      - healenium
+
+volumes:
+  docker-log-volume:
+
 networks:
   healenium:
