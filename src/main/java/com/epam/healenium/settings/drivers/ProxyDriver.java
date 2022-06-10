@@ -16,10 +16,7 @@ public class ProxyDriver implements IDriverInterface {
 
     @Override
     public WebDriver setDriver(Object options) throws MalformedURLException {
-        ChromeOptions option = new ChromeOptions();
-        option.addArguments("--no-sandbox");
-
-        this.driver = new RemoteWebDriver(new URL("http://"+LOCALHOST+":8085"), option);
+        this.driver = new RemoteWebDriver(new URL("http://" + LOCALHOST + ":8085"), (Capabilities) options);
         return this.driver;
     }
 
