@@ -46,17 +46,17 @@ public class GeneralTest extends BaseTest {
                 "The same number of locator for checkbox with findElements has been healed");
     }
 
-    @Test
-    @Severity(SeverityLevel.MINOR)
-    @Description("Button click with disable healing")
-    public void testButtonClickWithDisableHealing() {
-        FrameworkPage mainPage = pages.get(String.valueOf(PagesType.MARKUP_FIND_BY));
-
-        boolean result = mainPage.openPage()
-                .clickTestButton()
-                .confirmAlert()
-                .generateMarkup() //regenerate Markup
-                .checkLocatorTestButtonDontHealing(); //find test button again
-        assertTrue(result, "The locator was not healed");
-    }
+//    @Test
+//    @Severity(SeverityLevel.MINOR)
+//    @Description("Button click with disable healing")
+//    public void testButtonClickWithDisableHealing() {
+//        FrameworkPage mainPage = pages.get(String.valueOf(PagesType.MARKUP_FIND_BY));
+//
+//        boolean result = mainPage.openPage()
+//                .clickTestButton()
+//                .confirmAlert()
+//                .generateMarkup() //regenerate Markup
+//                .checkLocatorTestButtonDontHealing(); //find test button again
+//        assertTrue(result, "The locator was not healed");
+//    }
 }
