@@ -29,7 +29,7 @@ public class RemoteDriver implements IDriverInterface {
     public Object useChrome() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", "chrome");
-        capabilities.setCapability("browserVersion", "97.0");
+        capabilities.setCapability("browserVersion", "102.0");
         capabilities.setCapability("enableVNC", true);
 
         return capabilities;

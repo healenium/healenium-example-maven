@@ -21,7 +21,7 @@ public class BaseTest {
 
     @BeforeAll
     static public void setUp() throws MalformedURLException {
-        driver = new DriverContext(DriverType.LOCAL).getDriver(BrowserType.CHROME);
+        driver = new DriverContext(DriverType.REMOTE).getDriver(BrowserType.CHROME);
 
         driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
         driver.manage().window().setSize(new Dimension(1200, 800));
