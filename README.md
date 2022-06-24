@@ -12,7 +12,7 @@ Java + Maven + Junit5 project with healenium usage example
 
 To download this file into your project use this command:
 
-```$ curl https://raw.githubusercontent.com/healenium/healenium-example-maven/master/infra/docker-compose.yaml -o docker-compose.yml```
+```$ curl https://raw.githubusercontent.com/healenium/healenium-example-maven/master/infra/docker-compose.yml -o docker-compose.yml```
 
 Create /db/sql folder on the same level in your project. Add init.sql file into ./db/sql/init.sql folder in your project via command:
 
