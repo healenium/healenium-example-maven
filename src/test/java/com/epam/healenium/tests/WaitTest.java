@@ -1,6 +1,7 @@
 package com.epam.healenium.tests;
 
 import com.epam.healenium.FrameworkPage;
+import com.epam.healenium.constants.LocatorType;
 import com.epam.healenium.constants.PagesType;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
@@ -13,19 +14,12 @@ public class WaitTest extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     @Description("Conditional wait for simple locator")
     public void testConditionWait(){
-        FrameworkPage mainPage = pages.get(String.valueOf(PagesType.MARKUP));
+        FrameworkPage mainPage = pages.get(String.valueOf(PagesType.TEST_ENV));
 
         mainPage.openPage()
-                .clickTestButton()
-                .confirmAlert();
-
-        mainPage.generateMarkup()
-                .clickTestButton() //should be healed
-                .confirmAlert();
-
-        mainPage.generateMarkup()
-                .clickTestButtonWaitor(5) //should be healed
-                .confirmAlert();
+                .findTestElementWithWait(LocatorType.ID, "change_wait", 10)
+                .clickSubmitButton()
+                .findTestElementWithWait(LocatorType.ID, "change_wait", 10);
     }
 
 //    @Test

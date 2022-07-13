@@ -101,4 +101,6 @@ public abstract class FrameworkPage {
     public FrameworkPage clickFormButton() {
         return null;
     }
+
+    public FrameworkPage findTestElementWithWait(LocatorType type, String value, int seconds) { return null; }
 }
