@@ -22,38 +22,13 @@ Verify that images ```healenium/hlm-backend:3.2.1``` and ```postgres:11-alpine``
 
 ### 2. Project structure
 ```
-|__pom.xml
 |__infra
     |__db/sql
         |__init.sql
     |__docker-compose.yml
-|__src/main/java/com/epam/healenium
-    |__constants
-    |__selenide
-        |__pageobject
-            |__callback
-            |__markup
-            |__testenv
-            BasePage
-    |__selenium
-        |__pageobject
-            |__callback
-            |__markup
-            |__testenv
-            BasePage
-    |__settings
-        |__framework
-            |__JdiContext
-            |__SelenideContext
-            |__SeleniumContext
-        |__FrameworkContext
-|__src/test/java/com/epam/healenium/tests
-    |__CssTest
-    |__GeneralTest
-    |__ParentChildTest
-    |__SemanticTest
-    |__WaitTest
-    |__XpathTest
+|__src/main/java/
+|__src/test/java/
+|__pom.xml
 ``` 
 			   
 ### 3.Run test in terminal with maven
