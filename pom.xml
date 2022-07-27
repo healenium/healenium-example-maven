@@ -17,39 +17,26 @@
         <hamcrest.version>2.2</hamcrest.version>
         <webdrivermanager.version>4.2.0</webdrivermanager.version>
 
-        <selenium.version>4.1.2</selenium.version>
+        <selenium.version>4.2.2</selenium.version>
         <selenide.version>6.3.4</selenide.version>
 
         <healenium.version>3.2.4</healenium.version>
     </properties>
 
     <dependencies>
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/net.serenity-bdd/serenity-core &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>net.serenity-bdd</groupId>-->
-<!--            <artifactId>serenity-core</artifactId>-->
-<!--            <version>3.2.5</version>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/net.serenity-bdd/serenity-junit &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>net.serenity-bdd</groupId>-->
-<!--            <artifactId>serenity-junit</artifactId>-->
-<!--            <version>3.2.5</version>-->
-<!--        </dependency>-->
-
-
         <!--        For selenium 3.141.59 only-->
         <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
-        <dependency>
-            <groupId>com.squareup.okhttp3</groupId>
-            <artifactId>okhttp</artifactId>
-            <version>3.11.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.squareup.okhttp3</groupId>
-            <artifactId>logging-interceptor</artifactId>
-            <version>3.11.0</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.squareup.okhttp3</groupId>-->
+<!--            <artifactId>okhttp</artifactId>-->
+<!--            <version>3.11.0</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.squareup.okhttp3</groupId>-->
+<!--            <artifactId>logging-interceptor</artifactId>-->
+<!--            <version>3.11.0</version>-->
+<!--        </dependency>-->
+
         <dependency>
             <groupId>com.epam.healenium</groupId>
             <artifactId>healenium-web</artifactId>

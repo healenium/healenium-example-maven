@@ -39,4 +39,12 @@ public class Context {
     public boolean executeStrategy(String selector) {
         return strategy.doAction(selector);
     }
+
+    public boolean executeWaitStrategy(String selector, int seconds){
+        return strategy.doWaitAction(selector, seconds);
+    }
+
+    public boolean executeFluentStrategy(String selector, int seconds){
+        return strategy.doFluentAction(selector, seconds);
+    }
 }

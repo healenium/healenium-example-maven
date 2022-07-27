@@ -1,5 +1,6 @@
 package com.epam.healenium.selenium.pageobject.testenv;
 
+import com.epam.healenium.FrameworkPage;
 import com.epam.healenium.constants.LocatorType;
 import com.epam.healenium.constants.PageUrl;
 import com.epam.healenium.selenium.pageobject.SeleniumBasePage;
@@ -45,6 +46,18 @@ public class TestEnvPage extends SeleniumBasePage {
 
     public TestEnvPage clickFormButton(){
         driver.findElement(formButton).click();
+        return this;
+    }
+
+    public TestEnvPage findTestElementWithWait(LocatorType type, String value, int seconds) {
+        boolean result = new Context(driver, type).executeWaitStrategy(value, seconds);
+        assertTrue(result);
+        return this;
+    }
+
+    public FrameworkPage findTestElementFluentWait(LocatorType type, String value, int seconds) {
+        boolean result = new Context(driver,type).executeFluentStrategy(value,seconds);
+        assertTrue(result);
         return this;
     }
 }
