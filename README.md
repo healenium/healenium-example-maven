@@ -8,7 +8,11 @@ Java + Maven + Junit5 project with healenium usage example
 
 ```cd infra```
 
+To run tests locally use command:
 ```docker-compose up -d```
+
+To run tests using Healenium-Proxy with selenoid use command:
+```docker-compose-proxy-selenoid up -d```
 
 To download this file into your project use this command:
 
@@ -26,7 +30,11 @@ Verify that images ```healenium/hlm-backend:3.2.1``` and ```postgres:11-alpine``
 |__infra
     |__db/sql
         |__init.sql
+    |__browsers.json
     |__docker-compose.yml
+    |__docker-compose-proxy-grid.yml
+    |__docker-compose-proxy-selenoid.yml
+    |__docker-compose_selenoid.yml
 |__src/main/java/com/epam/healenium
     |__constants
     |__selenide
@@ -64,7 +72,7 @@ In ```BaseTest.java``` class select necessary driver: **LOCAL**, **PROXY** or **
 
 **LOCAL** - used for local run. It's been set by default in BaseTest.java class. For this driver should be used docker-compose file from test example.
 
-**PROXY** - used if you're running tests using healenium-proxy. For this driver you need to set docker-compose containers as in example by link:
+**PROXY** - used if you're running tests using Healenium-proxy. For this driver you need to set docker-compose containers as in example by link:
 https://github.com/healenium/healenium-example-dotnet/blob/master/infra/docker-compose.yml
 
 **REMOTE** - used if you-re running test on remote machine. Do not forget to provide necessary host. In this test example it's been used remote machine with Selenoid.
