@@ -55,16 +55,6 @@ public class MainPageWithFindBy extends SeleniumBasePage {
         return this;
     }
 
-    public boolean checkThatButtonInvisible() {
-        try {
-            new WebDriverWait(driver, 1)
-                    .until(ExpectedConditions.invisibilityOf(buttonForInvisible));
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
     public MainPageWithFindBy hoverOnTestButton() {
         Actions action = new Actions(driver);
         action.moveToElement(testButton).perform();

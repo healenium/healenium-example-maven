@@ -23,19 +23,6 @@ public class SeleniumBasePage extends FrameworkPage {
         }
     }
 
-    public String getAlertText() {
-        sleepForSecondsToSeeTheAlertWhileTestIsRunning(1);
-        String foundAlertText = "";
-        WebDriverWait wait = new WebDriverWait(driver, 0 /*timeout in seconds*/);
-        try {
-            wait.until(ExpectedConditions.alertIsPresent());
-            foundAlertText = driver.switchTo().alert().getText();
-        } catch (TimeoutException eTO) {
-            foundAlertText = "no alert text";
-        }
-        return foundAlertText;
-    }
-
     public SeleniumBasePage confirmAlert() {
         Alert alert = driver.switchTo().alert();
         alert.accept();
