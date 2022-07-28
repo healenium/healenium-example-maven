@@ -14,6 +14,7 @@ import org.openqa.selenium.WebDriver;
 import java.net.MalformedURLException;
 import java.time.Duration;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     static protected WebDriver driver;
@@ -23,8 +24,11 @@ public class BaseTest {
     static public void setUp() throws MalformedURLException {
         driver = new DriverContext(DriverType.PROXY).getDriver(BrowserType.CHROME);
 
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
-        driver.manage().window().setSize(new Dimension(1200, 800));
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+//
+//        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+//        driver.manage().window().setSize(new Dimension(1200, 800));
 
         pages = new FrameworkContext(FrameworkType.SELENIUM, driver).setFramework();
     }
