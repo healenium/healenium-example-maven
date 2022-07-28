@@ -24,7 +24,7 @@ public class BaseTest {
     static public void setUp() throws MalformedURLException {
         driver = new DriverContext(DriverType.PROXY).getDriver(BrowserType.CHROME);
 
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(2));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(7));
         driver.manage().window().setSize(new Dimension(1200, 800));
 
         pages = new FrameworkContext(FrameworkType.SELENIUM, driver).setFramework();
