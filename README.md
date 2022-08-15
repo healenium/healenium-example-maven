@@ -16,7 +16,7 @@ To run tests using Healenium-Proxy with selenoid use command:
 
 To download this file into your project use this command:
 
-```$ curl https://raw.githubusercontent.com/healenium/healenium-example-maven/master/infra/docker-compose.yaml -o docker-compose.yml```
+```$ curl https://raw.githubusercontent.com/healenium/healenium-example-maven/master/infra/docker-compose.yml -o docker-compose.yml```
 
 Create /db/sql folder on the same level in your project. Add init.sql file into ./db/sql/init.sql folder in your project via command:
 
@@ -26,7 +26,6 @@ Verify that images ```healenium/hlm-backend:3.2.1``` and ```postgres:11-alpine``
 
 ### 2. Project structure
 ```
-|__pom.xml
 |__infra
     |__db/sql
         |__init.sql

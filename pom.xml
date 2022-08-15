@@ -20,7 +20,7 @@
         <selenium.version>4.3.0</selenium.version>
         <selenide.version>6.3.4</selenide.version>
 
-        <healenium.version>${web}</healenium.version>
+        <healenium.version>3.2.5</healenium.version>
     </properties>
 
     <dependencies>
