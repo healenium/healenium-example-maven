@@ -24,6 +24,9 @@ public class ProxyDriver implements IDriverInterface {
     public Object useChrome() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
+        options.setCapability("enableVNC", true);
+        options.setCapability("sessionTimeout", "30m");
+        options.setCapability("logName", "my-cool-shit-name.log");
 
         return options;
     }

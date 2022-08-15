@@ -1,0 +1,89 @@
+version: "3.9"
+services:
+
+  postgres-db:
+    image: postgres:14.2-bullseye
+    container_name: postgres-db
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - POSTGRES_DB=healenium
+      - POSTGRES_USER=healenium_user
+      - POSTGRES_PASSWORD=YDk2nmNs4s9aCP6K
+    networks:
+      - healenium
+
+  healenium:
+    image: healenium/hlm-backend:3.2.3
+    container_name: healenium
+    restart: on-failure
+    ports:
+      - "7878:7878"
+    links:
+      - postgres-db
+    environment:
+      - SPRING_POSTGRES_DB=healenium
+      - SPRING_POSTGRES_SCHEMA=healenium
+      - SPRING_POSTGRES_USER=healenium_user
+      - SPRING_POSTGRES_PASSWORD=YDk2nmNs4s9aCP6K
+      - SPRING_POSTGRES_DB_HOST=postgres-db
+    networks:
+      - healenium
+
+  selector-imitator:
+    image: healenium/hlm-selector-imitator:1.1
+    container_name: selector-imitator
+    restart: on-failure
+    ports:
+      - "8000:8000"
+    networks:
+      - healenium
+
+  hlm-proxy:
+    image: healenium/hlm-proxy:1.0.0
+    container_name: hlm-proxy
+    restart: on-failure
+    ports:
+      - "8085:8085"
+    environment:
+      - RECOVERY_TRIES=1
+      - SCORE_CAP=.6
+      - HEAL_ENABLED=true
+      - SELENIUM_HOST=hlm-selenoid
+      - HEALENIUM_HOST=healenium
+      - IMITATE_HOST=selector-imitator
+      - SELENIUM_URL=/wd/hub
+    networks:
+      - healenium
+
+  selenoid:
+    image: healenium/hlm-selenoid:0.1.0
+    container_name: hlm-selenoid
+    restart: on-failure
+    ports:
+      - "4444:4444"
+    environment:
+      - PROXY_CONTAINER_NAME=hlm-proxy
+    volumes:
+      - .:/etc/selenoid/:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: ["-container-network", "healenium"]
+    networks:
+      - healenium
+
+  selenoid-ui:
+    image: aerokube/selenoid-ui:1.10.5
+    container_name: selenoid-ui
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    command: [ "--selenoid-uri", "http://hlm-selenoid:4444" ]
+    networks:
+      - healenium
+
+networks:
+  healenium:
+    name: healenium
