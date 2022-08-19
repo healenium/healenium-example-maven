@@ -1,6 +1,5 @@
 package com.epam.healenium.selenium.pageobject.testenv;
 
-import com.epam.healenium.FrameworkPage;
 import com.epam.healenium.constants.LocatorType;
 import com.epam.healenium.constants.PageUrl;
 import com.epam.healenium.selenium.pageobject.SeleniumBasePage;
@@ -64,6 +63,7 @@ public class TestEnvPage extends SeleniumBasePage {
     public TestEnvPage selectCheckboxes() {
         List<WebElement> checkboxes = driver.findElements(By.xpath("//*[contains(@class,'test-form')]//*[@class='input1']"));
         checkboxes.forEach(ch -> ch.click());
+        checkboxes.forEach(c -> assertTrue(c.isDisplayed()));
         return this;
     }
 }

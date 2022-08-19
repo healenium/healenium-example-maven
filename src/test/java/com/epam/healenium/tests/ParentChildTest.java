@@ -14,7 +14,7 @@ public class ParentChildTest extends BaseTest {
     @Severity(SeverityLevel.MINOR)
     @Description("Select first checkbox and verify using parent:: function in Xpath")
     public void testParentXpath() {
-        FrameworkPage testPage = pages.get(String.valueOf(PagesType.MARKUP));
+        FrameworkPage testPage = pages.get(String.valueOf(PagesType.TEST_ENV));
 
         testPage.openPage()
                 .findTestElement(LocatorType.XPATH, "(//*[@class='input1']//parent::*[contains(@class, 'input1')])[8]")
