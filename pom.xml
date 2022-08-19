@@ -17,7 +17,7 @@
         <hamcrest.version>2.2</hamcrest.version>
         <webdrivermanager.version>4.2.0</webdrivermanager.version>
 
-        <selenium.version>4.2.2</selenium.version>
+        <selenium.version>4.3.0</selenium.version>
         <selenide.version>6.3.4</selenide.version>
 
         <healenium.version>3.3.0</healenium.version>
