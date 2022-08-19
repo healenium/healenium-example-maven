@@ -8,53 +8,24 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 public class ParentChildTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.MINOR)
     @Description("Select first checkbox and verify using parent:: function in Xpath")
-    public void testParentXpath(){
-        FrameworkPage mainPage = pages.get(String.valueOf(PagesType.MARKUP));
+    public void testParentXpath() {
+        FrameworkPage testPage = pages.get(String.valueOf(PagesType.MARKUP));
 
-        mainPage.openPage()
-                .generateMarkup();
-
-        while (!mainPage.displayedText())
-            mainPage.generateMarkup();
-
-        mainPage.selectFirstCheckbox();
-        boolean result = mainPage.verifyFirstAccountCheckbox();
-        assertTrue(result, "Verify first account checkbox checked");
-
-        mainPage.selectFirstAccountCheckbox();
-        result = mainPage.verifyFirstAccountCheckbox(); //should be healed
-        assertTrue(result, "Verify first account checkbox unchecked");
-    }
-
-    @Test
-    @Severity(SeverityLevel.MINOR)
-    @Description("Select and verify several inputs via parent.findElement")
-    public void testUnderParentFindElements() {
-        FrameworkPage mainPage = pages.get(String.valueOf(PagesType.MARKUP));
-
-        mainPage.openPage()
-                .generateMarkup();
-
-        while (!mainPage.groupInputEnabled())
-            mainPage.generateMarkup();
-
-        // find all locator and fill them. verify their values
-        mainPage.verifyInputText(); //no healing
-        mainPage.fillInputsGroup();
-        mainPage.verifyInputText(); //should be healed
+        testPage.openPage()
+                .findTestElement(LocatorType.XPATH, "(//*[@class='input1']//parent::*[contains(@class, 'input1')])[8]")
+                .clickSubmitButton()
+                .findTestElement(LocatorType.XPATH, "(//*[@class='input1']//parent::*[contains(@class, 'input1')])[8]");
     }
 
     @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("Select and verify several inputs CSS FirstChild")
-    public void testCSSFirstChild(){
+    public void testCSSFirstChild() {
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
         page.openPage()
@@ -66,7 +37,7 @@ public class ParentChildTest extends BaseTest {
     @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("Select and verify several inputs CSS LastChild")
-    public void testCSSLastChild(){
+    public void testCSSLastChild() {
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 
         page.openPage()
@@ -77,8 +48,7 @@ public class ParentChildTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("Select first checkbox and verify using parent.findElements in Xpath. " +
-            "The difference between first - not use @DisabledHealing")
+    @Description("Select first checkbox and verify using parent.findElements in Xpath.")
     public void testXPathUnderParentFindElements() {
         FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
 

@@ -44,7 +44,7 @@ public class TestEnvPage extends SeleniumBasePage {
         return this;
     }
 
-    public TestEnvPage clickFormButton(){
+    public TestEnvPage clickFormButton() {
         driver.findElement(formButton).click();
         return this;
     }
@@ -55,9 +55,15 @@ public class TestEnvPage extends SeleniumBasePage {
         return this;
     }
 
-    public FrameworkPage findTestElementFluentWait(LocatorType type, String value, int seconds) {
-        boolean result = new Context(driver,type).executeFluentStrategy(value,seconds);
+    public TestEnvPage findTestElementFluentWait(LocatorType type, String value, int seconds) {
+        boolean result = new Context(driver, type).executeFluentStrategy(value, seconds);
         assertTrue(result);
+        return this;
+    }
+
+    public TestEnvPage selectCheckboxes() {
+        List<WebElement> checkboxes = driver.findElements(By.xpath("//*[contains(@class,'test-form')]//*[@class='input1']"));
+        checkboxes.forEach(ch -> ch.click());
         return this;
     }
 }
