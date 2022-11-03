@@ -13,6 +13,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class MainPageWithFindBy extends SeleniumBasePage {
 
     @FindBy(id = "markup-generation-button")
@@ -57,7 +59,7 @@ public class MainPageWithFindBy extends SeleniumBasePage {
 
     public boolean checkThatButtonInvisible() {
         try {
-            new WebDriverWait(driver, 1)
+            new WebDriverWait(driver, Duration.ofSeconds(1))
                     .until(ExpectedConditions.invisibilityOf(buttonForInvisible));
             return true;
         } catch (Exception e) {

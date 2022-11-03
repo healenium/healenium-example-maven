@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -139,7 +140,7 @@ public class MarkupPage extends SeleniumBasePage {
 
     public MarkupPage clickTestButtonWaitor(int seconds) {
 
-        WebDriverWait wait = new WebDriverWait(driver, seconds);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
         wait.until(ExpectedConditions.elementToBeClickable(testButton)).click();
 
         return this;
