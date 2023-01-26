@@ -1,6 +1,7 @@
 package com.epam.healenium.settings.framework;
 
 import com.epam.healenium.FrameworkPage;
+import com.epam.healenium.constants.PagesType;
 import com.epam.healenium.settings.IFrameworkInterface;
 import org.openqa.selenium.WebDriver;
 
@@ -14,7 +15,7 @@ public class JdiContext implements IFrameworkInterface {
     }
 
     @Override
-    public HashMap<String, FrameworkPage> useSettings() {
+    public HashMap<PagesType, FrameworkPage> useSettings() {
         return null;
     }
 }

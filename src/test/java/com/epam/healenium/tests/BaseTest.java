@@ -4,6 +4,7 @@ import com.epam.healenium.FrameworkPage;
 import com.epam.healenium.constants.BrowserType;
 import com.epam.healenium.constants.DriverType;
 import com.epam.healenium.constants.FrameworkType;
+import com.epam.healenium.constants.PagesType;
 import com.epam.healenium.settings.DriverContext;
 import com.epam.healenium.settings.FrameworkContext;
 import org.junit.jupiter.api.AfterAll;
@@ -17,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     static protected WebDriver driver;
-    static protected HashMap<String, FrameworkPage> pages;
+    static protected HashMap<PagesType, FrameworkPage> pages;
 
     @BeforeAll
     static public void setUp() throws MalformedURLException {

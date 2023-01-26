@@ -11,6 +11,11 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.HashMap;
 
+import static com.epam.healenium.constants.PagesType.CALLBACK;
+import static com.epam.healenium.constants.PagesType.MARKUP;
+import static com.epam.healenium.constants.PagesType.MARKUP_FIND_BY;
+import static com.epam.healenium.constants.PagesType.TEST_ENV;
+
 public class SeleniumContext implements IFrameworkInterface {
     private WebDriver driver;
 
@@ -19,12 +24,12 @@ public class SeleniumContext implements IFrameworkInterface {
     }
 
     @Override
-    public HashMap<String, FrameworkPage> useSettings() {
-        HashMap<String, FrameworkPage> seleniumContext = new HashMap<>();
-        seleniumContext.put(String.valueOf(PagesType.TEST_ENV), new TestEnvPage(this.driver));
-        seleniumContext.put(String.valueOf(PagesType.MARKUP), new MarkupPage(this.driver));
-        seleniumContext.put(String.valueOf(PagesType.MARKUP_FIND_BY), new MainPageWithFindBy(this.driver));
-        seleniumContext.put(String.valueOf(PagesType.CALLBACK), new CallbackPage(this.driver));
+    public HashMap<PagesType, FrameworkPage> useSettings() {
+        HashMap<PagesType, FrameworkPage> seleniumContext = new HashMap<>();
+        seleniumContext.put(TEST_ENV, new TestEnvPage(this.driver));
+        seleniumContext.put(MARKUP, new MarkupPage(this.driver));
+        seleniumContext.put(MARKUP_FIND_BY, new MainPageWithFindBy(this.driver));
+        seleniumContext.put(CALLBACK, new CallbackPage(this.driver));
 
         return seleniumContext;
     }

@@ -9,13 +9,15 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.Test;
 
+import static com.epam.healenium.constants.PagesType.TEST_ENV;
+
 public class XpathTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("XPath with special characters")
     public void testXpathSpecialCharacter(){
-        FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
+        FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
                 .findTestElement(LocatorType.XPATH, "//*[@id='change:name']")
@@ -27,7 +29,7 @@ public class XpathTest extends BaseTest {
     @Severity(SeverityLevel.MINOR)
     @Description("XPath Following")
     public void testXpathFollowing(){
-        FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
+        FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
                 .findTestElement(LocatorType.XPATH, "//*[@id='change_className']/following::test_tag")
@@ -39,7 +41,7 @@ public class XpathTest extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     @Description("XPath Contains")
     public void testXpathContains(){
-        FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
+        FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
                 .findTestElement(LocatorType.XPATH, "//input[contains(@class, 'test')]")
@@ -51,7 +53,7 @@ public class XpathTest extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     @Description("XPath Not Contains")
     public void testXpathNotContains(){
-        FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
+        FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
                 .findTestElement(LocatorType.XPATH, "//input[not(contains(@class, 'input1'))]")
@@ -63,7 +65,7 @@ public class XpathTest extends BaseTest {
     @Severity(SeverityLevel.MINOR)
     @Description("XPath Following-Sibling")
     public void testXpathFollowingSibling(){
-        FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
+        FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
                 .findTestElement(LocatorType.XPATH, "//*[starts-with(@class, 'test')]/following-sibling::*")
@@ -75,7 +77,7 @@ public class XpathTest extends BaseTest {
     @Severity(SeverityLevel.MINOR)
     @Description("XPath Ancestor::")
     public void testXPathAncestor(){
-        FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
+        FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
                 .findTestElement(LocatorType.XPATH, "(//*[starts-with(@class, 'test')]/ancestor::div[@class='healenium-form validate-form']//input)[1]")
@@ -87,7 +89,7 @@ public class XpathTest extends BaseTest {
     @Severity(SeverityLevel.MINOR)
     @Description("XPath OR")
     public void testXpathOR(){
-        FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
+        FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
                 .findTestElement(LocatorType.XPATH, "//*[@id='change_id' or @id='omg']")
@@ -99,7 +101,7 @@ public class XpathTest extends BaseTest {
     @Severity(SeverityLevel.MINOR)
     @Description("XPath And")
     public void testXpathAnd(){
-        FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
+        FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
                 .findTestElement(LocatorType.XPATH, "//*[@id='change_id' and @type='text']")
@@ -111,7 +113,7 @@ public class XpathTest extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     @Description("XPath Starts-with")
     public void testXpathStartsWith(){
-        FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
+        FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
                 .findTestElement(LocatorType.XPATH, "//*[starts-with(@class, 'test')]")
@@ -123,7 +125,7 @@ public class XpathTest extends BaseTest {
     @Severity(SeverityLevel.MINOR)
     @Description("XPath Precending::")
     public void testXpathPrecending(){
-        FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
+        FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
                 .findTestElement(LocatorType.XPATH, "//*[@id='change_className']/preceding::*[@id='change_id']")
@@ -135,7 +137,7 @@ public class XpathTest extends BaseTest {
     @Severity(SeverityLevel.MINOR)
     @Description("XPath Descendant::")
     public void testXpathDescendant(){
-        FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
+        FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
                 .findTestElement(LocatorType.XPATH, "//*[@id='descendant_change']/descendant::input")

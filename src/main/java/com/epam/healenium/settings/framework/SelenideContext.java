@@ -12,6 +12,11 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.HashMap;
 
+import static com.epam.healenium.constants.PagesType.CALLBACK;
+import static com.epam.healenium.constants.PagesType.MARKUP;
+import static com.epam.healenium.constants.PagesType.MARKUP_FIND_BY;
+import static com.epam.healenium.constants.PagesType.TEST_ENV;
+
 public class SelenideContext implements IFrameworkInterface {
 
     public SelenideContext(WebDriver driver) {
@@ -19,13 +24,13 @@ public class SelenideContext implements IFrameworkInterface {
     }
 
     @Override
-    public HashMap<String, FrameworkPage> useSettings() {
-        HashMap<String, FrameworkPage> selenideContext = new HashMap<>();
+    public HashMap<PagesType, FrameworkPage> useSettings() {
+        HashMap<PagesType, FrameworkPage> selenideContext = new HashMap<>();
 
-        selenideContext.put(String.valueOf(PagesType.TEST_ENV), new SelenideTestEnvPage());
-        selenideContext.put(String.valueOf(PagesType.CALLBACK), new SelenideCallbackPage());
-        selenideContext.put(String.valueOf(PagesType.MARKUP), new SelenideMarkupPage());
-        selenideContext.put(String.valueOf(PagesType.MARKUP_FIND_BY), new SelenideMainPageWithFindBy());
+        selenideContext.put(TEST_ENV, new SelenideTestEnvPage());
+        selenideContext.put(CALLBACK, new SelenideCallbackPage());
+        selenideContext.put(MARKUP, new SelenideMarkupPage());
+        selenideContext.put(MARKUP_FIND_BY, new SelenideMainPageWithFindBy());
 
         return selenideContext;
     }

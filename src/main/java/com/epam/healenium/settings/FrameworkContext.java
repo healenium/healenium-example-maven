@@ -2,6 +2,7 @@ package com.epam.healenium.settings;
 
 import com.epam.healenium.FrameworkPage;
 import com.epam.healenium.constants.FrameworkType;
+import com.epam.healenium.constants.PagesType;
 import com.epam.healenium.settings.framework.JdiContext;
 import com.epam.healenium.settings.framework.SelenideContext;
 import com.epam.healenium.settings.framework.SeleniumContext;
@@ -29,7 +30,7 @@ public class FrameworkContext {
         }
     }
 
-    public HashMap<String, FrameworkPage> setFramework() {
+    public HashMap<PagesType, FrameworkPage> setFramework() {
         return this.type.useSettings();
     }
 }
