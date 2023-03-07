@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class SeleniumBasePage extends FrameworkPage {
-    protected String mainPageUrl = "https://sha-test-app.herokuapp.com/";
+    protected String mainPageUrl = "https://elenastepuro.github.io/test_env/index.html";
     protected WebDriver driver;
 
     public SeleniumBasePage(WebDriver driver) {
@@ -39,6 +39,8 @@ public class SeleniumBasePage extends FrameworkPage {
     }
 
     public SeleniumBasePage confirmAlert() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30) /*timeout in seconds*/);
+        wait.until(ExpectedConditions.alertIsPresent());
         Alert alert = driver.switchTo().alert();
         alert.accept();
         return this;

@@ -2,6 +2,8 @@ package com.epam.healenium;
 
 import com.epam.healenium.constants.LocatorType;
 
+import java.io.FileReader;
+
 public abstract class FrameworkPage {
 
     public FrameworkPage openPage() {
@@ -33,6 +35,49 @@ public abstract class FrameworkPage {
     }
 
     public FrameworkPage confirmAlert() {
+        return null;
+    }
+    public FrameworkPage clickElementByChangeID() {
+        return null;
+    }
+
+    public FrameworkPage clickElementByChangeClassName() {
+        return null;
+    }
+
+    public FrameworkPage clickElementByChangeTagName() {
+        return null;
+    }
+
+    public FrameworkPage clickElementByChangeName() {
+        return null;
+    }
+
+    public FrameworkPage findElementByChangeLinkText() {
+        return null;
+    }
+
+    public FrameworkPage findCheckBox1() {
+        return null;
+    }
+
+    public FrameworkPage findCheckBox2() {
+        return null;
+    }
+
+    public FrameworkPage findCheckBox3() {
+        return null;
+    }
+
+    public FrameworkPage clickSubmitButtonForCheckBox() {
+        return null;
+    }
+
+    public FrameworkPage findElementEnableToDisable() {
+        return null;
+    }
+
+    public FrameworkPage findCheckBoxEnableToDisable() {
         return null;
     }
 
