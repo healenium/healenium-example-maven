@@ -26,6 +26,7 @@ public class LocalDriver implements IDriverInterface {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.setHeadless(false);
+        options.addArguments("--remote-allow-origins=*");
 
         WebDriver delegate = new ChromeDriver(options);
         return delegate;

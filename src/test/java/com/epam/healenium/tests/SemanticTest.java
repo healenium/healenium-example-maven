@@ -69,12 +69,14 @@ public class SemanticTest extends BaseTest {
     @Test
     @Severity(SeverityLevel.MINOR)
     @Description("Find element by partialLinkText")
-    public void testFindElementByPartialLinkText() {
+    public void testFindElementByPartialLinkText() throws InterruptedException {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
+        FrameworkPage partialLinkText = page.openPage()
                 .findTestElement(LocatorType.PARTIAL_LINK_TEXT, "PartialLinkText")
-                .clickSubmitButton()
+                .clickSubmitButton();
+        Thread.sleep(1000);
+        partialLinkText
                 .findTestElement(LocatorType.PARTIAL_LINK_TEXT, "PartialLinkText");
     }
 

@@ -18,7 +18,14 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,6 +38,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CssTest extends BaseTest {
 
+    @SneakyThrows
     @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("Update locator for element with css attribute")
@@ -41,6 +49,7 @@ public class CssTest extends BaseTest {
                 .openPage()
                 .clickAddSquareButton()
                 .verifySquareElement();
+        Thread.sleep(1000);
         assertTrue(result, "Element with css enabled");
 
         for (int i = 0; i <= 2; i++) {
@@ -87,14 +96,17 @@ public class CssTest extends BaseTest {
                 .findTestElement(LocatorType.CSS, "test_tag");
     }
 
+    @SneakyThrows
     @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("Update locator for element with css Disabled")
     public void testCssDisabled() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.CSS, "input:disabled")
+        FrameworkPage testElement = page.openPage()
+                .findTestElement(LocatorType.CSS, "input:disabled");
+        Thread.sleep(1000);
+        testElement
                 .clickSubmitButton()
                 .findTestElement(LocatorType.CSS, "input:disabled");
     }
