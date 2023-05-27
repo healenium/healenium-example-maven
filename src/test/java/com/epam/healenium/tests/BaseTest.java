@@ -1,15 +1,19 @@
 package com.epam.healenium.tests;
 
 import com.epam.healenium.FrameworkPage;
+import com.epam.healenium.SelfHealingDriver;
 import com.epam.healenium.constants.BrowserType;
 import com.epam.healenium.constants.DriverType;
 import com.epam.healenium.constants.FrameworkType;
 import com.epam.healenium.constants.PagesType;
 import com.epam.healenium.settings.DriverContext;
 import com.epam.healenium.settings.FrameworkContext;
+import io.qameta.allure.Attachment;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import java.net.MalformedURLException;
@@ -24,7 +28,6 @@ public class BaseTest {
     static public void setUp() throws MalformedURLException {
         driver = new DriverContext(DriverType.LOCAL).getDriver(BrowserType.CHROME);
 
-        driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
         driver.manage().window().setSize(new Dimension(1200, 800));
 
         pages = new FrameworkContext(FrameworkType.SELENIUM, driver).setFramework();
@@ -39,6 +42,6 @@ public class BaseTest {
 
 //    @Attachment(value = "Screenshot", type = "image/png")
 //    public byte[] screenshot() {
-//        return ((TakesScreenshot) driver.getDelegate()).getScreenshotAs(OutputType.BYTES);
+//        return ((TakesScreenshot) ((SelfHealingDriver) driver).getDelegate()).getScreenshotAs(OutputType.BYTES);
 //    }
 }
