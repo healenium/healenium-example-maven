@@ -10,6 +10,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.safari.SafariOptions;
 
 public class LocalDriver implements IDriverInterface {
     private SelfHealingDriver driver;
@@ -25,7 +27,6 @@ public class LocalDriver implements IDriverInterface {
     public Object useChrome() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.setHeadless(false);
 
         WebDriver delegate = new ChromeDriver(options);
         return delegate;
@@ -35,7 +36,7 @@ public class LocalDriver implements IDriverInterface {
     public Object useFirefox() {
         WebDriverManager.firefoxdriver().setup();
         FirefoxOptions options = new FirefoxOptions();
-        options.setHeadless(false);
+//        options.setHeadless(false);
 
         WebDriver delegate = new FirefoxDriver(options);
         return delegate;
@@ -47,6 +48,14 @@ public class LocalDriver implements IDriverInterface {
         EdgeOptions options = new EdgeOptions();
 
         WebDriver delegate = new EdgeDriver(options);
+        return delegate;
+    }
+
+    @Override
+    public Object useSafari() {
+        SafariOptions options = new SafariOptions();
+
+        WebDriver delegate = new SafariDriver(options);
         return delegate;
     }
 }

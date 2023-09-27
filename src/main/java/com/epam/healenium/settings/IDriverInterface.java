@@ -17,4 +17,5 @@ public interface IDriverInterface {
 
     Object useEdge();
 
+    Object useSafari();
 }

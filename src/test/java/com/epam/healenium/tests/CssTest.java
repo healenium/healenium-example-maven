@@ -1,32 +1,14 @@
 package com.epam.healenium.tests;
 
 import com.epam.healenium.FrameworkPage;
-import com.epam.healenium.SelfHealingDriver;
-import com.epam.healenium.constants.PagesType;
 import com.epam.healenium.constants.LocatorType;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.remote.RemoteWebElement;
-import org.openqa.selenium.support.FindBy;
-
-import java.net.URL;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 
 import static com.epam.healenium.constants.PagesType.CALLBACK;
 import static com.epam.healenium.constants.PagesType.TEST_ENV;
-import static java.lang.String.format;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CssTest extends BaseTest {

@@ -1,24 +1,19 @@
 package com.epam.healenium.tests;
 
 import com.epam.healenium.FrameworkPage;
-import com.epam.healenium.SelfHealingDriver;
 import com.epam.healenium.constants.BrowserType;
 import com.epam.healenium.constants.DriverType;
 import com.epam.healenium.constants.FrameworkType;
 import com.epam.healenium.constants.PagesType;
 import com.epam.healenium.settings.DriverContext;
 import com.epam.healenium.settings.FrameworkContext;
-import io.qameta.allure.Attachment;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import java.net.MalformedURLException;
 import java.util.HashMap;
-import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     static protected WebDriver driver;
