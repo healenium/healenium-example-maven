@@ -11,7 +11,7 @@ public class CallbackPage extends SeleniumBasePage {
     private By updateSquareButton = By.xpath("//button[contains(@class, 'update')]");
     private By removeSquareButton = By.xpath("//button[contains(@class, 'remove')]");
 
-    private By testButtonCss = By.cssSelector("[c='red']");
+    private By testButtonCss = By.cssSelector("[color='red']");
 
     public CallbackPage(WebDriver driver) {
         super(driver);

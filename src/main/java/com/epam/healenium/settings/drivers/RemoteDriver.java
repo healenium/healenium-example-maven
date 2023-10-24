@@ -29,7 +29,6 @@ public class RemoteDriver implements IDriverInterface {
     public Object useChrome() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", "chrome");
-        capabilities.setCapability("browserVersion", "97.0");
         capabilities.setCapability("enableVNC", true);
 
         return capabilities;
@@ -39,7 +38,6 @@ public class RemoteDriver implements IDriverInterface {
     public Object useFirefox() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", "firefox");
-        capabilities.setCapability("browserVersion", "95.0");
         capabilities.setCapability("enableVNC", true);
 
         return capabilities;
@@ -49,7 +47,15 @@ public class RemoteDriver implements IDriverInterface {
     public Object useEdge() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", "edge");
-        capabilities.setCapability("browserVersion", "98.0");
+        capabilities.setCapability("enableVNC", true);
+
+        return capabilities;
+    }
+
+    @Override
+    public Object useSafari() {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("browserName", "safari");
         capabilities.setCapability("enableVNC", true);
 
         return capabilities;

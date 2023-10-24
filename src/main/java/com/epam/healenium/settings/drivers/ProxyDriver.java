@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.safari.SafariOptions;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -31,7 +32,12 @@ public class ProxyDriver implements IDriverInterface {
     @Override
     public Object useFirefox() {
         FirefoxOptions options = new FirefoxOptions();
+        return options;
+    }
 
+    @Override
+    public Object useSafari() {
+        SafariOptions options = new SafariOptions();
         return options;
     }
 
