@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3.8"
 services:
 
   postgres-db:
@@ -17,7 +17,7 @@ services:
       - healenium
 
   healenium:
-    image: healenium/hlm-backend:3.3.4
+    image: healenium/hlm-backend:3.4.1
     ports:
       - "7878:7878"
     links:
@@ -30,6 +30,7 @@ services:
       - SPRING_POSTGRES_DB_HOST=postgres-db
       - KEY_SELECTOR_URL=false
       - COLLECT_METRICS=true
+      - FIND_ELEMENTS_AUTO_HEALING=false
       - HLM_LOG_LEVEL=info
     networks:
       - healenium
