@@ -12,13 +12,13 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
 
-        <junit.version>5.7.0</junit.version>
+        <junit.version>5.9.1</junit.version>
         <log4j.version>2.13.0</log4j.version>
         <hamcrest.version>2.2</hamcrest.version>
         <webdrivermanager.version>5.5.3</webdrivermanager.version>
 
-        <selenium.version>4.13.0</selenium.version>
-        <selenide.version>6.3.4</selenide.version>
+        <selenium.version>4.15.0</selenium.version>
+        <selenide.version>7.0.0</selenide.version>
         <jdi.version>1.3.22</jdi.version>
 
         <healenium.version>3.4.6</healenium.version>
@@ -54,7 +54,6 @@
             <artifactId>cucumber-junit</artifactId>
             <version>1.2.4</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.codeborne/selenide -->
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
