@@ -2,8 +2,6 @@ package com.epam.healenium;
 
 import com.epam.healenium.constants.LocatorType;
 
-import java.io.FileReader;
-
 public abstract class FrameworkPage {
 
     public FrameworkPage openPage() {
@@ -37,6 +35,7 @@ public abstract class FrameworkPage {
     public FrameworkPage confirmAlert() {
         return null;
     }
+
     public FrameworkPage clickElementByChangeID() {
         return null;
     }

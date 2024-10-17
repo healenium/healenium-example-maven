@@ -40,6 +40,9 @@ public class DriverContext {
             case IE:
                 this.driver = context.setDriver(context.useEdge());
                 break;
+            case SAFARI:
+                this.driver = context.setDriver(context.useSafari());
+                break;
         }
         return this.driver;
     }
