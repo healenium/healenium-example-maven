@@ -88,9 +88,9 @@ public class CssTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.CSS, "textarea:enabled")
+                .findTestElement(LocatorType.CSS, "textarea#change_enabled")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.CSS, "textarea:enabled");
+                .findTestElement(LocatorType.CSS, "textarea#change_enabled");
     }
 
     @Test
