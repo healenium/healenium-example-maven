@@ -64,9 +64,9 @@ public class CssTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.CSS, "test_tag")
+                .findTestElement(LocatorType.CSS, "input#change_element")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.CSS, "test_tag");
+                .findTestElement(LocatorType.CSS, "input#change_element");
     }
 
     @Test
