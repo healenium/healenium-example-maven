@@ -18,9 +18,9 @@ public class XpathTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.XPATH, "//*[@id='change:name']")
+                .findTestElement(LocatorType.XPATH, "input#newName")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.XPATH, "//*[@id='change:name']");
+                .findTestElement(LocatorType.XPATH, "input#newName");
     }
 
     @Test
@@ -30,9 +30,9 @@ public class XpathTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.XPATH, "//*[@id='change_className']/following::test_tag")
+                .findTestElement(LocatorType.XPATH, "input#change_element")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.XPATH, "//*[@id='change_className']/following::test_tag");
+                .findTestElement(LocatorType.XPATH, "input#change_element");
     }
 
     @Test
