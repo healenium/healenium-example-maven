@@ -18,9 +18,9 @@ public class XpathTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.XPATH, "//*[@id='change:name']")
+                .findTestElement(LocatorType.CSS_SELECTOR, "input#newName")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.XPATH, "//*[@id='change:name']");
+                .findTestElement(LocatorType.CSS_SELECTOR, "input#newName");
     }
 
     @Test
