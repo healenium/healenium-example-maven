@@ -66,9 +66,9 @@ public class XpathTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.XPATH, "//*[starts-with(@class, 'test')]/following-sibling::*")
+                .findTestElement(LocatorType.XPATH, "html > body > div > div > div:nth-child(3) > div:nth-child(2) > span")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.XPATH, "//*[starts-with(@class, 'test')]/following-sibling::*");
+                .findTestElement(LocatorType.XPATH, "html > body > div > div > div:nth-child(3) > div:nth-child(2) > span");
     }
 
     @Test
