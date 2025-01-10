@@ -40,9 +40,9 @@ public class CssTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.CSS, "#change_id")
+                .findTestElement(LocatorType.CSS, "input#newValue")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.CSS, "#change_id");
+                .findTestElement(LocatorType.CSS, "input#newValue");
     }
 
     @Test
