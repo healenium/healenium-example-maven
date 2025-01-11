@@ -21,7 +21,7 @@ public class GeneralTest extends BaseTest {
 
         mainPage.openPage().clickTestButton()
                 .confirmAlert()
-                .clickElementByChangeID(); // Click Element By Change ID
+                .clickElementByNewName(); // Click Element By New Name
         mainPage.clickSubmitButton()  //clicking Change locators button
                 .clickElementByChangeID();
     }
@@ -35,12 +35,12 @@ public class GeneralTest extends BaseTest {
         mainPage.openPage().clickElementByChangeClassName()
                 .clickElementByChangeTagName()
                 .clickElementByChangeName()
-                .findElementByChangeLinkText();
+                .findElementByChangeLinkText(); // Changed to a#change_links
         mainPage.clickSubmitButton()
                 .clickElementByChangeClassName()
                 .clickElementByChangeTagName()
                 .clickElementByChangeName()
-                .findElementByChangeLinkText();
+                .findElementByChangeLinkText(); // Changed to a#change_links
     }
 
     @Test
