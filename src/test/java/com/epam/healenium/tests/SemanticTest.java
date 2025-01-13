@@ -98,7 +98,7 @@ public class SemanticTest extends BaseTest {
     public void testPrice() {
         FrameworkPage page = pages.get(TEST_ENV);
         page.openPage();
-        WebElement element = driver.findElement(By.className("total_price"));
+        WebElement element = driver.findElement(By.className("By.xpath: //*[@id='change_element']"));
         element.click();
         driver.findElement(By.id("close_popup"));
     }
