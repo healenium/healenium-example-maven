@@ -6,10 +6,34 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import static com.epam.healenium.constants.PagesType.TEST_ENV;
 
 public class XpathTest extends BaseTest {
+
+    @Test
+    @Severity(SeverityLevel.MINOR)
+    @Description("Find element by tagName")
+    public void testFirstName() {
+        FrameworkPage page = pages.get(TEST_ENV);
+        page.openPage();
+        WebElement element = driver.findElement(By.linkText("first_name_text"));
+        element.click();
+        driver.findElement(By.xpath("//*[@id='change:name']"));
+    }
+
+    @Test
+    @Severity(SeverityLevel.MINOR)
+    @Description("Find element by tagName")
+    public void testSecondName() {
+        FrameworkPage page = pages.get(TEST_ENV);
+        page.openPage();
+        WebElement element = driver.findElement(By.cssSelector("html > div > div > form > div"));
+        element.click();
+        driver.findElement(By.xpath("close_popup_form"));
+    }
 
     @Test
     @Severity(SeverityLevel.NORMAL)
