@@ -36,11 +36,13 @@ public class GeneralTest extends BaseTest {
                 .clickElementByChangeTagName()
                 .clickElementByChangeName()
                 .findElementByChangeLinkText();
+    findElementByChangeLinkText(); // updated locator
         mainPage.clickSubmitButton()
                 .clickElementByChangeClassName()
                 .clickElementByChangeTagName()
                 .clickElementByChangeName()
                 .findElementByChangeLinkText();
+    findElementByChangeLinkText(); // updated locator
     }
 
     @Test
