@@ -7,6 +7,8 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import static com.epam.healenium.constants.PagesType.TEST_ENV;
 
@@ -89,4 +91,16 @@ public class SemanticTest extends BaseTest {
                 .clickSubmitButton()
                 .findTestElement(LocatorType.TAG_NAME, "test_tag");
     }
+
+    @Test
+    @Severity(SeverityLevel.MINOR)
+    @Description("Find element by tagName")
+    public void testPrice() {
+        FrameworkPage page = pages.get(TEST_ENV);
+        page.openPage();
+        WebElement element = driver.findElement(By.className("total_price"));
+        element.click();
+        driver.findElement(By.id("close_popup"));
+    }
+
 }
