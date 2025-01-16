@@ -30,7 +30,7 @@ public class XpathTest extends BaseTest {
     public void testSecondName() {
         FrameworkPage page = pages.get(TEST_ENV);
         page.openPage();
-        WebElement element = driver.findElement(By.cssSelector("html > div > div > form > div"));
+        WebElement element = driver.findElement(By.id("second_name"));
         element.click();
         driver.findElement(By.xpath("close_popup_form"));
     }
