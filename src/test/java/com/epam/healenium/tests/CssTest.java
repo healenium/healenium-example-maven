@@ -119,8 +119,8 @@ public class CssTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.CSS, ".test_class")
+                .findTestElement(LocatorType.XPATH, "//*[@id='change_className']")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.CSS, ".test_class");
+                .findTestElement(LocatorType.XPATH, "//*[@id='change_className']");
     }
 }
