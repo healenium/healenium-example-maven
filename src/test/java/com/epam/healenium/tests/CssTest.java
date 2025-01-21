@@ -40,9 +40,9 @@ public class CssTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.CSS, "#change_id")
+                .findTestElement(LocatorType.XPATH, "//*[@id='newValue']")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.CSS, "#change_id");
+                .findTestElement(LocatorType.XPATH, "//*[@id='newValue']");
     }
 
     @Test
@@ -64,9 +64,9 @@ public class CssTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.CSS, "test_tag")
+                .findTestElement(LocatorType.XPATH, "//*[@id='change_element']")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.CSS, "test_tag");
+                .findTestElement(LocatorType.XPATH, "//*[@id='change_element']");
     }
 
     @Test
@@ -88,9 +88,9 @@ public class CssTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.CSS, "textarea:enabled")
+                .findTestElement(LocatorType.XPATH, "//*[@id='change_enabled']")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.CSS, "textarea:enabled");
+                .findTestElement(LocatorType.XPATH, "//*[@id='change_enabled']");
     }
 
     @Test
@@ -119,8 +119,8 @@ public class CssTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.CSS, ".test_class")
+                .findTestElement(LocatorType.XPATH, "//*[@id='change_className']")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.CSS, ".test_class");
+                .findTestElement(LocatorType.XPATH, "//*[@id='change_className']");
     }
 }
