@@ -76,9 +76,9 @@ public class CssTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.CSS, "input:disabled")
+                .findTestElement(LocatorType.XPATH, "//*[@id='change_disabled']")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.CSS, "input:disabled");
+                .findTestElement(LocatorType.XPATH, "//*[@id='change_disabled']");
     }
 
     @Test
