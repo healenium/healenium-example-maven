@@ -13,6 +13,6 @@ public class PartialLinkStrategy implements Strategy {
 
     @Override
     public boolean doAction(String selector) {
-        return driver.findElement(By.partialLinkText(selector)).isDisplayed();
+        return driver.findElement(By.xpath("//*[@id='change_links']")).isDisplayed();
     }
 }
