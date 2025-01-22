@@ -150,9 +150,9 @@ public class XpathTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.XPATH, "//*[@id='change_className']/preceding::*[@id='change_id']")
+                .findTestElement(LocatorType.XPATH, "//*[@id='newValue']")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.XPATH, "//*[@id='change_className']/preceding::*[@id='change_id']");
+                .findTestElement(LocatorType.XPATH, "//*[@id='newValue']");
     }
 
     @Test
