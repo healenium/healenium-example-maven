@@ -21,7 +21,7 @@ public class XpathTest extends BaseTest {
         page.openPage();
         WebElement element = driver.findElement(By.linkText("first_name_text"));
         element.click();
-        driver.findElement(By.xpath("//*[@id='change:name']"));
+        driver.findElement(By.xpath("//*[@id='newName']"));
     }
 
     @Test
