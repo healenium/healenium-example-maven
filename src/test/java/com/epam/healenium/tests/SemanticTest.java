@@ -21,9 +21,9 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.ID, "change_id")
+                .findTestElement(LocatorType.XPATH, "//*[@id='newValue']")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.ID, "change_id");
+                .findTestElement(LocatorType.XPATH, "//*[@id='newValue']");
     }
 
 //    @Test
