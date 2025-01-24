@@ -7,7 +7,7 @@ public enum LocatorType {
     CLASS_NAME("className"),
     LINK_TEXT("linkText"),
     NAME("name"),
-    PARTIAL_LINK_TEXT("partialLinkText"),
+    PARTIAL_LINK_TEXT("//*[@id='change_links']"),
     TAG_NAME("tagName");
 
     private final String typeName;
