@@ -54,9 +54,9 @@ public class XpathTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.XPATH, "//*[@id='change_className']/following::test_tag")
+                .findTestElement(LocatorType.XPATH, "//*[@id='change_className']/following::*[@id='change_element']")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.XPATH, "//*[@id='change_className']/following::test_tag");
+                .findTestElement(LocatorType.XPATH, "//*[@id='change_className']/following::*[@id='change_element']");
     }
 
     @Test
