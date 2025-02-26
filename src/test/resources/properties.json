@@ -7,7 +7,7 @@
   "capabilities": [
     {
       "browserName": "chrome",
-      "version": "96",
+      "version": "97",
       "goog:chromeOptions": {
         "args": [
           "--no-sandbox",
