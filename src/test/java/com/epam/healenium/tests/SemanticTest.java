@@ -51,9 +51,9 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.LINK_TEXT, "Change: LinkText, PartialLinkText")
+                .findTestElement(LocatorType.LINK_TEXT, "//*[@id='change_links']")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.LINK_TEXT, "Change: LinkText, PartialLinkText");
+                .findTestElement(LocatorType.LINK_TEXT, "//*[@id='change_links']");
     }
 
     @Test
@@ -63,9 +63,9 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.NAME, "change_name")
+                .findTestElement(LocatorType.NAME, "//*[@id='newName']")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.NAME, "change_name");
+                .findTestElement(LocatorType.NAME, "//*[@id='newName']");
     }
 
     @Test
@@ -75,9 +75,9 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.PARTIAL_LINK_TEXT, "PartialLinkText")
+                .findTestElement(LocatorType.PARTIAL_LINK_TEXT, "//*[@id='change_links']")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.PARTIAL_LINK_TEXT, "PartialLinkText");
+                .findTestElement(LocatorType.PARTIAL_LINK_TEXT, "//*[@id='change_links']");
     }
 
     @Test
@@ -87,9 +87,9 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.TAG_NAME, "test_tag")
+                .findTestElement(LocatorType.TAG_NAME, "//*[@id='change_element']")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.TAG_NAME, "test_tag");
+                .findTestElement(LocatorType.TAG_NAME, "//*[@id='change_element']");
     }
 
     @Test
