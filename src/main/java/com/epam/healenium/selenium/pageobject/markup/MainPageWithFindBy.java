@@ -47,7 +47,8 @@ public class MainPageWithFindBy extends SeleniumBasePage {
     @FindBy (name =  "change_name")
     WebElement inputFieldChangeName;
     @FindBy (linkText = "Change: LinkText, PartialLinkText")
-    WebElement inputFieldChangeLinkText;
+    @FindBy(xpath = "//*[@id='change_links']")
+WebElement inputFieldChangeLinkText;
 
     @FindBy(id = "form_checked1")
     WebElement checkBox1;
