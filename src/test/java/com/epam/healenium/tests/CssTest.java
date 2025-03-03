@@ -6,6 +6,7 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 
 import static com.epam.healenium.constants.PagesType.CALLBACK;
 import static com.epam.healenium.constants.PagesType.TEST_ENV;
@@ -63,10 +64,10 @@ public class CssTest extends BaseTest {
     public void testCssElement() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.CSS, "test_tag")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.CSS, "test_tag");
+        page.openPage();
+        driver.findElement(By.cssSelector("test_tag")).isDisplayed();
+        page.clickSubmitButton();
+        driver.findElement(By.cssSelector("test_tag")).isDisplayed();
     }
 
     @Test

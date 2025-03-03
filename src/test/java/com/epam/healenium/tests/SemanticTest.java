@@ -3,10 +3,13 @@ package com.epam.healenium.tests;
 import com.epam.healenium.FrameworkPage;
 import com.epam.healenium.constants.LocatorType;
 import com.epam.healenium.constants.PagesType;
+import com.epam.healenium.selenium.pageobject.SeleniumBasePage;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 import static com.epam.healenium.constants.PagesType.TEST_ENV;
 
@@ -84,9 +87,9 @@ public class SemanticTest extends BaseTest {
     public void testFindElementByTagName() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.TAG_NAME, "test_tag")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.TAG_NAME, "test_tag");
+        page.openPage();
+        driver.findElement(By.tagName("test_tag")).isDisplayed();
+        page.clickSubmitButton();
+        driver.findElement(By.tagName("test_tag")).isDisplayed();
     }
 }
