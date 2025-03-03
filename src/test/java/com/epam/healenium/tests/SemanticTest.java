@@ -64,9 +64,9 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.NAME, "change_name")
+                .findTestElement(LocatorType.NAME, "healed_change_name")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.NAME, "change_name");
+                .findTestElement(LocatorType.NAME, "healed_change_name");
     }
 
     @Test
