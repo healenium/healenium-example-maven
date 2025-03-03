@@ -76,9 +76,9 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.PARTIAL_LINK_TEXT, "PartialLinkText")
+                .findTestElement(LocatorType.PARTIAL_LINK_TEXT, "HealedPartialLinkText")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.PARTIAL_LINK_TEXT, "PartialLinkText");
+                .findTestElement(LocatorType.PARTIAL_LINK_TEXT, "HealedPartialLinkText");
     }
 
     @Test
