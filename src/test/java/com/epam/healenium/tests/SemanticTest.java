@@ -52,9 +52,9 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.LINK_TEXT, "Change: LinkText, PartialLinkText")
+                .findTestElement(LocatorType.XPATH, "//*[@id='change_links']")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.LINK_TEXT, "Change: LinkText, PartialLinkText");
+                .findTestElement(LocatorType.XPATH, "//*[@id='change_links']");
     }
 
     @Test
