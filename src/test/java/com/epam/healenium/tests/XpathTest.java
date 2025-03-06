@@ -1,11 +1,11 @@
 package com.epam.healenium.tests;
 
 import com.epam.healenium.FrameworkPage;
-import com.epam.healenium.constants.LocatorType;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 
 import static com.epam.healenium.constants.PagesType.TEST_ENV;
 
@@ -17,10 +17,10 @@ public class XpathTest extends BaseTest {
     public void testXpathSpecialCharacter() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.XPATH, "//*[@id='change:name']")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.XPATH, "//*[@id='change:name']");
+        page.openPage();
+        driver.findElement(By.xpath("//*[@id='change:name']"));
+        page.clickSubmitButton();
+        driver.findElement(By.xpath("//*[@id='change:name']"));
     }
 
     @Test
@@ -29,10 +29,10 @@ public class XpathTest extends BaseTest {
     public void testXpathFollowing() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.XPATH, "//*[@id='change_className']/following::test_tag")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.XPATH, "//*[@id='change_className']/following::test_tag");
+        page.openPage();
+        driver.findElement(By.xpath("//*[@id='change_className']/following::test_tag"));
+        page.clickSubmitButton();
+        driver.findElement(By.xpath("//*[@id='change_className']/following::test_tag"));
     }
 
     @Test
@@ -41,10 +41,10 @@ public class XpathTest extends BaseTest {
     public void testXpathContains() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.XPATH, "//input[contains(@class, 'test')]")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.XPATH, "//input[contains(@class, 'test')]");
+        page.openPage();
+        driver.findElement(By.xpath("//input[contains(@class, 'test')]"));
+        page.clickSubmitButton();
+        driver.findElement(By.xpath("//input[contains(@class, 'test')]"));
     }
 
     @Test
@@ -53,10 +53,10 @@ public class XpathTest extends BaseTest {
     public void testXpathNotContains() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.XPATH, "//input[not(contains(@class, 'input1'))]")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.XPATH, "//input[not(contains(@class, 'input1'))]");
+        page.openPage();
+        driver.findElement(By.xpath("//input[not(contains(@class, 'input1'))]"));
+        page.clickSubmitButton();
+        driver.findElement(By.xpath("//input[not(contains(@class, 'input1'))]"));
     }
 
     @Test
@@ -65,10 +65,10 @@ public class XpathTest extends BaseTest {
     public void testXpathFollowingSibling() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.XPATH, "//*[starts-with(@class, 'test')]/following-sibling::*")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.XPATH, "//*[starts-with(@class, 'test')]/following-sibling::*");
+        page.openPage();
+        driver.findElement(By.xpath("//*[starts-with(@class, 'test')]/following-sibling::*"));
+        page.clickSubmitButton();
+        driver.findElement(By.xpath("//*[starts-with(@class, 'test')]/following-sibling::*"));
     }
 
     @Test
@@ -77,10 +77,10 @@ public class XpathTest extends BaseTest {
     public void testXPathAncestor() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.XPATH, "(//*[starts-with(@class, 'test')]/ancestor::div[@class='healenium-form validate-form']//input)[1]")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.XPATH, "(//*[starts-with(@class, 'test')]/ancestor::div[@class='healenium-form validate-form']//input)[1]");
+        page.openPage();
+        driver.findElement(By.xpath("(//*[starts-with(@class, 'test')]/ancestor::div[@class='healenium-form validate-form']//input)[1]"));
+        page.clickSubmitButton();
+        driver.findElement(By.xpath("(//*[starts-with(@class, 'test')]/ancestor::div[@class='healenium-form validate-form']//input)[1]"));
     }
 
     @Test
@@ -89,10 +89,10 @@ public class XpathTest extends BaseTest {
     public void testXpathOR() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.XPATH, "//*[@id='change_id' or @id='omg']")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.XPATH, "//*[@id='change_id' or @id='omg']");
+        page.openPage();
+        driver.findElement(By.xpath("//*[@id='change_id' or @id='omg']"));
+        page.clickSubmitButton();
+        driver.findElement(By.xpath("//*[@id='change_id' or @id='omg']"));
     }
 
     @Test
@@ -101,10 +101,10 @@ public class XpathTest extends BaseTest {
     public void testXpathAnd() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.XPATH, "//*[@id='change_id' and @type='text']")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.XPATH, "//*[@id='change_id' and @type='text']");
+        page.openPage();
+        driver.findElement(By.xpath("//*[@id='change_id' and @type='text']"));
+        page.clickSubmitButton();
+        driver.findElement(By.xpath("//*[@id='change_id' and @type='text']"));
     }
 
     @Test
@@ -113,10 +113,10 @@ public class XpathTest extends BaseTest {
     public void testXpathStartsWith() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.XPATH, "//*[starts-with(@class, 'test')]")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.XPATH, "//*[starts-with(@class, 'test')]");
+        page.openPage();
+        driver.findElement(By.xpath("//*[starts-with(@class, 'test')]"));
+        page.clickSubmitButton();
+        driver.findElement(By.xpath("//*[starts-with(@class, 'test')]"));
     }
 
     @Test
@@ -125,10 +125,10 @@ public class XpathTest extends BaseTest {
     public void testXpathPrecending() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.XPATH, "//*[@id='change_className']/preceding::*[@id='change_id']")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.XPATH, "//*[@id='change_className']/preceding::*[@id='change_id']");
+        page.openPage();
+        driver.findElement(By.xpath("//*[@id='change_className']/preceding::*[@id='change_id']"));
+        page.clickSubmitButton();
+        driver.findElement(By.xpath("//*[@id='change_className']/preceding::*[@id='change_id']"));
     }
 
     @Test
@@ -137,10 +137,10 @@ public class XpathTest extends BaseTest {
     public void testXpathDescendant() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.XPATH, "//*[@id='descendant_change']/descendant::input")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.XPATH, "//*[@id='descendant_change']/descendant::input");
+        page.openPage();
+        driver.findElement(By.xpath("//*[@id='descendant_change']/descendant::input"));
+        page.clickSubmitButton();
+        driver.findElement(By.xpath("//*[@id='descendant_change']/descendant::input"));
     }
 
     @Test

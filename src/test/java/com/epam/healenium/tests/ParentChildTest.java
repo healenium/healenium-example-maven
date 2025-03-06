@@ -1,15 +1,13 @@
 package com.epam.healenium.tests;
 
 import com.epam.healenium.FrameworkPage;
-import com.epam.healenium.constants.LocatorType;
-import com.epam.healenium.constants.PagesType;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 
 import static com.epam.healenium.constants.PagesType.TEST_ENV;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ParentChildTest extends BaseTest {
 
@@ -19,7 +17,7 @@ public class ParentChildTest extends BaseTest {
 //    public void testParentXpath(){
 //        FrameworkPage mainPage = pages.get(String.valueOf(PagesType.MARKUP));
 //
-//        mainPage.openPage()
+//        mainpage.openPage();
 //                .generateMarkup();
 //
 //        while (!mainPage.displayedText())
@@ -40,7 +38,7 @@ public class ParentChildTest extends BaseTest {
 //    public void testUnderParentFindElements() {
 //        FrameworkPage mainPage = pages.get(String.valueOf(PagesType.MARKUP));
 //
-//        mainPage.openPage()
+//        mainpage.openPage();
 //                .generateMarkup();
 //
 //        while (!mainPage.groupInputEnabled())
@@ -55,25 +53,25 @@ public class ParentChildTest extends BaseTest {
     @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("Select and verify several inputs CSS FirstChild")
-    public void testCSSFirstChild(){
+    public void testCSSFirstChild() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.CSS, "test_tag:first-child")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.CSS, "test_tag:first-child");
+        page.openPage();
+        driver.findElement(By.cssSelector("test_tag:first-child"));
+        page.clickSubmitButton();
+        driver.findElement(By.cssSelector("test_tag:first-child"));
     }
 
     @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("Select and verify several inputs CSS LastChild")
-    public void testCSSLastChild(){
+    public void testCSSLastChild() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.CSS, "child_tag:last-child")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.CSS, "child_tag:last-child");
+        page.openPage();
+        driver.findElement(By.cssSelector("child_tag:last-child"));
+        page.clickSubmitButton();
+        driver.findElement(By.cssSelector("child_tag:last-child"));
     }
 
 //    @Test
@@ -85,7 +83,7 @@ public class ParentChildTest extends BaseTest {
 //
 //        String parentXpath = "//*[contains(@class,'test-form')]";
 //        String childXpath = "//*[@class='input1']";
-//        page.openPage()
+//        page.openPage();
 //                .findElementsUnderParent(parentXpath, childXpath)
 //                .clickFormButton()
 //                .findElementsUnderParent(parentXpath, childXpath);

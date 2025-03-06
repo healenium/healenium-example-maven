@@ -1,15 +1,11 @@
 package com.epam.healenium.tests;
 
 import com.epam.healenium.FrameworkPage;
-import com.epam.healenium.constants.LocatorType;
-import com.epam.healenium.constants.PagesType;
-import com.epam.healenium.selenium.pageobject.SeleniumBasePage;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 import static com.epam.healenium.constants.PagesType.TEST_ENV;
 
@@ -21,10 +17,10 @@ public class SemanticTest extends BaseTest {
     public void testButtonClickWithId() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.ID, "change_id")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.ID, "change_id");
+        page.openPage();
+        driver.findElement(By.id("change_id"));
+        page.clickSubmitButton();
+        driver.findElement(By.id("change_id"));
     }
 
 //    @Test
@@ -51,10 +47,10 @@ public class SemanticTest extends BaseTest {
     public void testFindElementByLinkText() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.LINK_TEXT, "Change: LinkText, PartialLinkText")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.LINK_TEXT, "Change: LinkText, PartialLinkText");
+        page.openPage();
+        driver.findElement(By.linkText("Change: LinkText, PartialLinkText"));
+        page.clickSubmitButton();
+        driver.findElement(By.linkText("Change: LinkText, PartialLinkText"));
     }
 
     @Test
@@ -63,10 +59,10 @@ public class SemanticTest extends BaseTest {
     public void testFindElementByName() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.NAME, "change_name")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.NAME, "change_name");
+        page.openPage();
+        driver.findElement(By.name("change_name"));
+        page.clickSubmitButton();
+        driver.findElement(By.name("change_name"));
     }
 
     @Test
@@ -75,10 +71,10 @@ public class SemanticTest extends BaseTest {
     public void testFindElementByPartialLinkText() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.PARTIAL_LINK_TEXT, "PartialLinkText")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.PARTIAL_LINK_TEXT, "PartialLinkText");
+        page.openPage();
+        driver.findElement(By.partialLinkText("PartialLinkText"));
+        page.clickSubmitButton();
+        driver.findElement(By.partialLinkText("PartialLinkText"));
     }
 
     @Test

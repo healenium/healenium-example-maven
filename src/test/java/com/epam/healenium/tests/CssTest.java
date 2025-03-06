@@ -1,7 +1,6 @@
 package com.epam.healenium.tests;
 
 import com.epam.healenium.FrameworkPage;
-import com.epam.healenium.constants.LocatorType;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -40,10 +39,10 @@ public class CssTest extends BaseTest {
     public void testCssId() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.CSS, "#change_id")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.CSS, "#change_id");
+        page.openPage();
+        driver.findElement(By.cssSelector("#change_id"));
+        page.clickSubmitButton();
+        driver.findElement(By.cssSelector("#change_id"));
     }
 
     @Test
@@ -52,10 +51,10 @@ public class CssTest extends BaseTest {
     public void testCssIdSpecialCharacter() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.CSS, "input#change\\:name")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.CSS, "input#change\\:name");
+        page.openPage();
+        driver.findElement(By.cssSelector("input#change\\:name"));
+        page.clickSubmitButton();
+        driver.findElement(By.cssSelector("input#change\\:name"));
     }
 
     @Test
@@ -76,10 +75,10 @@ public class CssTest extends BaseTest {
     public void testCssDisabled() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.CSS, "input:disabled")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.CSS, "input:disabled");
+        page.openPage();
+        driver.findElement(By.cssSelector("input:disabled"));
+        page.clickSubmitButton();
+        driver.findElement(By.cssSelector("input:disabled"));
     }
 
     @Test
@@ -88,10 +87,10 @@ public class CssTest extends BaseTest {
     public void testCssEnabled() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.CSS, "textarea:enabled")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.CSS, "textarea:enabled");
+        page.openPage();
+        driver.findElement(By.cssSelector("textarea:enabled"));
+        page.clickSubmitButton();
+        driver.findElement(By.cssSelector("textarea:enabled"));
     }
 
     @Test
@@ -100,10 +99,10 @@ public class CssTest extends BaseTest {
     public void testCssChecked() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.CSS, "input:checked")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.CSS, "input:checked");
+        page.openPage();
+        driver.findElement(By.cssSelector("input:checked"));
+        page.clickSubmitButton();
+        driver.findElement(By.cssSelector("input:checked"));
     }
 
     @Test
@@ -119,9 +118,9 @@ public class CssTest extends BaseTest {
     public void testCssClassName() {
         FrameworkPage page = pages.get(TEST_ENV);
 
-        page.openPage()
-                .findTestElement(LocatorType.CSS, ".test_class")
-                .clickSubmitButton()
-                .findTestElement(LocatorType.CSS, ".test_class");
+        page.openPage();
+        driver.findElement(By.cssSelector(".test_class"));
+        page.clickSubmitButton();
+        driver.findElement(By.cssSelector(".test_class"));
     }
 }
