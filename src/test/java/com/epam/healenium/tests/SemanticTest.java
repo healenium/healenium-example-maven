@@ -48,9 +48,9 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.linkText("Change: LinkText, PartialLinkText"));
+        driver.findElement(By.xpath("//*[@id='change_links']"));
         page.clickSubmitButton();
-        driver.findElement(By.linkText("Change: LinkText, PartialLinkText"));
+        driver.findElement(By.xpath("//*[@id='change_links']"));
     }
 
     @Test
@@ -60,9 +60,9 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.name("change_name"));
+        driver.findElement(By.xpath("//*[@id='newName']"));
         page.clickSubmitButton();
-        driver.findElement(By.name("change_name"));
+        driver.findElement(By.xpath("//*[@id='newName']"));
     }
 
     @Test
