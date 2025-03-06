@@ -57,9 +57,9 @@ public class ParentChildTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.cssSelector("test_tag:first-child"));
+        driver.findElement(By.cssSelector("input#change_element"));
         page.clickSubmitButton();
-        driver.findElement(By.cssSelector("test_tag:first-child"));
+        driver.findElement(By.cssSelector("input#change_element"));
     }
 
     @Test
