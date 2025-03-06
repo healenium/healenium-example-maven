@@ -44,9 +44,9 @@ public class MainPageWithFindBy extends SeleniumBasePage {
     @FindBy(xpath ="//test_tag/following-sibling::input")
     WebElement inputFieldChangeTagName;
 
-    @FindBy (name =  "change_name")
+    @FindBy (xpath = "//*[@id='newName']")
     WebElement inputFieldChangeName;
-    @FindBy (linkText = "Change: LinkText, PartialLinkText")
+    @FindBy (xpath = "//*[@id='change_links']")
     WebElement inputFieldChangeLinkText;
 
     @FindBy(id = "form_checked1")
