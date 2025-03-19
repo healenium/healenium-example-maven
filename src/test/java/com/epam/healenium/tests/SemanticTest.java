@@ -18,9 +18,9 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.id("change_id"));
+        driver.findElement(By.id("updated_id"));
         page.clickSubmitButton();
-        driver.findElement(By.id("change_id"));
+        driver.findElement(By.id("updated_id"));
     }
 
 //    @Test
