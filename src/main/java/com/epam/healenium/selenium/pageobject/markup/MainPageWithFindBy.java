@@ -31,7 +31,7 @@ public class MainPageWithFindBy extends SeleniumBasePage {
     @FindBy(id = "field-parent")
     WebElement fieldParent;
 
-    @FindBy(id = "change_id")
+    @FindBy(cssSelector = "input#newValue")
     WebElement inputFieldChangeID;
 
 
