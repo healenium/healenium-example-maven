@@ -27,6 +27,9 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install docker-compose-plugin
+        
+    - name: Verify Docker Compose installation
+      run: docker-compose --version
 
     # 4. Поднимаем всё с помощью Docker Compose
     - name: Start services via Docker Compose
