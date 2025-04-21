@@ -27,7 +27,10 @@ public class LocalDriver implements IDriverInterface {
     public Object useChrome() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-
+        options.addArguments("--user-data-dir=/tmp/unique-chrome-profile-" + System.currentTimeMillis());
+        options.addArguments("--headless"); // Запуск в headless-режиме
+        options.addArguments("--disable-gpu");
+        options.addArguments("--no-sandbox");
         WebDriver delegate = new ChromeDriver(options);
         return delegate;
     }
