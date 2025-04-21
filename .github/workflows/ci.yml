@@ -29,11 +29,11 @@ jobs:
         sudo apt-get install docker-compose-plugin
         
     - name: Verify Docker Compose installation
-      run: docker-compose --version
+      run: docker compose --version
 
     # 4. Поднимаем всё с помощью Docker Compose
     - name: Start services via Docker Compose
-      run: docker-compose -f ./infra/docker-compose.yml up -d 
+      run: docker compose -f ./infra/docker-compose.yml up -d 
 
     # 5. Проводим проверку здоровья сервисов (healthcheck для зависимых сервисов)
     - name: Wait for services to be ready
