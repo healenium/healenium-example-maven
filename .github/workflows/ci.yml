@@ -1,0 +1,56 @@
+name: CI Pipeline
+
+# Указываем, что workflow запускается вручную
+on:
+  workflow_dispatch: # Этот триггер позволяет ручной запуск через UI
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Клонируем репозиторий
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # 2. Устанавливаем Java и Maven
+    - name: Setup JDK
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin' # Используем Temurin-дистрибуцию JDK
+        java-version: '17'      # Указываем версию Java (замените на вашу, если отличается)
+        cache: 'maven'          # Включаем кеширование зависимостей Maven
+
+
+    # 3. Устанавливаем Docker Compose (если используется старая версия)
+# Установка Docker Compose вручную (бинарный файл)
+    - name: Install Docker Compose Manually
+      run: |
+        curl -L "https://github.com/docker/compose/releases/download/v2.35.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+        sudo chmod +x /usr/local/bin/docker-compose
+        
+    - name: Verify Docker Compose installation
+      run: docker compose --version
+
+    # 4. Поднимаем всё с помощью Docker Compose
+    - name: Start services via Docker Compose
+      run: docker compose -f ./infra/docker-compose.yml up -d 
+
+    # 5. Проводим проверку здоровья сервисов (healthcheck для зависимых сервисов)
+    - name: Wait for services to be ready
+      run: |
+        sleep 10 # Ожидаем, пока все сервисы станут доступными
+        docker ps
+
+   # 6. Компилируем проект и загружаем зависимости
+    - name: Build with Maven
+      run: mvn compile
+
+   # 7. Запускаем тесты
+    - name: Run Maven tests
+      run: mvn test
+
+    # 8. Завершаем работу (очистка контейнеров)
+    - name: Shutdown services
+      if: always()
+      run: docker compose down
