@@ -53,4 +53,4 @@ jobs:
     # 8. Завершаем работу (очистка контейнеров)
     - name: Shutdown services
       if: always()
-      run: docker compose down
+      run: docker compose -f ./infra/docker-compose.yml down
