@@ -8,6 +8,7 @@ services:
       - "5432:5432"
     volumes:
       - ./db/sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - pgdata:/var/lib/postgresql/data
     restart: always
     environment:
       - POSTGRES_DB=healenium
