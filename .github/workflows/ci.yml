@@ -52,14 +52,14 @@ jobs:
     # 6. Сохраняем дамп базы данных
     - name: Dump PostgreSQL database
       run: |
-        docker exec -i postgres-db pg_dump -U healenium_user -d healenium > dump.sql
+        docker exec -i postgres-db pg_dump -U healenium_user -d healenium > ./infra/dump.sql
         
     # 7. Коммитим дамп в репозиторий (перезаписываем старую версию)
     - name: Commit and push database dump
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add dump.sql
+        git add ./infra/dump.sql
         git commit -m "Auto-update database dump" || echo "No changes to commit."  # Если файл не изменился, пропускаем коммит
         git push origin HEAD:master --force # Принудительно перезаписываем изменения
       env:
