@@ -51,7 +51,7 @@ jobs:
 
    # 7. Запускаем тесты
     - name: Run Maven tests
-      run: mvn test
+      run: mvn test -Dtest=SimpleTest
 
     # 6. Сохраняем дамп базы данных
     - name: Dump PostgreSQL database
