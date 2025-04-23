@@ -41,9 +41,9 @@ jobs:
         sleep 10 # Ожидаем, пока все сервисы станут доступными
         docker ps
 
-    # - name: Restoring a dump PostgreSQL database
-    #   run: |
-    #     docker exec -i postgres-db psql -U healenium_user -d healenium < ./infra/dump.sql
+    - name: Restoring a dump PostgreSQL database
+      run: |
+        docker exec -i postgres-db psql -U healenium_user -d healenium < ./infra/dump.sql
         
    # 6. Компилируем проект и загружаем зависимости
     - name: Build with Maven
