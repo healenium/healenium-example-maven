@@ -23,7 +23,6 @@ jobs:
 
 
     # 3. Устанавливаем Docker Compose (если используется старая версия)
-# Установка Docker Compose вручную (бинарный файл)
     - name: Install Docker Compose Manually
       run: |
         curl -L "https://github.com/docker/compose/releases/download/v2.35.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -49,6 +48,23 @@ jobs:
    # 7. Запускаем тесты
     - name: Run Maven tests
       run: mvn test
+
+    # 6. Сохраняем дамп базы данных
+    - name: Dump PostgreSQL database
+      run: |
+        docker exec -i postgres-db pg_dump -U healenium_user -d healenium > dump.sql
+        
+    # 7. Коммитим дамп в репозиторий (перезаписываем старую версию)
+    - name: Commit and push database dump
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add dump.sql
+        git commit -m "Auto-update database dump" || echo "No changes to commit."  # Если файл не изменился, пропускаем коммит
+        git push origin HEAD:master --force # Принудительно перезаписываем изменения
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Используем токен для аутентификации
+
 
     # 8. Завершаем работу (очистка контейнеров)
     - name: Shutdown services
