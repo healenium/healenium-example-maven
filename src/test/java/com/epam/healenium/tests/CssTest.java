@@ -64,9 +64,9 @@ public class CssTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.cssSelector("test_tag")).isDisplayed();
+        driver.findElement(By.cssSelector("input#change_element")).isDisplayed();
         page.clickSubmitButton();
-        driver.findElement(By.cssSelector("test_tag")).isDisplayed();
+        driver.findElement(By.cssSelector("input#change_element")).isDisplayed();
     }
 
     @Test
