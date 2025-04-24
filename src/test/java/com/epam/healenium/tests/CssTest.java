@@ -88,9 +88,9 @@ public class CssTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.cssSelector("textarea:enabled"));
+        driver.findElement(By.cssSelector("textarea#change_enabled"));
         page.clickSubmitButton();
-        driver.findElement(By.cssSelector("textarea:enabled"));
+        driver.findElement(By.cssSelector("textarea#change_enabled"));
     }
 
     @Test
