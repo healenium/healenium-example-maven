@@ -64,9 +64,9 @@ public class CssTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.cssSelector("test_tag")).isDisplayed();
+        driver.findElement(By.cssSelector("input#change_element")).isDisplayed();
         page.clickSubmitButton();
-        driver.findElement(By.cssSelector("test_tag")).isDisplayed();
+        driver.findElement(By.cssSelector("input#change_element")).isDisplayed();
     }
 
     @Test
@@ -76,9 +76,9 @@ public class CssTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.cssSelector("input:disabled"));
+        driver.findElement(By.cssSelector("input#change_disabled"));
         page.clickSubmitButton();
-        driver.findElement(By.cssSelector("input:disabled"));
+        driver.findElement(By.cssSelector("input#change_disabled"));
     }
 
     @Test
@@ -88,9 +88,9 @@ public class CssTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.cssSelector("textarea:enabled"));
+        driver.findElement(By.cssSelector("textarea#change_enabled"));
         page.clickSubmitButton();
-        driver.findElement(By.cssSelector("textarea:enabled"));
+        driver.findElement(By.cssSelector("textarea#change_enabled"));
     }
 
     @Test
@@ -119,8 +119,8 @@ public class CssTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.cssSelector(".test_class"));
+        driver.findElement(By.cssSelector("input#change_className"));
         page.clickSubmitButton();
-        driver.findElement(By.cssSelector(".test_class"));
+        driver.findElement(By.cssSelector("input#change_className"));
     }
 }
