@@ -71,9 +71,9 @@ public class ParentChildTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage()
-                .findTestElement(LocatorType.CSS, "child_tag:last-child")
+                .findTestElement(LocatorType.XPATH, "//*[@id='change_element_last_child']")
                 .clickSubmitButton()
-                .findTestElement(LocatorType.CSS, "child_tag:last-child");
+                .findTestElement(LocatorType.XPATH, "//*[@id='change_element_last_child']");
     }
 
 //    @Test
