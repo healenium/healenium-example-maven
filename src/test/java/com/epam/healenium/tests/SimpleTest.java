@@ -30,7 +30,7 @@ public class SimpleTest extends BaseTest {
 
         page.openPage();
         page.clickSubmitButton();
-        driver.findElement(By.cssSelector("textarea:enabled"));
+        driver.findElement(By.cssSelector("textarea#change_enabled"));
     }
 
     @Test
