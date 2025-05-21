@@ -76,9 +76,9 @@ public class CssTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.cssSelector("input:disabled"));
+        driver.findElement(By.cssSelector("input#change_disabled"));
         page.clickSubmitButton();
-        driver.findElement(By.cssSelector("input:disabled"));
+        driver.findElement(By.cssSelector("input#change_disabled"));
     }
 
     @Test
