@@ -69,9 +69,9 @@ public class ParentChildTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.cssSelector("child_tag:last-child"));
+        driver.findElement(By.xpath("//[@id='change_element_last_child']"));
         page.clickSubmitButton();
-        driver.findElement(By.cssSelector("child_tag:last-child"));
+        driver.findElement(By.xpath("//[@id='change_element_last_child']"));
     }
 
 //    @Test
