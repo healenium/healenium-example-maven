@@ -18,9 +18,9 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.id("change_id"));
+        driver.findElement(By.xpath("//*[@id='newValue']"));
         page.clickSubmitButton();
-        driver.findElement(By.id("change_id"));
+        driver.findElement(By.xpath("//*[@id='newValue']"));
     }
 
 //    @Test
@@ -48,9 +48,9 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.linkText("Change: LinkText, PartialLinkText"));
+        driver.findElement(By.xpath("//*[@id='change_links']"));
         page.clickSubmitButton();
-        driver.findElement(By.linkText("Change: LinkText, PartialLinkText"));
+        driver.findElement(By.xpath("//*[@id='change_links']"));
     }
 
     @Test
@@ -60,9 +60,9 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.name("change_name"));
+        driver.findElement(By.xpath("//*[@id='newName']"));
         page.clickSubmitButton();
-        driver.findElement(By.name("change_name"));
+        driver.findElement(By.xpath("//*[@id='newName']"));
     }
 
     @Test
@@ -72,9 +72,9 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.partialLinkText("PartialLinkText"));
+        driver.findElement(By.xpath("//*[@id='change_links']"));
         page.clickSubmitButton();
-        driver.findElement(By.partialLinkText("PartialLinkText"));
+        driver.findElement(By.xpath("//*[@id='change_links']"));
     }
 
     @Test
@@ -84,8 +84,8 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.tagName("test_tag")).isDisplayed();
+        driver.findElement(By.xpath("//*[@id='change_element']")).isDisplayed();
         page.clickSubmitButton();
-        driver.findElement(By.tagName("test_tag")).isDisplayed();
+        driver.findElement(By.xpath("//*[@id='change_element']")).isDisplayed();
     }
 }
