@@ -1,28 +1,28 @@
 name: CI Pipeline
 
-# Указываем, что workflow запускается вручную
+# Specify that the workflow is triggered manually
 on:
-  workflow_dispatch: # Этот триггер позволяет ручной запуск через UI
+  workflow_dispatch: # This trigger allows manual execution through the UI
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. Клонируем репозиторий
+    # 1. Clone the repository
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # 2. Устанавливаем Java и Maven
+    # 2. Set up Java and Maven
     - name: Setup JDK
       uses: actions/setup-java@v3
       with:
-        distribution: 'temurin' # Используем Temurin-дистрибуцию JDK
-        java-version: '17'      # Указываем версию Java (замените на вашу, если отличается)
-        cache: 'maven'          # Включаем кеширование зависимостей Maven
+        distribution: 'temurin' # Use the Temurin JDK distribution
+        java-version: '17'      # Specify the Java version (replace with yours if different)
+        cache: 'maven'          # Enable dependency caching for Maven
 
 
-    # 3. Устанавливаем Docker Compose (если используется старая версия)
+    # 3. Install Docker Compose manually (for older versions)
     - name: Install Docker Compose Manually
       run: |
         curl -L "https://github.com/docker/compose/releases/download/v2.35.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -31,46 +31,47 @@ jobs:
     - name: Verify Docker Compose installation
       run: docker compose --version
 
-    # 4. Поднимаем всё с помощью Docker Compose
+    # 4. Start all services using Docker Compose
     - name: Start services via Docker Compose
       run: docker compose -f ./infra/docker-compose.yml up -d 
 
-    # 5. Проводим проверку здоровья сервисов (healthcheck для зависимых сервисов)
+    # 5. Wait for services to be healthy (healthcheck for dependent services)
     - name: Wait for services to be ready
       run: |
-        sleep 10 # Ожидаем, пока все сервисы станут доступными
+        sleep 10 # Wait until all services are accessible
         docker ps
 
-    - name: Restoring a dump PostgreSQL database
+    # 6. Restore a PostgreSQL database dump
+    - name: Restore PostgreSQL database dump
       run: |
         docker exec -i postgres-db psql -U healenium_user -d healenium < ./infra/dump.sql
         
-   # 6. Компилируем проект и загружаем зависимости
+    # 7. Build the project and load dependencies
     - name: Build with Maven
       run: mvn compile
 
-   # 7. Запускаем тесты
+    # 8. Run tests
     - name: Run Maven tests
       run: mvn test -Dtest=SimpleTest
 
-    # 6. Сохраняем дамп базы данных
+    # 9. Save the database dump
     - name: Dump PostgreSQL database
       run: |
         docker exec -i postgres-db pg_dump -U healenium_user -d healenium > ./infra/dump.sql
         
-    # 7. Коммитим дамп в репозиторий (перезаписываем старую версию)
+    # 10. Commit the updated database dump to the repository
     - name: Commit and push database dump
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add ./infra/dump.sql
-        git commit -m "Auto-update database dump" || echo "No changes to commit."  # Если файл не изменился, пропускаем коммит
-        git push origin HEAD:master --force # Принудительно перезаписываем изменения
+        git commit -m "Auto-update database dump" || echo "No changes to commit."  # Skip commit if the file hasn't changed
+        git push origin HEAD:master --force # Force push changes to the repository
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Используем токен для аутентификации
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Use token for authentication
 
 
-    # 8. Завершаем работу (очистка контейнеров)
+    # 11. Finalize by cleaning up containers
     - name: Shutdown services
       if: always()
       run: docker compose -f ./infra/docker-compose.yml down
