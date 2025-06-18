@@ -48,9 +48,9 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.linkText("Change: LinkText, PartialLinkText"));
+        driver.findElement(By.cssSelector("a#change_links"));
         page.clickSubmitButton();
-        driver.findElement(By.linkText("Change: LinkText, PartialLinkText"));
+        driver.findElement(By.cssSelector("a#change_links"));
     }
 
     @Test
