@@ -60,9 +60,9 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.name("change_name"));
+        driver.findElement(By.cssSelector("input#newName"));
         page.clickSubmitButton();
-        driver.findElement(By.name("change_name"));
+        driver.findElement(By.cssSelector("input#newName"));
     }
 
     @Test
