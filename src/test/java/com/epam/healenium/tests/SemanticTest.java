@@ -18,9 +18,9 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.id("change_id"));
+        driver.findElement(By.cssSelector("input#newValue"));
         page.clickSubmitButton();
-        driver.findElement(By.id("change_id"));
+        driver.findElement(By.cssSelector("input#newValue"));
     }
 
 //    @Test
@@ -48,9 +48,9 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.linkText("Change: LinkText, PartialLinkText"));
+        driver.findElement(By.cssSelector("a#change_links"));
         page.clickSubmitButton();
-        driver.findElement(By.linkText("Change: LinkText, PartialLinkText"));
+        driver.findElement(By.cssSelector("a#change_links"));
     }
 
     @Test
@@ -60,9 +60,9 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.name("change_name"));
+        driver.findElement(By.cssSelector("input#newName"));
         page.clickSubmitButton();
-        driver.findElement(By.name("change_name"));
+        driver.findElement(By.cssSelector("input#newName"));
     }
 
     @Test
@@ -72,9 +72,9 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.partialLinkText("PartialLinkText"));
+        driver.findElement(By.cssSelector("a#change_links"));
         page.clickSubmitButton();
-        driver.findElement(By.partialLinkText("PartialLinkText"));
+        driver.findElement(By.cssSelector("a#change_links"));
     }
 
     @Test
@@ -84,8 +84,8 @@ public class SemanticTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.tagName("test_tag")).isDisplayed();
+        driver.findElement(By.cssSelector("input#change_element")).isDisplayed();
         page.clickSubmitButton();
-        driver.findElement(By.tagName("test_tag")).isDisplayed();
+        driver.findElement(By.cssSelector("input#change_element")).isDisplayed();
     }
 }
