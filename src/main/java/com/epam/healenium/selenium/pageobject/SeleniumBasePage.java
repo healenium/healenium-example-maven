@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class SeleniumBasePage extends FrameworkPage {
-    protected String mainPageUrl = "https://elenastepuro.github.io/test_env/index.html";
+    protected String mainPageUrl = "https://healenium.github.io/healenium-test-env/index.html";
     protected WebDriver driver;
 
     public SeleniumBasePage(WebDriver driver) {
