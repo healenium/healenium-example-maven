@@ -22,3 +22,5 @@ chromedriver*
 /target/
 /healenium-web-selenide/.allure/
 /healenium-web-selenide/build/
+
+.codemie/
