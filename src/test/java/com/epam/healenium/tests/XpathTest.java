@@ -18,9 +18,9 @@ public class XpathTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.xpath("//*[@id='change:name']"));
+        driver.findElement(By.cssSelector("input#newName"));
         page.clickSubmitButton();
-        driver.findElement(By.xpath("//*[@id='change:name']"));
+        driver.findElement(By.cssSelector("input#newName"));
     }
 
     @Test
@@ -30,9 +30,9 @@ public class XpathTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.xpath("//*[@id='change_className']/following::test_tag"));
+        driver.findElement(By.cssSelector("input#change_element"));
         page.clickSubmitButton();
-        driver.findElement(By.xpath("//*[@id='change_className']/following::test_tag"));
+        driver.findElement(By.cssSelector("input#change_element"));
     }
 
     @Test
