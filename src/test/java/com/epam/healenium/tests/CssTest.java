@@ -119,8 +119,8 @@ public class CssTest extends BaseTest {
         FrameworkPage page = pages.get(TEST_ENV);
 
         page.openPage();
-        driver.findElement(By.cssSelector(".test_class"));
+        driver.findElement(By.cssSelector("input#change_className"));
         page.clickSubmitButton();
-        driver.findElement(By.cssSelector(".test_class"));
+        driver.findElement(By.cssSelector("input#change_className"));
     }
 }
