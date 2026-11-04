@@ -19,7 +19,7 @@ public class SimpleTest extends BaseTest {
 
         page.openPage();
         page.clickSubmitButton();
-        driver.findElement(By.cssSelector("#change_id"));
+        driver.findElement(By.cssSelector("input#newValue"));
     }
 
     @Test
