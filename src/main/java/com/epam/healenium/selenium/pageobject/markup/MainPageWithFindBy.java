@@ -1,3 +1,4 @@
+ 
 package com.epam.healenium.selenium.pageobject.markup;
 
 import com.epam.healenium.annotation.DisableHealing;
@@ -41,12 +42,12 @@ public class MainPageWithFindBy extends SeleniumBasePage {
     @FindBy(className = "test_class")
     WebElement inputFieldChangeClassName;
 
-    @FindBy(xpath ="//test_tag/following-sibling::input")
+    @FindBy(css ="input#change_below_element")
     WebElement inputFieldChangeTagName;
 
-    @FindBy (name =  "change_name")
+    @FindBy (css =  "input#newName")
     WebElement inputFieldChangeName;
-    @FindBy (linkText = "Change: LinkText, PartialLinkText")
+    @FindBy (css = "a#change_links")
     WebElement inputFieldChangeLinkText;
 
     @FindBy(id = "form_checked1")
