@@ -74,19 +74,19 @@ public class ParentChildTest extends BaseTest {
         driver.findElement(By.cssSelector("child_tag:last-child"));
     }
 
-//    @Test
-//    @Severity(SeverityLevel.NORMAL)
-//    @Description("Select first checkbox and verify using parent.findElements in Xpath. " +
-//            "The difference between first - not use @DisabledHealing")
-//    public void testXPathUnderParentFindElements() {
-//        FrameworkPage page = pages.get(String.valueOf(PagesType.TEST_ENV));
-//
-//        String parentXpath = "//*[contains(@class,'test-form')]";
-//        String childXpath = "//*[@class='input1']";
-//        page.openPage();
-//                .findElementsUnderParent(parentXpath, childXpath)
-//                .clickFormButton()
-//                .findElementsUnderParent(parentXpath, childXpath);
-//    }
-// selenium 4 (above, below, toLeftOf, toRightOf, near)
+    @Test
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Select first checkbox and verify using parent.findElements in Xpath. " +
+            "The difference between first - not use @DisabledHealing")
+    public void testXPathUnderParentFindElements() {
+        FrameworkPage page = pages.get(TEST_ENV);
+
+        String parentXpath = "//*[contains(@class,'test-form')]";
+        String childXpath = "//*[@class='input1']";
+        page.openPage();
+        page.findElementsUnderParent(parentXpath, childXpath);
+        page.clickFormButton();
+        page.findElementsUnderParent(parentXpath, childXpath);
+    }
+
 }
